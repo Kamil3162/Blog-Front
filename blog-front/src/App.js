@@ -1,25 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomeScreen from "./views/HomeScreen";
+import MainScreenApplication from "./views/MainScreenApplication";
+import WindowSizeContext from "./context/WindowsSizeContext";
+import NavigationVisibilityProvider from "./context/NavigationVisibilityContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <WindowSizeContext>
+                <NavigationVisibilityProvider>
+                    <MainScreenApplication>
+                        <Routes>
+                            <Route path="/home" element={<HomeScreen />} />
+                        </Routes>
+                    </MainScreenApplication>
+                </NavigationVisibilityProvider>
+            </WindowSizeContext>
+        </BrowserRouter>
+    );
 }
 
 export default App;
