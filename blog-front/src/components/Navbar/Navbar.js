@@ -4,7 +4,7 @@ import {
     NavbarContainer, NavbarElement,
     NavbarElementsContainer,
     SearchContainer,
-    SearchField
+    SearchField, SignUpButton
 } from "../../assets/NavbarStyled";
 import { WindowSizeContext} from "../../context/WindowsSizeContext";
 import { NavigationVisibilityContext} from "../../context/NavigationVisibilityContext";
@@ -46,7 +46,7 @@ function Navbar(){
                     <SearchField type="text" placeholder="Search..." />
                 </SearchContainer>
                 <AuthButton text="Log in">Log in</AuthButton>
-                <AuthButton text="Sign up">Sign up</AuthButton>
+                <SignUpButton text="Sign up">Sign up</SignUpButton>
             </NavbarElementsContainer>
         </NavbarContainer>
     )

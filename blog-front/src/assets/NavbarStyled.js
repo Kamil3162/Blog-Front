@@ -11,8 +11,8 @@ export const NavbarContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
     @media (min-width: 768px){
+      padding: 10px;
       display: grid;
       grid-template-columns: 1fr 94px 1fr;
     }
@@ -25,7 +25,7 @@ export const AuthButton = styled.button`
 
   @media (min-width: 768px){
     display: block;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Gothic A1', sans-serif;
     content: ${props => props.text};
     padding: 10px;
     font-weight: 1000;
@@ -33,7 +33,48 @@ export const AuthButton = styled.button`
     width: 80px;
     height: 40px;
     font-size: 15px;
+    border: none;
   }
+`;
+
+export const AuthButtonCom = styled.button`
+  background-size: auto;
+  font-family: 'Gothic A1', sans-serif;
+  content: "${props => props.text}"; // Use props.text directly
+  padding: 10px;
+  font-weight: 1000;
+  border-radius: 20px;
+  width: 160px; // Use props.width directly
+  height: 50px; // Use props.height directly
+  font-size: 15px; // Use props.font_size directly
+  border: none;
+  background: ${props => props.background || 'initial'}; // Use props.background directly
+  color: ${props => props.color};
+
+  @media (min-width: 768px) {
+    display: block;
+    font-family: 'Gothic A1', sans-serif;
+    content: "${props => props.text}"; // Use props.text directly
+    padding: 10px;
+    font-weight: 1000;
+    border-radius: 20px;
+    width: ${props => props.width ? props.width + 'px' : '80px'}; // Use props.width directly
+    height: ${props => props.height ? props.height + 'px ' : '40px'}; // Use props.height directly
+    font-size: ${props => props.font_size || '15px'}; // Use props.font_size directly
+    border: none;
+    background: ${props => props.background || 'initial'}; // Use props.background directly
+    color: ${props => props.color};
+  }
+
+  &:hover {
+    background-color: rgba(13, 82, 225, 0.73); /* Replace with valid color values */
+    transition: 0.1s linear background-color;
+  }
+`;
+
+export const SignUpButton = styled(AuthButton)`
+  background-color: #0020ff;
+  color: white;
 `;
 
 export const SearchField = styled.input`
@@ -82,24 +123,33 @@ export const NavbarElementsContainer = styled.div`
 `;
 
 export const NavigationContainer = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   z-index: 1;
-  background-color: #fafafa;
+  background-color: black;
+  border-radius: 10px;
   border-top: 1px solid #e7e7e9;
   padding: 10px;
   width: 80%;
+  gap: 10px;
 
   @media (min-width: 500px) {
     display: ${props => props.display ? "initial" : "none"};
     border: none;
   }
+  
 `;
 
 export const NavigationElement = styled.div`
     width: 100%;
     font-family: 'DM Sans', sans-serif;
-
+    font-size: 20px;
+    padding: 10px;
+    //background-color: white;
+    border-radius: 10px;
+    max-width: 90%;
+    color: white;
 `;
 
 

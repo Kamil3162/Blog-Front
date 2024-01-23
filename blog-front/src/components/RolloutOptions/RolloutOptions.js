@@ -15,8 +15,8 @@ function RolloutOptions(){
                 <>
                     <NavigationElement>Option1</NavigationElement>
                     <NavigationElement>Option2</NavigationElement>
-                    <NavigationElement>Option3</NavigationElement>
-                    <NavigationElement>Option4</NavigationElement>
+                    <NavigationElement>Log In</NavigationElement>
+                    <NavigationElement>Sign Up</NavigationElement>
                 </>
             )}
         </NavigationContainer>

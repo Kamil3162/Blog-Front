@@ -5,9 +5,9 @@ import styled from "styled-components";
  */
 
 export const MainContainer = styled.div`
-    margin: 0 auto;
-    max-width: 1600px;
-    padding: 20px;
+    //margin: 0 auto;
+    max-width: 100%;
+    height: 100%;
 `;
 
 
