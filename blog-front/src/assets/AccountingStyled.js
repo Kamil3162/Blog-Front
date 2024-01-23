@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-
-
-
 export const AccountingContainer = styled.div`
     display: flex;
     flex-direction: row;
@@ -18,6 +15,12 @@ export const AccountingContainer = styled.div`
       color: black;
     }
 `;
+
+export const UserDetailsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; // Adjust this value as needed to create space between FormField components
+`
 
 export const ImageAccount = styled.div`
     flex:1;
@@ -67,7 +70,6 @@ export const FormField = styled.div`
   margin-bottom: 25px;
   justify-items: center;
 `;
-
 
 
 export const LoginInputLabel = styled.label`

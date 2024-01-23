@@ -45,8 +45,16 @@ function Navbar(){
                     </div>
                     <SearchField type="text" placeholder="Search..." />
                 </SearchContainer>
-                <AuthButton text="Log in">Log in</AuthButton>
-                <SignUpButton text="Sign up">Sign up</SignUpButton>
+                <AuthButton text="Log in">
+                    <a href="/login">
+                        Log in
+                    </a>
+                </AuthButton>
+                <SignUpButton text="Sign up">
+                    <a href="/sing-up">
+                        Sign up
+                    </a>
+                </SignUpButton>
             </NavbarElementsContainer>
         </NavbarContainer>
     )
