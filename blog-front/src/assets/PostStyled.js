@@ -2,22 +2,37 @@ import styled from "styled-components";
 
 export const PostHeader = styled.div`
   display: block;
-  font-size: 35px;
   font-family: 'Lexend', sans-serif;
   font-weight: 800;
   margin-bottom: 50px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #ddd;
   
+  @media (min-width: 600px){
+    flex: 2;
+    margin-left: 100px;
+    
+  }
+  h1{
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+  }
 `;
 
 export const SiteContentContainer = styled.div`
-    margin-top: 10vh; // Adjust the value as needed
-    width: 100%;
+    display: block;
+  
+    @media (min-width: 600px){
+      margin-top: 10vh; // Adjust the value as needed
+      width: 100%;
+      display: flex;
+    }
+    
+    
 `;
 export const HomeHeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
-  
+    
   &:hover{
     color: purple;
   }
@@ -37,9 +52,11 @@ export const HomeTitle = styled.p`
   padding: 0;
 `;
 export const HomeDataContainer = styled.div`
+    width: 50%;
+    height: auto;
 `;
 export const HomePhotoContainer = styled.div`
-    max-width: 100%;
+  max-width: 100%;
   max-height: 100%;
   overflow: hidden; // This will prevent the image from overflowing the container
 
@@ -59,19 +76,25 @@ export const HomePhotoContainer = styled.div`
   }
 `;
 export const HomeContentContainer = styled.div`
-  font-family: 'Jost', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   color: black;
   margin-bottom: 20px;
-  max-width: 50%;
+  max-width: 100%;
+  overflow-wrap: break-word;
   
   @media (min-width: 500px){
     img{
       max-width: 60%;
       height: auto; // Keeps the aspect ratio of the image
-      object-fit: contain; // Adjusts the image to fit within the container
+      text-align: center;
     }
   }
+`;
+
+export const HomeContentText = styled.div`
+  font-family: 'Raleway',sans-serif;
+  text-align: left; // Align text to the left within the centered block
+  display: inline-block; // Make the div inline so it takes only the necessary width
 `;
 
 

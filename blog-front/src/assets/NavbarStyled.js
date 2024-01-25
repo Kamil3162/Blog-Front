@@ -21,7 +21,7 @@ export const NavbarContainer = styled.div`
 export const AuthButton = styled.button`
   display: none;
   background-size: auto;
-
+  
 
   @media (min-width: 768px){
     display: block;
@@ -34,6 +34,9 @@ export const AuthButton = styled.button`
     height: 40px;
     font-size: 15px;
     border: none;
+  }
+  a{
+    text-decoration: none;
   }
 `;
 
@@ -73,8 +76,9 @@ export const AuthButtonCom = styled.button`
 `;
 
 export const SignUpButton = styled(AuthButton)`
-  background-color: #0020ff;
+  background-color: #0f24a8;
   color: white;
+
 `;
 
 export const SearchField = styled.input`

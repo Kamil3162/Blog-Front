@@ -7,6 +7,7 @@ import Register from "./views/Register";
 import MainScreenApplication from "./views/MainScreenApplication";
 import WindowSizeContext from "./context/WindowsSizeContext";
 import NavigationVisibilityProvider from "./context/NavigationVisibilityContext";
+import PostDisplay from "./views/PostDisplay";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                             <Route path="/home" element={<HomeScreen />} />
                             <Route path="/login" element={<Login />} />
                             <Route path="/sing-up" element={< Register/>} />
+                            <Route path="/post-detail" element={< PostDisplay/>} />
                         </Routes>
                     </MainScreenApplication>
                 </NavigationVisibilityProvider>
