@@ -7,6 +7,7 @@ import HeaderPost from "../components/HeaderPost/HeaderPost";
 import ContentPart from "../components/ContentPart/ContentPart";
 import RolloutOptions from "../components/RolloutOptions/RolloutOptions";
 import Categories from "../components/Categories/Categories";
+import Footer from "../components/Footer/Footer";
 function HomeScreen(){
     console.log("generowanie home screen");
     return (
@@ -17,6 +18,7 @@ function HomeScreen(){
                 <HeaderPost title="tytul">dsa</HeaderPost>
                 <Categories/>
             </ContentPart>
+            <Footer/>
         </HomeContainer>
     )
 }

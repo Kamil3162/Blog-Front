@@ -41,9 +41,14 @@ export const AddText = styled.textarea`
   height: 400px;
   margin: 10px auto 0 auto; /* Top, Right&Left, Bottom, Right&Left */
   border-radius: 15px;
-  padding: 10px;
-  font-size: 15px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  
+  padding: 20px; /* Adds some space inside the textarea */
+  box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
+  resize: vertical; /* Allows the user to resize the textarea vertically */
+  font-family: 'Arial', sans-serif; /* Improves readability */
+  font-size: 16px; /* Sets a comfortable font size for reading and writing */
+  line-height: 1.5; /* Improves the readability of multiline text */
+  outline: none; /* Removes the default focus outline to use a custom style if desired */
+  &:focus {
+    border-color: #007bff; /* Highlights the textarea when focused */
+  }
 `;
