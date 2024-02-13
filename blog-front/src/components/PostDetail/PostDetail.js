@@ -8,7 +8,7 @@ import {
 import blog_image from "../../assets/blog_image.png";
 import {HomeDate, HomePhotoContainer, HomeTitle} from "../../assets/PostStyled";
 
-function PostDetail(){
+function PostDetail(){ // add here button edit
     return (
         <PostDetailContainer>
             <PostDetailHeader>

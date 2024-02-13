@@ -16,7 +16,6 @@ function MainScreenApplication(props){
 
     return (
         <MainContainer>
-
             {props.children}
         </MainContainer>
     )

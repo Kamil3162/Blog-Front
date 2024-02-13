@@ -8,6 +8,7 @@ import MainScreenApplication from "./views/MainScreenApplication";
 import WindowSizeContext from "./context/WindowsSizeContext";
 import NavigationVisibilityProvider from "./context/NavigationVisibilityContext";
 import PostDisplay from "./views/PostDisplay";
+import PostCreateView from "./views/PostCreateView";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                             <Route path="/login" element={<Login />} />
                             <Route path="/sing-up" element={< Register/>} />
                             <Route path="/post-detail" element={< PostDisplay/>} />
+                            <Route path="/post-create" element={< PostCreateView/>} />
                         </Routes>
                     </MainScreenApplication>
                 </NavigationVisibilityProvider>
