@@ -9,7 +9,6 @@ export function AuthButtonComponent({text, width, height, background, font_size,
             background={background}
             font_size={font_size}
             color={color}>
-
             {text}
         </AuthButtonCom>
     )

@@ -2,10 +2,12 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: #110c42;
+  background-color: #b3b3b3;
   height: 200px;
   border-radius: 15px;
   padding: 20px;
+  position: static;
+  bottom: 0;
 `;
 
 export const ContentContainerFooterUpp = styled.div`

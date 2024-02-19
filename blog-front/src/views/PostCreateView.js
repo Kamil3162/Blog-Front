@@ -3,6 +3,7 @@ import RolloutOptions from "../components/RolloutOptions/RolloutOptions";
 import PostCreate from "../components/PostCreate/PostCreate";
 import {HomeContainer} from "../assets/HomeStyled";
 import React from "react";
+import Footer from "../components/Footer/Footer";
 
 function PostCreateView(){
     return(
@@ -10,6 +11,7 @@ function PostCreateView(){
             <Navbar/>
             <RolloutOptions/>
             <PostCreate/>
+            <Footer/>
         </HomeContainer>
     )
 }

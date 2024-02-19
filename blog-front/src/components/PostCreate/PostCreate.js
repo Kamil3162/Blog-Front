@@ -1,7 +1,8 @@
 import {PostDetailContainer} from "../../assets/PostDetailStyled";
-import {useState} from "react";
-import {AddFileForm, AddText, AddTitle, PhotoContainer} from "../../assets/PostCreateStyled";
+import React, {useState} from "react";
+import {AddFileForm, AddText, AddTitle, PhotoContainer, PostImagesList} from "../../assets/PostCreateStyled";
 import upimage from "../../assets/upload.png";
+import {AuthButtonComponent} from "../Button/AuthButtonComponent";
 function PostCreate(){
 
     const [image, setImage] = useState(null);
@@ -13,9 +14,14 @@ function PostCreate(){
         setImage(null);
         setFileName("");
     }
+
     return(
         <PhotoContainer>
-            <AddTitle/>
+            <AddTitle
+                placeholder="Title..."
+                placeholderTextColor="white"
+
+            />
             <AddFileForm action="">
                 <input type="file" accept="image/*" className='input-field' hidden
                 onChange={({target: {files}}) => {
@@ -40,7 +46,17 @@ function PostCreate(){
                         </>
                 }
             </AddFileForm>
-            <AddText/>
+            <AddText
+                placeholder="Add content..."
+                placeholderTextColor="white"
+            />
+            <AuthButtonComponent
+                mar
+                width={350}
+                height={50}
+                background={"blue"}
+                color={"white"}
+                text="Upload post"/>
         </PhotoContainer>
     )
 }

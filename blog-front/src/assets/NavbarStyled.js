@@ -53,6 +53,7 @@ export const AuthButtonCom = styled.button`
   border: none;
   background: ${props => props.background || 'initial'}; // Use props.background directly
   color: ${props => props.color};
+  margin: auto;
 
   @media (min-width: 768px) {
     display: block;
