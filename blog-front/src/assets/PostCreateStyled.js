@@ -9,8 +9,8 @@ export const PhotoContainer = styled.div`
   text-align: center;
   //justify-content: center;
   //padding: 20px;
-  background-color: #d3d3d3;
-  padding: 20px;
+  margin-top: 40px;
+  width: 100%;
 `;
 
 export const AddFileForm = styled.form`
@@ -23,6 +23,11 @@ export const AddFileForm = styled.form`
   border: 2px dashed #914545;
   cursor: pointer;
   margin: auto; // Add this to center the form itself if it's not already centered
+  
+  @media (max-width: 600px){
+    height: 150px;
+    width: 150px;
+  }
 `;
 
 export const AddTitle = styled.input`
@@ -37,10 +42,16 @@ export const AddTitle = styled.input`
   color: black;
   background-color: inherit;
   border-bottom: 2px dashed white;
+  
   &::placeholder {
     color: black; /* Adjust the opacity as needed */
   }
-  
+  @media (max-width: 600px){
+    width: 200px;
+  }
+  @media (min-width: 1000px){
+    width: 400px;
+  }
 `;
 
 export const AddText = styled.textarea`
@@ -59,13 +70,18 @@ export const AddText = styled.textarea`
   background-color:#20285b ;
   color: white;
   font-weight: 800;
+  
   &::placeholder {
     color: white; /* Adjust the opacity as needed */
   }
+  
   &:focus {
     border-color: #007bff; /* Highlights the textarea when focused */
   }
   
+  @media (max-width: 600px){
+    width: 300px;
+  }
 `;
 
 

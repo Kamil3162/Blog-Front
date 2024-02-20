@@ -51,7 +51,7 @@ function Navbar(){
                     </a>
                 </AuthButton>
                 <SignUpButton text="Sign up">
-                    <a href="/sign-up">
+                    <a href="/sing-up">
                         Sign up
                     </a>
                 </SignUpButton>

@@ -11,6 +11,7 @@ export const NavbarContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
     @media (min-width: 768px){
       padding: 10px;
       display: grid;
@@ -21,6 +22,7 @@ export const NavbarContainer = styled.div`
 export const AuthButton = styled.button`
   display: none;
   background-size: auto;
+  text-decoration: none;
   
 
   @media (min-width: 768px){
@@ -132,7 +134,7 @@ export const NavigationContainer = styled.div`
   flex-direction: column;
   position: absolute;
   z-index: 1;
-  background-color: black;
+  background-color: #050303;
   border-radius: 10px;
   border-top: 1px solid #e7e7e9;
   padding: 10px;
@@ -143,7 +145,6 @@ export const NavigationContainer = styled.div`
     display: ${props => props.display ? "initial" : "none"};
     border: none;
   }
-  
 `;
 
 export const NavigationElement = styled.div`

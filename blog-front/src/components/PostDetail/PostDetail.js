@@ -8,7 +8,14 @@ import {
 import blog_image from "../../assets/blog_image.png";
 import {HomeDate, HomePhotoContainer, HomeTitle} from "../../assets/PostStyled";
 import Footer from "../Footer/Footer";
-
+import {
+    CommentContainer,
+    CommentsContainer,
+    NameContainer,
+    PhotoContainer, TextContainer,
+    TextTitleContainer
+} from "../../CommentsStyled";
+import Photo from "../../assets/Photo.png";
 function PostDetail(){ // add here button edit
     return (
         <PostDetailContainer>
@@ -36,6 +43,22 @@ function PostDetail(){ // add here button edit
                     Before we sign off for the year, here’s four web design trends our team at Webflow is keeping our eyes on for 2024.
                 </PostDetailContent>
             </PostDetailContentContainer>
+            <CommentsContainer>
+                <CommentContainer>
+                    <PhotoContainer>
+                        <img src={Photo}/>
+                    </PhotoContainer>
+                    <TextTitleContainer>
+                        <NameContainer>
+                            <p>Kamil Holub</p>
+                            <p> now</p>
+                        </NameContainer>
+                        <TextContainer>
+                            dsadas
+                        </TextContainer>
+                    </TextTitleContainer>
+                </CommentContainer>
+            </CommentsContainer>
             <Footer/>
         </PostDetailContainer>
     )
