@@ -14,7 +14,6 @@ function HeaderPost({title}){
     console.log("Generowanie Header Post");
     return (
         <PostHeader>
-
             <h1>To jest rendering post</h1>
             {/*{title}*/}
             <HomeHeaderContainer>

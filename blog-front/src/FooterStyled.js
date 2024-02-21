@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: rgba(33, 44, 166, 0.76);
+  background-color: rgba(13, 25, 229, 0.76);
   height: 200px;
   border-radius: 15px;
   padding: 20px;

@@ -9,6 +9,8 @@ import WindowSizeContext from "./context/WindowsSizeContext";
 import NavigationVisibilityProvider from "./context/NavigationVisibilityContext";
 import PostDisplay from "./views/PostDisplay";
 import PostCreateView from "./views/PostCreateView";
+import ResetPasswordDisplay from "./views/ResetPasswordDisplay";
+import SetNewPasswordDisplay from "./views/SetNewPasswordDisplay";
 
 function App() {
     return (
@@ -22,6 +24,8 @@ function App() {
                             <Route path="/sing-up" element={< Register/>} />
                             <Route path="/post-detail" element={< PostDisplay/>} />
                             <Route path="/post-create" element={< PostCreateView/>} />
+                            <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
+                            <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
                         </Routes>
                     </MainScreenApplication>
                 </NavigationVisibilityProvider>

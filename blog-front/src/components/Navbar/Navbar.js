@@ -41,7 +41,7 @@ function Navbar(){
             <NavbarElementsContainer alignment="flex-end">
                 <SearchContainer>
                     <div>
-                        <img src={photo1} width="30px" height="30px"/>
+                        <img src={photo1} width="20px" height="20px"/>
                     </div>
                     <SearchField type="text" placeholder="Search..." />
                 </SearchContainer>

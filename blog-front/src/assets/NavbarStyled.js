@@ -56,6 +56,7 @@ export const AuthButtonCom = styled.button`
   background: ${props => props.background || 'initial'}; // Use props.background directly
   color: ${props => props.color};
   margin: auto;
+  margin-top: 10px;
 
   @media (min-width: 768px) {
     display: block;
@@ -101,7 +102,7 @@ export const SearchField = styled.input`
 
 export const SearchContainer = styled.div`
     width: 150px;
-  
+    display: flex;
   @media (min-width: 1060px){
     /*
       this will work if screen will have minimum 768px
