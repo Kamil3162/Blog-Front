@@ -7,6 +7,7 @@ import HeaderPost from "../components/HeaderPost/HeaderPost";
 import PostDetail from "../components/PostDetail/PostDetail";
 import Categories from "../components/Categories/Categories";
 import React from "react";
+import Footer from "../components/Footer/Footer";
 
 
 function PostDisplay(){
@@ -15,6 +16,7 @@ function PostDisplay(){
             <Navbar/>
             <RolloutOptions/>
             <PostDetail/>
+            <Footer/>
         </HomeContainer>
     )
 }

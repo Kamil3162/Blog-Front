@@ -16,6 +16,10 @@ import {
     TextTitleContainer
 } from "../../CommentsStyled";
 import Photo from "../../assets/Photo.png";
+import {CreateCommentContainer, CreateCommentField} from "../../assets/PostCommentStyled";
+import {AuthButtonComponent} from "../Button/AuthButtonComponent";
+import React from "react";
+import AddComment from "../AddComment";
 function PostDetail(){ // add here button edit
     return (
         <PostDetailContainer>
@@ -43,7 +47,10 @@ function PostDetail(){ // add here button edit
                     Before we sign off for the year, here’s four web design trends our team at Webflow is keeping our eyes on for 2024.
                 </PostDetailContent>
             </PostDetailContentContainer>
+
             <CommentsContainer>
+                <HomeTitle>Add comments</HomeTitle>
+                <AddComment/>
                 <CommentContainer>
                     <PhotoContainer>
                         <img src={Photo}/>

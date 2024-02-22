@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {AuthButtonComponent} from "./components/Button/AuthButtonComponent";
 
 
 export const CommentsContainer = styled.div`
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-  width: auto;
+    width: auto;
 `;
 export const CommentContainer = styled.div`
     display: flex;
@@ -51,3 +52,6 @@ export const NameContainer = styled.div`
   display: flex;
 `;
 
+// export const UploadButton = styled.button(AuthButtonComponent)`
+//     margin-left: 0px;
+// `;
