@@ -59,7 +59,6 @@ function PostDetail(){ // add here button edit
                     </TextTitleContainer>
                 </CommentContainer>
             </CommentsContainer>
-            <Footer/>
         </PostDetailContainer>
     )
 }

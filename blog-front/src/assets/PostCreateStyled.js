@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 
 export const PhotoContainer = styled.div`
-    // responsible for display image ony my web page during update a photo
-  //display: flex;
-  //flex-direction: column;
+  display: flex;
+  flex-direction: column;
   //height: 100vh;
   text-align: center;
-  //justify-content: center;
-  //padding: 20px;
+  justify-content: center;
   margin-top: 40px;
   width: 100%;
+  margin-bottom: 100px;
 `;
 
 export const AddFileForm = styled.form`
@@ -20,7 +19,6 @@ export const AddFileForm = styled.form`
   align-items: center;
   height: 200px;
   width: 200px;
-  border: 2px dashed #914545;
   cursor: pointer;
   margin: auto; // Add this to center the form itself if it's not already centered
   
@@ -55,10 +53,9 @@ export const AddTitle = styled.input`
 `;
 
 export const AddText = styled.textarea`
-  width: 700px;
-  border: 1px solid black;
+  width: 520px;
   height: 400px;
-  margin: 10px auto 0 auto; /* Top, Right&Left, Bottom, Right&Left */
+  margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
   border-radius: 15px;
   padding: 20px; /* Adds some space inside the textarea */
   box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
@@ -67,12 +64,12 @@ export const AddText = styled.textarea`
   font-size: 16px; /* Sets a comfortable font size for reading and writing */
   line-height: 1.5; /* Improves the readability of multiline text */
   outline: none; /* emoves the default focus outline to use a custom style if desired */
-  background-color:#20285b ;
-  color: white;
+  background-color:#2138cd14 ;
+  color: black;
   font-weight: 800;
   
   &::placeholder {
-    color: white; /* Adjust the opacity as needed */
+    color: black; /* Adjust the opacity as needed */
   }
   
   &:focus {
@@ -80,9 +77,45 @@ export const AddText = styled.textarea`
   }
   
   @media (max-width: 600px){
-    width: 300px;
+    width: 320px;
   }
 `;
 
+
+export const InputDataPostCreate = styled.input`
+    font-family: 'Raleway', sans-serif;
+    width: 300px;
+    padding: 10px;
+    font-weight: 600;
+    background-color:#2138cd14 ;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: auto;
+  
+  @media (min-width: 600px){
+    width: 520px; /* Max width for larger screens */
+  }
+`;
+
+export const StyledSelect = styled.select`
+  font-family: 'Raleway', sans-serif;
+  width: 320px; /* Max width for larger screens */
+  padding: 10px;
+  font-weight: 600;
+  background-color: #2138cd14; /* Slightly transparent blue */
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 20px auto; /* Consolidated margin for top, bottom, and center alignment */
+  
+  option{
+    font-weight: 800;
+  }
+  
+  @media (min-width: 600px){
+    width: 520px; /* Max width for larger screens */
+    
+  }
+  
+`;
 
 

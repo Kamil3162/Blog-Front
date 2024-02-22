@@ -5,7 +5,6 @@ function Profile({props}){
     return (
         <img
             src={props.path}
-
         />
     )
 }

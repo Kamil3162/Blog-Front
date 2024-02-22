@@ -1,8 +1,16 @@
 import {PostDetailContainer} from "../../assets/PostDetailStyled";
 import React, {useState} from "react";
-import {AddFileForm, AddText, AddTitle, PhotoContainer, PostImagesList} from "../../assets/PostCreateStyled";
+import {
+    AddFileForm,
+    AddText,
+    AddTitle,
+    InputDataPostCreate,
+    PhotoContainer,
+    PostImagesList, StyledSelect
+} from "../../assets/PostCreateStyled";
 import upimage from "../../assets/upload.png";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
+import {HomeTitle} from "../../assets/PostStyled";
 function PostCreate(){
 
     const [image, setImage] = useState(null);
@@ -17,19 +25,34 @@ function PostCreate(){
 
     return(
         <PhotoContainer>
-            <AddTitle
-                placeholder="Title..."
-                placeholderTextColor="white"
+            <HomeTitle>Add Post</HomeTitle>
 
+            <InputDataPostCreate
+                placeholder="Title..."
             />
+
+            <StyledSelect name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </StyledSelect>
+
+
+            <AddText
+                placeholder="Add content..."
+                placeholderTextColor="black"
+            />
+
+
             <AddFileForm action="">
                 <input type="file" accept="image/*" className='input-field' hidden
-                onChange={({target: {files}}) => {
-                    files[0] && setFileName(files[0].name)
-                    if(files){
-                        setImage(URL.createObjectURL(files[0]))
-                }
-                }}/>
+                       onChange={({target: {files}}) => {
+                           files[0] && setFileName(files[0].name)
+                           if(files){
+                               setImage(URL.createObjectURL(files[0]))
+                           }
+                       }}/>
                 {
                     image ?
                         <>
@@ -38,21 +61,18 @@ function PostCreate(){
                         </>
                         :
                         <>
-                        <img src={upimage}
-                             width={60}
-                             height={60}
-                             onClick={() => document.querySelector(".input-field").click()}/>
+                            <img src={upimage}
+                                 width={60}
+                                 height={60}
+                                 onClick={() => document.querySelector(".input-field").click()}/>
                             <p>Browse file to upload</p>
                         </>
                 }
             </AddFileForm>
-            <AddText
-                placeholder="Add content..."
-                placeholderTextColor="white"
-            />
+
             <AuthButtonComponent
                 mar
-                width={350}
+                width={450}
                 height={50}
                 background={"blue"}
                 color={"white"}
