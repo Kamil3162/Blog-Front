@@ -11,26 +11,31 @@ import PostDisplay from "./views/PostDisplay";
 import PostCreateView from "./views/PostCreateView";
 import ResetPasswordDisplay from "./views/ResetPasswordDisplay";
 import SetNewPasswordDisplay from "./views/SetNewPasswordDisplay";
+import ChatPanelView from "./views/ChatPanelView";
+import {AuthProvider} from "./context/AuthContext";
 
 function App() {
     return (
-        <BrowserRouter>
-            <WindowSizeContext>
-                <NavigationVisibilityProvider>
-                    <MainScreenApplication>
-                        <Routes>
-                            <Route path="/home" element={<HomeScreen />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/sing-up" element={< Register/>} />
-                            <Route path="/post-detail" element={< PostDisplay/>} />
-                            <Route path="/post-create" element={< PostCreateView/>} />
-                            <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
-                            <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
-                        </Routes>
-                    </MainScreenApplication>
-                </NavigationVisibilityProvider>
-            </WindowSizeContext>
-        </BrowserRouter>
+        <AuthProvider>
+            <BrowserRouter>
+                <WindowSizeContext>
+                    <NavigationVisibilityProvider>
+                        <MainScreenApplication>
+                            <Routes>
+                                <Route path="/home" element={<HomeScreen />} />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/sing-up" element={< Register/>} />
+                                <Route path="/post-detail" element={< PostDisplay/>} />
+                                <Route path="/post-create" element={< PostCreateView/>} />
+                                <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
+                                <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
+                                <Route path="/chat-panel" element={< ChatPanelView/>} />
+                            </Routes>
+                        </MainScreenApplication>
+                    </NavigationVisibilityProvider>
+                </WindowSizeContext>
+            </BrowserRouter>
+        </AuthProvider>
     );
 }
 
