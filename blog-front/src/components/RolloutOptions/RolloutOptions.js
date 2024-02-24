@@ -1,5 +1,5 @@
 import React from "react";
-import {NavigationContainer, NavigationElement} from "../../assets/NavbarStyled";
+import {NavigationContainer, NavigationElement} from "../../assets/styledCss/NavbarStyled";
 import { NavigationVisibilityContext } from '../../context/NavigationVisibilityContext';
 import { WindowSizeContext} from "../../context/WindowsSizeContext";
 import {useContext} from "react";

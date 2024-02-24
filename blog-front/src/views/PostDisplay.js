@@ -1,5 +1,5 @@
-import {PostDetailHeader} from "../assets/PostDetailStyled";
-import {HomeContainer} from "../assets/HomeStyled";
+import {PostDetailHeader} from "../assets/styledCss/PostDetailStyled";
+import {HomeContainer} from "../assets/styledCss/HomeStyled";
 import Navbar from "../components/Navbar/Navbar";
 import RolloutOptions from "../components/RolloutOptions/RolloutOptions";
 import ContentPart from "../components/ContentPart/ContentPart";

@@ -1,6 +1,6 @@
-import {PostListContainer, PostListPhoto} from "../../assets/PostListStyled";
-import blog_image from "../../assets/blog_image.png";
-import {HomeContentContainer, HomeContentText, HomeDate, HomePhotoContainer, HomeTitle} from "../../assets/PostStyled";
+import {PostListContainer, PostListPhoto} from "../../assets/styledCss/PostListStyled";
+import blog_image from "../../assets/icons/blog_image.png";
+import {HomeContentContainer, HomeContentText, HomeDate, HomePhotoContainer, HomeTitle} from "../../assets/styledCss/PostStyled";
 
 function PostList(){
     return (

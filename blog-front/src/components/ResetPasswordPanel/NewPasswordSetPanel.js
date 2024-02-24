@@ -1,18 +1,32 @@
-import {PostDetailContainer} from "../../assets/PostDetailStyled";
+import {PostDetailContainer} from "../../assets/styledCss/PostDetailStyled";
 import {
     BackContainer,
     ImageResetPasswordContainer,
     ResetPasswordDescription, ResetPasswordForm,
     ResetPasswordTitle
-} from "../../assets/ResetPasswordStyled";
-import key from "../../assets/key.png";
-import {FormField, LoginInputField, LoginInputLabel} from "../../assets/AccountingStyled";
+} from "../../assets/styledCss/ResetPasswordStyled";
+import key from "../../assets/icons/key.png";
+import {FormField, LoginInputField, LoginInputLabel} from "../../assets/styledCss/AccountingStyled";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
-import key_chain from "../../assets/key-chain.png";
-import React from "react";
-
+import key_chain from "../../assets/icons/key-chain.png";
+import React, {useEffect, useState} from "react";
+import { check_password } from ".//utils/checker";
 
 function NewPasswordSetPanel(){
+
+    const [password, setPassword] = useState("");
+    const [repassword, setRePassword] = useState("");
+    const [passwordsMatch, setPasswordsMatch] = useState(true);
+
+    useEffect(() => {
+        if (check_password(password, repassword)){
+            setPasswordsMatch(true);
+        }
+        else {
+            setPasswordsMatch(false);
+        }
+    }, [password, repassword]);
+
     return (
         <>
             <PostDetailContainer>
@@ -26,7 +40,19 @@ function NewPasswordSetPanel(){
                         <LoginInputLabel>
                             Password
                         </LoginInputLabel>
-                        <LoginInputField />
+                        <LoginInputField
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <LoginInputLabel>
+                            Retype-Password
+                        </LoginInputLabel>
+                        <LoginInputField
+                            type="password"
+                            value={repassword}
+                            onChange={(e) => setRePassword(e.target.value)}
+                        />
                         <AuthButtonComponent
                             width={350}
                             height={50}
@@ -34,6 +60,13 @@ function NewPasswordSetPanel(){
                             color={"white"}
                             text="Set Password">Set Password</AuthButtonComponent>
                     </FormField>
+                    {!passwordsMatch && (
+                        <p style={{
+                            color: 'red',
+                            fontFamily: 'Gothic A1',
+                            fontWeight: 800
+                        }}>Passwords do not match!</p>
+                    )}
                 </ResetPasswordForm>
             </PostDetailContainer>
         </>

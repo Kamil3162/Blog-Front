@@ -1,4 +1,4 @@
-import {AuthButton, AuthButtonCom} from "../../assets/NavbarStyled";
+import {AuthButton, AuthButtonCom} from "../../assets/styledCss/NavbarStyled";
 
 export function AuthButtonComponent({text, width, height, background, font_size,padding ,color="white"}){
     return (

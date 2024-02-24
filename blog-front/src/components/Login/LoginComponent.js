@@ -4,13 +4,13 @@ import {
     ImageAccount, LabelContainer, LinkStyle, LoginForm,
     LoginInputField,
     LoginInputLabel
-} from "../../assets/AccountingStyled";
-import logo_login from "../../assets/logo_login.png";
-import {AuthButton, SignUpButton} from "../../assets/NavbarStyled";
+} from "../../assets/styledCss/AccountingStyled";
+import logo_login from "../../assets/icons/logo_login.png";
+import {AuthButton, SignUpButton} from "../../assets/styledCss/NavbarStyled";
 import React, {useState} from "react";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
 import { useAuth} from "../../context/AuthContext";
-import {login_user, register} from "../../services/loginservice";
+import {login_user, register} from "../../services/login_service";
 import { handleValueChange} from "../../utils/tools_functions";
 
 export function LoginComponent(){

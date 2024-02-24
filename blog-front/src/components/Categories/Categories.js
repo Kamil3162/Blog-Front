@@ -1,4 +1,4 @@
-import {CategoriesContainer, CategoryTitle} from "../../assets/CategoriesStyled";
+import {CategoriesContainer, CategoryTitle} from "../../assets/styledCss/CategoriesStyled";
 
 
 function Categories(){

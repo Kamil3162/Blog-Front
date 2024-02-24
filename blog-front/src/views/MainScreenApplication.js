@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {MainContainer} from "../assets/MainStyled";
+import {MainContainer} from "../assets/styledCss/MainStyled";
 
 function MainScreenApplication(props){
 

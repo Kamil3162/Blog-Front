@@ -4,9 +4,9 @@ import {
     PostDetailHeaderTitle,
     PostDetailInformation,
     PostDetailPhotoContainer
-} from "../../assets/PostDetailStyled";
-import blog_image from "../../assets/blog_image.png";
-import {HomeDate, HomePhotoContainer, HomeTitle} from "../../assets/PostStyled";
+} from "../../assets/styledCss/PostDetailStyled";
+import blog_image from "../../assets/icons/blog_image.png";
+import {HomeDate, HomePhotoContainer, HomeTitle} from "../../assets/styledCss/PostStyled";
 import Footer from "../Footer/Footer";
 import {
     CommentContainer,
@@ -15,11 +15,11 @@ import {
     PhotoContainer, TextContainer,
     TextTitleContainer
 } from "../../CommentsStyled";
-import Photo from "../../assets/Photo.png";
-import {CreateCommentContainer, CreateCommentField} from "../../assets/PostCommentStyled";
+import Photo from "../../assets/icons/Photo.png";
+import {CreateCommentContainer, CreateCommentField} from "../../assets/styledCss/PostCommentStyled";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
 import React from "react";
-import AddComment from "../AddComment";
+import AddComment from "../Comments/AddComment";
 function PostDetail(){ // add here button edit
     return (
         <PostDetailContainer>

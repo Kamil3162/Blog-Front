@@ -5,8 +5,8 @@ import {
     HomePhotoContainer,
     HomeTitle,
     PostHeader
-} from "../../assets/PostStyled";
-import blog_image from "../../assets/blog_image.png";
+} from "../../assets/styledCss/PostStyled";
+import blog_image from "../../assets/icons/blog_image.png";
 import PostList from "../PostList/PostList";
 
 

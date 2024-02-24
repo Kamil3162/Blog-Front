@@ -8,7 +8,11 @@ export const PostDetailContainer = styled.div`
 `;
 
 export const PostDetailHeader = styled.div`
-    display: block;
+    display: flex;
+    flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
   
   @media (min-width: 600px){
     padding-bottom: 20px;
@@ -21,6 +25,12 @@ export const PostDetailHeader = styled.div`
 `;
 
 export const PostDetailPhotoContainer = styled(HomePhotoContainer)`
+    display: flex;  
+    justify-content: flex-start;
+      
+    img{
+      border-radius: 15px;
+    }  
   
     @media (min-width: 600px){
       display: flex;
@@ -28,10 +38,9 @@ export const PostDetailPhotoContainer = styled(HomePhotoContainer)`
       max-height: 60%;
       flex: 1;
       margin-right: -300px; // Adjust this value as needed
-      justify-content: flex-end;
       
       img{
-        border-radius: 0;
+        border-radius: 15px;
       }
     }
 `;
@@ -63,6 +72,7 @@ export const PostDetailContent = styled.div`
 `;
 
 export const PostDetailInformation = styled.div`
+  
   @media (min-width: 600px){
     flex: 1;
     text-align: center;

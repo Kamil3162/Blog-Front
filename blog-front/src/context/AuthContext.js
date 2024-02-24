@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import Cookies from "universal-cookie";
-import {fetchValidateUser} from "../services/loginservice";
+import {fetchValidateUser} from "../services/login_service";
 
 import jwt, {jwtDecode} from "jwt-decode";
 
@@ -27,7 +27,6 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setAuthToken(null);
         setUser(null);
-        cookies.remove('access_token');
     };
 
     const validateUser = async () => {

@@ -5,17 +5,24 @@ import {
     NavbarElementsContainer,
     SearchContainer,
     SearchField, SignUpButton
-} from "../../assets/NavbarStyled";
+} from "../../assets/styledCss/NavbarStyled";
 import { WindowSizeContext} from "../../context/WindowsSizeContext";
 import { NavigationVisibilityContext} from "../../context/NavigationVisibilityContext";
-import photo1 from "../../assets/loop.png";
-import listview from "../../assets/listview.png";
+import photo1 from "../../assets/icons/loop.png";
+import listview from "../../assets/icons/listview.png";
 import {useContext} from "react";
+import { logout } from "../../services/login_service";
 
 function Navbar(){
 
     const { width } = useContext(WindowSizeContext);
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
+
+    const handleLogout = () =>{
+        console.log("click");
+        logout();
+    }
+
     const toggleNavVisibility = () => {
         setIsNavVisible(!isNavVisible);
     }
@@ -27,6 +34,7 @@ function Navbar(){
                     <>
                         <NavbarElement>About me</NavbarElement>
                         <NavbarElement>Home</NavbarElement>
+                        <NavbarElement onClick={handleLogout}>Logout</NavbarElement>
                     </>
                 ) : (
                     // Content for smaller screens

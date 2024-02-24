@@ -6,7 +6,7 @@ import {
     FooterContainer,
     FooterImageContainer, FooterTitle
 } from "../../FooterStyled";
-import kamildevlogo from "../../assets/kamildevlogo.png";
+import kamildevlogo from "../../assets/icons/kamildevlogo.png";
 
 function Footer(){
 
@@ -17,7 +17,7 @@ function Footer(){
                     <FooterImageContainer>
                         <img src={kamildevlogo} width={100} height={100}/>
                     </FooterImageContainer>
-                    <p>All rights reserved </p>
+                    <h1>All rights reserved </h1>
                 </ColumnFooterContainer>
                 <ColumnFooterContainer>
                     <FooterTitle>
@@ -30,17 +30,15 @@ function Footer(){
                     <FooterTitle>
                         Product
                     </FooterTitle>
-                    <p>dsadsa</p>
-                    <p>dsadsa</p>
-                    <p>dsadsa</p>
+                    <p>Business</p>
+                    <p>Security</p>
                 </ColumnFooterContainer>
                 <ColumnFooterContainer>
                     <FooterTitle>
                         Social
                     </FooterTitle>
-                    <p>dsadsa</p>
-                    <p>dsadsa</p>
-                    <p>dsadsa</p>
+                    <p>Instagram</p>
+                    <p>Linkedin</p>
                 </ColumnFooterContainer>
             </ConterContainerFooter>
         </FooterContainer>

@@ -1,5 +1,5 @@
-import {CreateCommentContainer, CreateCommentField} from "../assets/PostCommentStyled";
-import {AuthButtonComponent} from "./Button/AuthButtonComponent";
+import {CreateCommentContainer, CreateCommentField} from "../../assets/styledCss/PostCommentStyled";
+import {AuthButtonComponent} from "../Button/AuthButtonComponent";
 import React from "react";
 
 

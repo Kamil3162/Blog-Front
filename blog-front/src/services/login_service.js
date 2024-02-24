@@ -1,8 +1,11 @@
 import axios from "axios";
 import jwt, {jwtDecode} from "jwt-decode";
+import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 
 const API_URL = "http://127.0.0.1:10000"
-
+const API_PATH = process.env.REACT_APP_API_URL
 
 export const register = (name, username, email, password) => {
     return axios.post(API_URL + '/register', {
@@ -35,6 +38,8 @@ export const login_user = (username, password) => {
     })
         .then((response) => {
             console.log(jwtDecode(response.data.access_token));
+            const user_data = cookies.get('user_data');
+            console.log(user_data.id)
 
             if (response.data.access_token) {
                 console.log(response.data);
@@ -44,6 +49,7 @@ export const login_user = (username, password) => {
 }
 
 export const fetchValidateUser = (setCurrentUser) => {
+    console.log(API_URL);
     axios.get(API_URL + '/validate', {
         withCredentials: true, // This enables cross-origin requests to include cookies
         // credentials: 'include', // Important to include cookies
@@ -63,4 +69,13 @@ export const fetchValidateUser = (setCurrentUser) => {
                 setCurrentUser(null);
             }
         });
+}
+
+export const logout = () => {
+    console.log("invoke logout function");
+    return axios.get(API_URL + '/logout', {
+        withCredentials: true
+    }).then(response => {
+        console.log(response);
+    })
 }

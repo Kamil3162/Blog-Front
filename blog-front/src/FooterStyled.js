@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: rgba(13, 25, 229, 0.76);
+  background-color: rgba(6, 7, 16, 0.82);
   height: 200px;
   padding: 20px;
   position: static;
@@ -22,15 +22,26 @@ export const ColumnFooterContainer = styled.div`
   flex: 1; // This ensures each column takes equal width
   display: flex; // Add this if you want to align the items inside the column
   flex-direction: column; // Stack the items vertically
-  justify-content: center; // Center the content vertically inside the column
-  align-items: center; // Center the content horizontally inside the column
+  //justify-content: flex-start; // Center the content vertically inside the column
+  //align-items: center; // Center the content horizontally inside the column
   padding: 0 10px; // Add some padding on the sides of each column for spacing, adjust as needed
-  text-align: center; // Ensure the text within each column is centered, if that's your desired outcom
+  //text-align: center; // Ensure the text within each column is centered, if that's your desired outcom
+
   p {
     margin-top: 5px; // Removes the top margin
     margin-bottom: 0; // Adjusts or removes the bottom margin as needed
-    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: #8b8b8f;
+
+  }
+
+  h1 {
+    font-size: 15px;
+    margin-top: 5px; // Removes the top margin
+    margin-bottom: 0; // Adjusts or removes the bottom margin as needed
+    font-family: 'Raleway', sans-serif;
     font-weight: 600;
+    
   }
 `;
 
@@ -45,5 +56,5 @@ export const FooterImageContainer = styled.div`
 export const FooterTitle = styled.p`
   font-family: 'Raleway',sans-serif;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 600;
 `;

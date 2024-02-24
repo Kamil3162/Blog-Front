@@ -1,17 +1,18 @@
-import {PostDetailContainer} from "../../assets/PostDetailStyled";
+import {PostDetailContainer} from "../../assets/styledCss/PostDetailStyled";
 import {
     BackContainer,
     ImageResetPasswordContainer,
     ReserPasswordTitle,
     ResetPasswordDescription, ResetPasswordForm,
     ResetPasswordTitle
-} from "../../assets/ResetPasswordStyled";
-import key from "../../assets/key.png";
+} from "../../assets/styledCss/ResetPasswordStyled";
+import key from "../../assets/icons/key.png";
 import Footer from "../Footer/Footer";
-import {FormField, LoginInputField, LoginInputLabel} from "../../assets/AccountingStyled";
+import {FormField, LoginInputField, LoginInputLabel} from "../../assets/styledCss/AccountingStyled";
 import React from "react";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
-import turn_back from "../../assets/turn-back.png";
+import turn_back from "../../assets/icons/turn-back.png";
+
 function ResetPasswordPanel(){
     return (
         <>
