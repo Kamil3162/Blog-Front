@@ -13,6 +13,7 @@ import ResetPasswordDisplay from "./views/ResetPasswordDisplay";
 import SetNewPasswordDisplay from "./views/SetNewPasswordDisplay";
 import ChatPanelView from "./views/ChatPanelView";
 import {AuthProvider} from "./context/AuthContext";
+import AdminPanelView from "./views/AdminPanelView";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                                 <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
                                 <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
                                 <Route path="/chat-panel" element={< ChatPanelView/>} />
+                                <Route path="/admin-panel" element={< AdminPanelView/>} />
                             </Routes>
                         </MainScreenApplication>
                     </NavigationVisibilityProvider>
