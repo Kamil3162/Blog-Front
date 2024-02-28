@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import bc_esa from "../../../assets/icons/bc_esa.jpg";
+
+import {LeftPanelElementText} from "./LeftPanelStyled";
 
 
 export const AdminPanelContainer = styled.div`
   display: flex;
   min-width: 100vh;
   min-height: 100vh;
-  background-color: #fdfdfd;
+  //background-color: #fdfdfd;
+  background-repeat: no-repeat;
 `;
 
 export const DashBoardContainer = styled.div`
@@ -19,23 +23,83 @@ export const DashBoardBussinesInfoContainer = styled.div`
 
 `;
 export const DashBoardBussinessElement = styled.div`
-  background-color: #dee0e0;
+  background-color: #f1efef;
   display: flex;
-  padding: 15px;
-  width: auto;
+  padding: 5px;
+  width: 250px;
   border-radius: 15px;
+  
 `;
 export const DashBoardBussinessTextContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-  p{
-    color: white;
+  flex: 3;
+
+  p {
+    color: #070606;
+    font-size: 20px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    margin-top: 8px; /* Adjusted for additional spacing */
+    margin-bottom: 0;
+  }
+
+  h1 {
+    color: #82899b;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    margin-top: 0; /* Removes the top margin */
-    margin-bottom: 10px; /* Adjust the bottom margin as needed */
-    /* Alternatively, you could set both top and bottom margins at once:
-    margin: 0 0 10px 0; */
+
   }
+`;
+
+export const DashBoardInfoContainer = styled.div`
+  margin-left: 30px;
+  margin-top: 20px;
+  display: flex;
+  gap: 50px;
+  max-height: 400px;
+`;
+
+export const LeftDashBoardInfoContainer = styled.div`
+  flex: 3;
+  display: flex;
+  border-radius: 15px;
+  background-color: #f7f7f7;
+  padding: 10px;
+`;
+export const LeftDashBoardImageContainer = styled.div`
+  padding: 5px;
+  
+  img{
+    height: auto;
+    width: 100%;
+    object-fit: contain; // Adjusts the image to fit within the container
+  }
+`;
+
+export const RightDashBoardInfoContainer = styled.div`
+    flex: 2;
+    border-radius: 15px;
+    background-color: #182d20;
+    padding: 10px;
+    margin-right: 20px;
+    background-image: url("${bc_esa}");
+`;
+
+
+export const LeftDashBoardPanelEsa = styled.div`
+    flex: 4;
+`;
+export const DashBoardInfoFont = styled(LeftPanelElementText)`
+  font-weight: 1000;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+`;
+
+export const DashBoardPanelsFonts = styled.p`
+    font-size: ${props => props.font_size}px;
+    font-weight: ${props => props.font_weight}px;
+    font-family: ${props => props.font_family};
+    margin-bottom: ${props => props.margin_bottom}px;
+    color : ${props => props.color};
+    
 `;

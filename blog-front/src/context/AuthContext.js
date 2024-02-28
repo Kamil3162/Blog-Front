@@ -38,9 +38,9 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
-    useEffect(() => {
-        validateUser();
-    }, []);
+    // useEffect(() => {
+    //     validateUser();
+    // }, []);
 
 
     return (

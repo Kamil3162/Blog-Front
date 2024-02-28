@@ -41,25 +41,25 @@ export const LeftPanelElementText = styled.div`
     font-family: 'Raleway', sans-serif;
     font-weight: 800;
     margin-left: 5px;
+  
 `;
 export const LeftPanelElementIcon = styled.div`
   display: flex; /* Enables flexbox */
-  justify-content: center; /* Centers children horizontally */
+  //justify-content: center; /* Centers children horizontally */
   align-items: center; /* Centers children vertically */
-  flex: 1;
   padding: 5px;
-  background-color: #b2519a;
+  //background-color: #8899c5;
   border-radius: 15px;
-
-  justify-items: center;
-  text-align: center;
+  height: 40px; /* Fixed height of the container */
 
   img {
-    width: auto;
-    height: 3vh;
+    max-height: 40%; /* Reduced to make the image smaller */
+    object-fit: contain; /* Maintains aspect ratio without cropping */
+    min-height: 30px; /* Adjusted down to allow the image to become smaller */
   }
 `;
 
 export const BreakPanel = styled(LeftPanelElement)`
     background-color: inherit;
+    margin-top: 300px;
 `;

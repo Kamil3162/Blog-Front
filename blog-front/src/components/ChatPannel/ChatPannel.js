@@ -6,24 +6,39 @@ function WebSocketComponent() {
 
     const [ws, setWs] = useState(null);
     const [messages, setMessages] = useState([]);
+    const [userid, setUserId] = useState('');
+
     const user_data = cookie.get('user_data');
     const user_id = user_data.id;
+
     console.log(user_id);
 
     useEffect(() => {
+        console.log("ws start")
         // Create WebSocket connection.
         const websocket = new WebSocket(`ws://127.0.0.1:10000/ws/${user_id}`);
 
         // Connection opened
         websocket.addEventListener('open', function (event) {
-            websocket.send('Hello Server!'); // Send a message to the server
+
+            const object = {
+                'type': 'info',
+                'message': 'Hello Server!'
+            };
+
+            websocket.send(JSON.stringify(object)); // Send a message to the server
         });
 
         // Listen for messages
         websocket.addEventListener('message', function (event) {
-            console.log(event);
-            console.log('Message from server ', event.data);
-            setMessages(prev => [...prev, event.data]);
+            let message_data = JSON.parse(event.data);
+            if (message_data.type === 'info_status'){
+                console.log("to jest logowanie przez usera");
+                console.log(message_data.message);
+                console.log(message_data.user_id);
+            }
+            console.log('Message from server ', message_data.message);
+            setMessages(prev => [...prev, message_data.message]);
         });
 
         // Update the ws state to use it later for sending messages
@@ -35,9 +50,18 @@ function WebSocketComponent() {
         };
     }, []);
 
+    const message = {
+        clientId: 2,
+        message: "hello back response from server"
+    };
+
     const sendMessage = () => {
         if(ws) {
-            ws.send('Hello from Client!');
+            ws.send(JSON.stringify({
+                "source_usr": 2,
+                "target_usr":"32",
+                "message": "message"
+            }));
         }
     };
 
