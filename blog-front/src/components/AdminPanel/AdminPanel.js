@@ -30,10 +30,17 @@ import bc_esa  from "../../assets/icons/bc_esa.jpg";
 import money  from "../../assets/icons/money-bag.png";
 import view  from "../../assets/icons/view.png";
 import group  from "../../assets/icons/group.png";
+import star from "../../assets/icons/start.svg";
 import {TopBarContainer} from "./styles/TopBarStyled";
 import TopBar from "./components/TopBar";
 import Navbar from "../Navbar/Navbar";
-import {InfoBlogsContainer, InfoBlogTableth, InfoBlogTH} from "./styles/InfoBlogsStyled";
+import {
+    InfoBlogsContainer,
+    InfoBlogTableth,
+    InfoBlogTd,
+    InfoBlogTH,
+    OwnderInfoPhotoBlog, OwnderInforBlogTd
+} from "./styles/InfoBlogsStyled";
 
 function AdminPanel(){
     return (
@@ -181,11 +188,21 @@ function AdminPanel(){
                             </InfoBlogTableth>
                         </tr>
                         <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                            <td>Germany</td>
-                            <td>Germany</td>
+                            <InfoBlogTd>Alfreds Futterkiste</InfoBlogTd>
+                            <InfoBlogTd>Maria Anders</InfoBlogTd>
+                            <InfoBlogTd>
+                                <OwnderInforBlogTd>
+                                    <OwnderInfoPhotoBlog>
+                                        <img src={table}/>
+                                    </OwnderInfoPhotoBlog>
+                                    <p>Germany</p>
+                                </OwnderInforBlogTd>
+                            </InfoBlogTd>
+                            <InfoBlogTd>Germany</InfoBlogTd>
+                            <InfoBlogTd>
+                                <img src={star}/>
+                                Germany
+                            </InfoBlogTd>
                         </tr>
                     </table>
                 </InfoBlogsContainer>
