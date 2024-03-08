@@ -30,7 +30,7 @@ import bc_esa  from "../../assets/icons/bc_esa.jpg";
 import money  from "../../assets/icons/money-bag.png";
 import view  from "../../assets/icons/view.png";
 import group  from "../../assets/icons/group.png";
-import star from "../../assets/icons/start.svg";
+import star from "../../assets/icons/star.png";
 import {TopBarContainer} from "./styles/TopBarStyled";
 import TopBar from "./components/TopBar";
 import Navbar from "../Navbar/Navbar";
@@ -41,6 +41,8 @@ import {
     InfoBlogTH,
     OwnderInfoPhotoBlog, OwnderInforBlogTd
 } from "./styles/InfoBlogsStyled";
+import StarIcon from "../../assets/icons/star-svgrepo-com.svg";
+import { FaStar } from 'react-icons/fa';
 
 function AdminPanel(){
     return (
@@ -195,13 +197,21 @@ function AdminPanel(){
                                     <OwnderInfoPhotoBlog>
                                         <img src={table}/>
                                     </OwnderInfoPhotoBlog>
-                                    <p>Germany</p>
+                                    <p>Admin</p>
                                 </OwnderInforBlogTd>
                             </InfoBlogTd>
-                            <InfoBlogTd>Germany</InfoBlogTd>
+                            <InfoBlogTd>321321321</InfoBlogTd>
                             <InfoBlogTd>
-                                <img src={star}/>
-                                Germany
+                                {/*<StarIcon style={{ fill: '#ff0000' }} />;*/}
+                                {/*<img src={star}/>*/}
+                                {/*<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">*/}
+                                {/*    <circle cx="50" cy="50" r="40" stroke="black" strokeWidth="3" fill="white" />*/}
+                                {/*</svg>*/}
+                                <FaStar className="icon start"/>
+                                <FaStar className="icon start"/>
+                                <FaStar className="icon start"/>
+                                <FaStar className="icon start"/>
+                                <FaStar className="icon start"/>
                             </InfoBlogTd>
                         </tr>
                     </table>
@@ -211,3 +221,7 @@ function AdminPanel(){
     )
 }
 export default AdminPanel;
+
+const changeStartColor = () =>{
+
+}
