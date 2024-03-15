@@ -1,4 +1,4 @@
-import {PostDetailContainer} from "../../assets/styledCss/PostDetailStyled";
+import {PostDetailContainer} from "../../../assets/styledCss/PostDetailStyled";
 import React, {useState} from "react";
 import {
     AddFileForm,
@@ -7,10 +7,10 @@ import {
     InputDataPostCreate,
     PhotoContainer,
     PostImagesList, StyledSelect
-} from "../../assets/styledCss/PostCreateStyled";
-import upimage from "../../assets/icons/upload.png";
-import {AuthButtonComponent} from "../Button/AuthButtonComponent";
-import {HomeTitle} from "../../assets/styledCss/PostStyled";
+} from "../../../assets/styledCss/PostCreateStyled";
+import upimage from "../../../assets/icons/upload.png";
+import {AuthButtonComponent} from "../../Button/AuthButtonComponent";
+import {HomeTitle} from "../../../assets/styledCss/PostStyled";
 function PostCreate(){
 
     const [image, setImage] = useState(null);

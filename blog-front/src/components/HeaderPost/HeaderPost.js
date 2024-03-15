@@ -7,7 +7,7 @@ import {
     PostHeader
 } from "../../assets/styledCss/PostStyled";
 import blog_image from "../../assets/icons/blog_image.png";
-import PostList from "../PostList/PostList";
+import PostList from "../Posts/PostList/PostList";
 
 
 function HeaderPost({title}){

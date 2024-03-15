@@ -2,10 +2,10 @@ import axios from "axios";
 import jwt, {jwtDecode} from "jwt-decode";
 import Cookies from "universal-cookie";
 
-const cookies = new Cookies();
+// import API_URL from "../config/api_path.js";
 
+const cookies = new Cookies();
 const API_URL = "http://127.0.0.1:10000"
-const API_PATH = process.env.REACT_APP_API_URL
 
 export const register = (name, username, email, password) => {
     return axios.post(API_URL + '/register', {

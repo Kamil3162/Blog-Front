@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cookies from "universal-cookie";
+import {OnlineUserContainer, OnlineUserUsernames, UsersListContainer} from "./components/UsersList";
+import {ChatComponentContainer, ChatContentContainer} from "./components/ChatComponent";
 
 function WebSocketComponent() {
     const cookie = new Cookies();
@@ -9,45 +11,45 @@ function WebSocketComponent() {
     const [userid, setUserId] = useState('');
 
     const user_data = cookie.get('user_data');
-    const user_id = user_data.id;
+    // const user_id = user_data.id;
 
-    console.log(user_id);
+    // console.log(user_id);
 
     useEffect(() => {
         console.log("ws start")
         // Create WebSocket connection.
-        const websocket = new WebSocket(`ws://127.0.0.1:10000/ws/${user_id}`);
-
-        // Connection opened
-        websocket.addEventListener('open', function (event) {
-
-            const object = {
-                'type': 'info',
-                'message': 'Hello Server!'
-            };
-
-            websocket.send(JSON.stringify(object)); // Send a message to the server
-        });
-
-        // Listen for messages
-        websocket.addEventListener('message', function (event) {
-            let message_data = JSON.parse(event.data);
-            if (message_data.type === 'info_status'){
-                console.log("to jest logowanie przez usera");
-                console.log(message_data.message);
-                console.log(message_data.user_id);
-            }
-            console.log('Message from server ', message_data.message);
-            setMessages(prev => [...prev, message_data.message]);
-        });
-
-        // Update the ws state to use it later for sending messages
-        setWs(websocket);
-
-        // Don't forget to close the WebSocket connection when the component unmounts
-        return () => {
-            websocket.close();
-        };
+        // const websocket = new WebSocket(`ws://127.0.0.1:10000/ws/${user_id}`);
+        //
+        // // Connection opened
+        // websocket.addEventListener('open', function (event) {
+        //
+        //     const object = {
+        //         'type': 'info',
+        //         'message': 'Hello Server!'
+        //     };
+        //
+        //     websocket.send(JSON.stringify(object)); // Send a message to the server
+        // });
+        //
+        // // Listen for messages
+        // websocket.addEventListener('message', function (event) {
+        //     let message_data = JSON.parse(event.data);
+        //     if (message_data.type === 'info_status'){
+        //         console.log("to jest logowanie przez usera");
+        //         console.log(message_data.message);
+        //         console.log(message_data.user_id);
+        //     }
+        //     console.log('Message from server ', message_data.message);
+        //     setMessages(prev => [...prev, message_data.message]);
+        // });
+        //
+        // // Update the ws state to use it later for sending messages
+        // setWs(websocket);
+        //
+        // // Don't forget to close the WebSocket connection when the component unmounts
+        // return () => {
+        //     websocket.close();
+        // };
     }, []);
 
     const message = {
@@ -66,14 +68,25 @@ function WebSocketComponent() {
     };
 
     return (
-        <div>
-            <button onClick={sendMessage}>Send Message</button>
-            <ul>
-                {messages.map((msg, index) => (
-                    <li key={index}>{msg}</li>
-                ))}
-            </ul>
-        </div>
+        <ChatComponentContainer>
+            <UsersListContainer>
+                <OnlineUserContainer>
+                    <OnlineUserUsernames>
+                        esa
+                    </OnlineUserUsernames>
+                </OnlineUserContainer>
+            </UsersListContainer>
+            <ChatContentContainer>
+                <div>
+                    <button onClick={sendMessage}>Send Message</button>
+                    {/*<ul>*/}
+                    {/*    {messages.map((msg, index) => (*/}
+                    {/*        <li key={index}>{msg}</li>*/}
+                    {/*    ))}*/}
+                    {/*</ul>*/}
+                </div>
+            </ChatContentContainer>
+        </ChatComponentContainer>
     );
 }
 

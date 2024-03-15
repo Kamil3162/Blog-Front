@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 import RolloutOptions from "../components/RolloutOptions/RolloutOptions";
-import PostCreate from "../components/PostCreate/PostCreate";
+import PostCreate from "../components/Posts/PostCreate/PostCreate";
 import {HomeContainer} from "../assets/styledCss/HomeStyled";
 import React from "react";
 import Footer from "../components/Footer/Footer";
