@@ -24,6 +24,11 @@ export const InfoBlogTd = styled.td`
   font-weight: 800;
   font-size: 17px;
   color: #0a0909;
+  
+  img{
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const OwnderInforBlogTd = styled.div`
