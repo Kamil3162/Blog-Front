@@ -20,6 +20,7 @@ export const register = (name, username, email, password) => {
 };
 export const login_user = (username, password) => {
     const formData = new FormData();
+
     formData.append('username', username);
     formData.append('password', password);
 

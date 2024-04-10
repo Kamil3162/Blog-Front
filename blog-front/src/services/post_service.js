@@ -70,8 +70,8 @@ export const postDetail = (post_id) =>{
     })
 }
 
-export const fetchPosts = () => {
-    axios.get(API_URL + '/posts',{
+export const fetchPosts = (page_number=1) => {
+    axios.get(API_URL + `/posts/{page_number}`,{
 
     }).then(response =>{
         console.log(response);

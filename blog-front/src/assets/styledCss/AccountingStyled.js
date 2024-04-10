@@ -59,8 +59,6 @@ export const AuthFields = styled.div`
      font-family: 'Plus Jakarta Sans', sans-serif;
      font-size: 40px;
    }
-  
-  
 `;
 
 export const FormField = styled.div`

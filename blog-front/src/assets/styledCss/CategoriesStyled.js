@@ -7,7 +7,6 @@ export const CategoriesContainer = styled.div`
     font-size: 15px;
     font-family: 'Raleway',sans-serif;
     font-weight: 800;
-    
   }
   
     @media (min-width: 700px){

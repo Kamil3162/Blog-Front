@@ -26,12 +26,14 @@ function App() {
                                 <Route path="/home" element={<HomeScreen />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/sing-up" element={< Register/>} />
+                                <Route path="/posts/:page" element={< AdminPanelView/>} />
                                 <Route path="/post-detail" element={< PostDisplay/>} />
                                 <Route path="/post-create" element={< PostCreateView/>} />
                                 <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
                                 <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
                                 <Route path="/chat-panel" element={< ChatPanelView/>} />
                                 <Route path="/admin-panel" element={< AdminPanelView/>} />
+                                <Route path="/user" element={< AdminPanelView/>} />
                             </Routes>
                         </MainScreenApplication>
                     </NavigationVisibilityProvider>
