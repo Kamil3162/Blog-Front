@@ -14,6 +14,8 @@ import SetNewPasswordDisplay from "./views/SetNewPasswordDisplay";
 import ChatPanelView from "./views/ChatPanelView";
 import {AuthProvider} from "./context/AuthContext";
 import AdminPanelView from "./views/AdminPanelView";
+import CategoryCreateView from "./views/CategoryCreateView";
+import CategoriesView from "./views/CategoriesView";
 
 function App() {
     return (
@@ -26,6 +28,8 @@ function App() {
                                 <Route path="/home" element={<HomeScreen />} />
                                 <Route path="/login" element={<Login />} />
                                 <Route path="/sing-up" element={< Register/>} />
+                                <Route path="/categories" element={< CategoriesView/>} />
+                                <Route path="/category/create" element={< CategoryCreateView/>} />
                                 <Route path="/posts/:page" element={< AdminPanelView/>} />
                                 <Route path="/post-detail" element={< PostDisplay/>} />
                                 <Route path="/post-create" element={< PostCreateView/>} />

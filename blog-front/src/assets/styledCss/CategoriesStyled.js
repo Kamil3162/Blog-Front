@@ -22,5 +22,4 @@ export const CategoryTitle = styled.div`
     font-family: 'Raleway',sans-serif;
     font-size: 25px;
     font-weight: 800;
-  
 `;

@@ -26,26 +26,25 @@ function PostCreate(){
     return(
         <PhotoContainer>
             <HomeTitle>Add Post</HomeTitle>
-
-            <InputDataPostCreate
-                placeholder="Title..."
-            />
-
-            <StyledSelect name="cars" id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-            </StyledSelect>
-
-
-            <AddText
-                placeholder="Add content..."
-                placeholderTextColor="black"
-            />
-
-
             <AddFileForm action="">
+                <InputDataPostCreate
+                    placeholder="Title..."
+                />
+
+                <StyledSelect name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </StyledSelect>
+
+
+                <AddText
+                    placeholder="Add content..."
+                    placeholderTextColor="black"
+                />
+
+
                 <input type="file" accept="image/*" className='input-field' hidden
                        onChange={({target: {files}}) => {
                            files[0] && setFileName(files[0].name)

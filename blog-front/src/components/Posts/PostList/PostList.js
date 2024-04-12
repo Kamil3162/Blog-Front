@@ -1,6 +1,14 @@
 import {PostListContainer, PostListPhoto} from "../../../assets/styledCss/PostListStyled";
 import blog_image from "../../../assets/icons/blog_image.png";
-import {HomeContentContainer, HomeContentText, HomeDate, HomePhotoContainer, HomeTitle} from "../../../assets/styledCss/PostStyled";
+import {
+    HomeCategory,
+    HomeContentContainer,
+    HomeContentText,
+    HomeDate,
+    HomePhotoContainer,
+    HomeTitle,
+    HomeTitlePost
+} from "../../../assets/styledCss/PostStyled";
 
 function PostList(){
     return (
@@ -28,7 +36,10 @@ function PostList(){
                     </HomePhotoContainer>
                 </PostListPhoto>
                 <div>
-                    <HomeDate>DEC 19, 2023</HomeDate>
+                    <HomeTitlePost>
+                        <HomeDate>DEC 19, 2023</HomeDate>
+                        <HomeCategory>Interview</HomeCategory>
+                    </HomeTitlePost>
                     <HomeTitle>4 Web Desgn Trends to Watch in 2024</HomeTitle>
                     <HomeContentContainer>
                         <HomeContentText>

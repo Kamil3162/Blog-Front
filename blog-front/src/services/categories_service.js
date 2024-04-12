@@ -67,3 +67,16 @@ export const updateCategory = async(category_id, category_name) =>{
     }
 }
 
+export const fetchNewestPost = async() =>{
+    try{
+
+        const response = axios.get(API_URL + "/newest-post", config);
+        console.log("fetch newset post");
+        return response;
+
+    } catch (error){
+        console.log("new error according to fetch nbewest post");
+        throw error;
+    }
+}
+

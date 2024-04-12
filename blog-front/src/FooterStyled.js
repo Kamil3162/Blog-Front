@@ -2,12 +2,12 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  background-color: rgba(6, 7, 16, 0.82);
-  height: 200px;
-  padding: 20px;
   position: static;
   bottom: 0;
-  margin-top: 20px;
+  left: 0;
+  background-color: rgba(6, 7, 16, 0.82);
+  height: 150px;
+  padding: 20px;
 `;
 
 export const ConterContainerFooter = styled.div`

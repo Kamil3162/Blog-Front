@@ -4,7 +4,7 @@ import {HomePhotoContainer} from "./PostStyled";
 
 export const PostDetailContainer = styled.div`
     text-align: center;
-  padding: 10px;
+    padding: 10px;
 `;
 
 export const PostDetailHeader = styled.div`

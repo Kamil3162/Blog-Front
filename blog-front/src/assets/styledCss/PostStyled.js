@@ -44,6 +44,27 @@ export const HomeDate = styled.p`
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
 `;
+
+
+
+export const HomeTitlePost = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+export const HomeCategory = styled.p`
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  background-color:blue;
+  color: #dee0e0!important;
+  padding: 10px;
+  justify-content: center;
+  align-content: center;
+  border-radius: 15px;
+`
+
 export const HomeTitle = styled.p`
   margin-top: 0;
   font-family: 'Raleway', sans-serif;

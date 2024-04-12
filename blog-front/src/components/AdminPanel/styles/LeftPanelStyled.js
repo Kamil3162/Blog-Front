@@ -61,5 +61,5 @@ export const LeftPanelElementIcon = styled.div`
 
 export const BreakPanel = styled(LeftPanelElement)`
     background-color: inherit;
-    margin-top: 300px;
+    margin-top: 100px;
 `;

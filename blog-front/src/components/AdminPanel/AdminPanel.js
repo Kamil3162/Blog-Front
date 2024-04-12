@@ -25,12 +25,14 @@ import enter from "../../assets/admin_icons/enter.png";
 import power_off from "../../assets/admin_icons/power-off.png";
 import user from "../../assets/admin_icons/user.png";
 import chart from "../../assets/icons/chart.png";
-import right_panel_color  from "../../assets/icons/rightpanel_color.jpg";
-import bc_esa  from "../../assets/icons/bc_esa.jpg";
 import money  from "../../assets/icons/money-bag.png";
 import view  from "../../assets/icons/view.png";
 import group  from "../../assets/icons/group.png";
 import star from "../../assets/icons/star.png";
+import categories from "../../assets/icons/categories.png";
+import right_panel_color  from "../../assets/icons/rightpanel_color.jpg";
+import bc_esa  from "../../assets/icons/bc_esa.jpg";
+
 import {TopBarContainer} from "./styles/TopBarStyled";
 import TopBar from "./components/TopBar";
 import Navbar from "../Navbar/Navbar";
@@ -67,6 +69,14 @@ function AdminPanel(){
                     </LeftPanelElementIcon>
                     <LeftPanelElementText>
                         <p>Table</p>
+                    </LeftPanelElementText>
+                </LeftPanelElement>
+                <LeftPanelElement>
+                    <LeftPanelElementIcon>
+                        <img src={categories}/>
+                    </LeftPanelElementIcon>
+                    <LeftPanelElementText>
+                        <p>Categories</p>
                     </LeftPanelElementText>
                 </LeftPanelElement>
                 <BreakPanel>
@@ -166,7 +176,7 @@ function AdminPanel(){
                 </DashBoardInfoContainer>
                 <InfoBlogsContainer>
                     <DashBoardInfoFont>
-                        Projects
+                        Posts
                     </DashBoardInfoFont>
                     <LeftPanelElementText>
                         ✔️ 30 done this month
@@ -207,7 +217,7 @@ function AdminPanel(){
                                 {/*<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">*/}
                                 {/*    <circle cx="50" cy="50" r="40" stroke="black" strokeWidth="3" fill="white" />*/}
                                 {/*</svg>*/}
-                                <FaStar className="icon start"/>
+                                <FaStar className="icon start" style={{ color: 'yellow' }}/>
                                 <FaStar className="icon start"/>
                                 <FaStar className="icon start"/>
                                 <FaStar className="icon start"/>

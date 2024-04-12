@@ -9,7 +9,7 @@ export const PhotoContainer = styled.div`
   justify-content: center;
   margin-top: 40px;
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
 
 export const AddFileForm = styled.form`
@@ -17,10 +17,11 @@ export const AddFileForm = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 200px;
+  height: auto;
+  width: 100%;
   cursor: pointer;
   margin: auto; // Add this to center the form itself if it's not already centered
+  padding-top: 10px;
   
   @media (max-width: 600px){
     height: 150px;
