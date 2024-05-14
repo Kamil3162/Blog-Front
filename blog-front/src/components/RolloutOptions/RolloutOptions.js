@@ -10,16 +10,51 @@ function RolloutOptions(){
     const { width } = useContext(WindowSizeContext);
 
     return (
-        <NavigationContainer>
-            {(isNavVisible && width < 500) && (
+        isNavVisible && width < 500 && (
+            <NavigationContainer>
                 <>
-                    <NavigationElement>Option1</NavigationElement>
-                    <NavigationElement>Option2</NavigationElement>
-                    <NavigationElement>Log In</NavigationElement>
-                    <NavigationElement>Sign Up</NavigationElement>
+                    <NavigationElement>
+                        <a href="/about/me">
+                            About me
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/home">
+                            Home
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/post-create">
+                            Post Create
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/category/create">
+                            Category Create
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/admin-panel">
+                            Admin Panel
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/post-detail">
+                            Post Detail
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/login">
+                            Login
+                        </a>
+                    </NavigationElement>
+                    <NavigationElement>
+                        <a href="/sing-up">
+                        Sign up
+                    </a></NavigationElement>
                 </>
-            )}
-        </NavigationContainer>
+            </NavigationContainer>
+        )
     );
 }
 

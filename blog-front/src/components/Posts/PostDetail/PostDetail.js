@@ -3,7 +3,7 @@ import {
     PostDetailHeader,
     PostDetailHeaderTitle,
     PostDetailInformation,
-    PostDetailPhotoContainer
+    PostDetailPhotoContainer, PostModifyContainer
 } from "../../../assets/styledCss/PostDetailStyled";
 import blog_image from "../../../assets/icons/blog_image.png";
 import {HomeDate, HomePhotoContainer, HomeTitle} from "../../../assets/styledCss/PostStyled";
@@ -27,8 +27,13 @@ import CancelButton from "../../Button/CancelButton";
 
 function PostDetail(){ // add here button edit
     const [notificationVisibility, setNotificationVisibility] = useState(false);
+
     const [modifyStatus, setModifyStatus] = useState(false);
     const [postDeleteStatus, setPostDeleteStatus] = useState(false);
+
+    const [postDeleteApprove, setPostDeleteApprove] = useState(false);
+    const [postUpdateApprove, setPostUpdateApprove] = useState(false);
+
 
     const highlightStyle = {
         border: "1px solid #ccc",
@@ -62,6 +67,19 @@ function PostDetail(){ // add here button edit
         setPostDeleteStatus(true);
     };
 
+    const handleCancelBtn = (e) => {
+        const title = document.querySelector('.post-title');
+        const content = document.querySelector('.post-content');
+
+        console.log(title);
+        console.log(content);
+
+        title.contentEditable = "false"
+        content.contentEditable = "false"
+
+        console.log("cancel button click");
+    }
+
     return (
         <PostDetailContainer>
             {
@@ -70,18 +88,28 @@ function PostDetail(){ // add here button edit
                         text="Are you sure you wanna modify post?"
                         option1="Accept"
                         option2="Decline"
+                        setModify={setModifyStatus}
+
                     />
                 ) : postDeleteStatus ? (
+                    <>
                         <Notification
                             text="Are you sure you wanna delete post?"
                             option1="Accept"
                             option2="Decline"
+                            setDel={setPostDeleteStatus}
                         />
+                        <div style={{ height: '650px' }}> {/* Adjust the height value as needed */}
+                            {/* Content of the div */}
+                        </div>
+                    </>
                     ):(
                     <>
-                        <DeleteButton onClick={handlePostBtnDelete} />
-                        <ModifyButton onClick={handleModifyElements} />
-                        <CancelButton />
+                        <PostModifyContainer>
+                            <DeleteButton onClick={handlePostBtnDelete} />
+                            <ModifyButton onClick={handleModifyElements} />
+                            <CancelButton onClick={handleCancelBtn}/>
+                        </PostModifyContainer>
                         <PostDetailHeader>
                             <PostDetailPhotoContainer>
                                 <img src={blog_image}/>
@@ -115,7 +143,7 @@ function PostDetail(){ // add here button edit
                         </PostDetailContentContainer>
 
                         <CommentsContainer>
-                            <HomeTitle>Add comments</HomeTitle>
+                            <HomeTitle>Comments</HomeTitle>
                             <AddComment/>
                             <CommentContainer>
                                 <PhotoContainer>

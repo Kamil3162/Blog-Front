@@ -5,6 +5,7 @@ import {
     LoginInputField,
     LoginInputLabel
 } from "../../assets/styledCss/AccountingStyled";
+import { useNavigate } from 'react-router-dom';
 import logo_login from "../../assets/icons/logo_login.png";
 import {AuthButton, SignUpButton} from "../../assets/styledCss/NavbarStyled";
 import React, {useState} from "react";
@@ -13,10 +14,13 @@ import { useAuth} from "../../context/AuthContext";
 import {login_user, register} from "../../services/login_service";
 import { handleValueChange} from "../../utils/tools_functions";
 
+
 export function LoginComponent(){
+    const history = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const { setAuthToken } = useAuth();
     const { login } = useAuth();
 
 
@@ -28,7 +32,9 @@ export function LoginComponent(){
             const response = await login_user(username, password);
             console.log(response);
             console.log(response.access_token);
-            login(response.access_token);
+            login();
+            // setAuthToken(true);
+            history('/home');
         } catch (error) {
             console.error("Registration failed", error);
             // Handle errors (e.g., display an error message)
@@ -57,10 +63,10 @@ export function LoginComponent(){
                     <FormField>
                         <LoginInputLabel>
                             Password
-                            <a href="/forgot">Forgot?</a>
+                            <a href="/reset/password">Forgot?</a>
                         </LoginInputLabel>
                         <LoginInputField
-                            type="text"
+                            type="password"
                             value={password}
                             onChange={handleValueChange(setPassword)}
                         />
@@ -75,6 +81,10 @@ export function LoginComponent(){
                 <p>
                     Don't have an account?
                     <a href="/sing-up">Sign up</a>
+                </p>
+                <p>
+                    Go to Home
+                    <a href="/home"> Home</a>
                 </p>
             </AuthFields>
         </AccountingContainer>

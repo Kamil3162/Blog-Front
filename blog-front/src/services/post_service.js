@@ -2,6 +2,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
+
 const API_URL = "http://127.0.0.1:10000";
 
 export const postCreate = (title, category, content, photo) => {

@@ -45,8 +45,16 @@ import {
 } from "./styles/InfoBlogsStyled";
 import StarIcon from "../../assets/icons/star-svgrepo-com.svg";
 import { FaStar } from 'react-icons/fa';
+import {getUserDataCookies} from "../../utils/tools_functions";
+import {useAuth} from "../../context/AuthContext";
 
 function AdminPanel(){
+
+    const { authToken }  = useAuth();
+    const user_data = authToken;
+
+    console.log("user_data", user_data)
+
     return (
         <AdminPanelContainer>
             <LeftPanelContainer>
@@ -82,33 +90,44 @@ function AdminPanel(){
                 <BreakPanel>
                     <LeftPanelElementText>ACCOUNT PAGES</LeftPanelElementText>
                 </BreakPanel>
-                <LeftPanelElement>
-                    <LeftPanelElementIcon>
-                        <img src={user}/>
-                    </LeftPanelElementIcon>
-                    <LeftPanelElementText>
-                        <p>Register</p>
-                    </LeftPanelElementText>
-                </LeftPanelElement>
-                <LeftPanelElement>
-                    <LeftPanelElementIcon>
-                        <img src={enter}/>
-                    </LeftPanelElementIcon>
-                    <LeftPanelElementText>
-                        <p>Login</p>
-                    </LeftPanelElementText>
-                </LeftPanelElement>
-                <LeftPanelElement>
-                    <LeftPanelElementIcon>
-                        <img src={power_off}/>
-                    </LeftPanelElementIcon>
-                    <LeftPanelElementText>
-                        <p>Logout</p>
-                    </LeftPanelElementText>
-                </LeftPanelElement>
+                {
+                    user_data ? (
+                        <>
+                            <LeftPanelElement>
+                                <LeftPanelElementIcon>
+                                    <img src={power_off}/>
+                                </LeftPanelElementIcon>
+                                <LeftPanelElementText>
+                                    <p>Logout</p>
+                                </LeftPanelElementText>
+                            </LeftPanelElement>
+                        </>
+                    ):(
+                        <>
+                            <LeftPanelElement>
+                                <LeftPanelElementIcon>
+                                    <img src={user}/>
+                                </LeftPanelElementIcon>
+                                <LeftPanelElementText>
+                                    <p>Register</p>
+                                </LeftPanelElementText>
+                            </LeftPanelElement>
+                            <LeftPanelElement>
+                                <LeftPanelElementIcon>
+                                    <img src={enter}/>
+                                </LeftPanelElementIcon>
+                                <LeftPanelElementText>
+                                    <p>Login</p>
+                                </LeftPanelElementText>
+                            </LeftPanelElement>
+                        </>
+                    )
+                }
             </LeftPanelContainer>
             <DashBoardContainer>
-                <TopBar/>
+                <DashBoardBussinessTextContainer>
+                    <h1>Dashboard</h1>
+                </DashBoardBussinessTextContainer>
                 <DashBoardBussinesInfoContainer>
                     <DashBoardBussinessElement>
                         <DashBoardBussinessTextContainer>

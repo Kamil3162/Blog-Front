@@ -20,12 +20,12 @@ export const AddFileForm = styled.form`
   height: auto;
   width: 100%;
   cursor: pointer;
-  margin: auto; // Add this to center the form itself if it's not already centered
   padding-top: 10px;
-  
+  margin-top: 50px;
   @media (max-width: 600px){
     height: 150px;
     width: 150px;
+    margin-left: 10%;
   }
 `;
 
@@ -54,20 +54,9 @@ export const AddTitle = styled.input`
 `;
 
 export const AddText = styled.textarea`
-  width: 520px;
+  width: 200px;
   height: 400px;
-  margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
-  border-radius: 15px;
-  padding: 20px; /* Adds some space inside the textarea */
-  box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
-  resize: vertical; /* Allows the user to resize the textarea vertically */
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px; /* Sets a comfortable font size for reading and writing */
-  line-height: 1.5; /* Improves the readability of multiline text */
-  outline: none; /* emoves the default focus outline to use a custom style if desired */
-  background-color:#2138cd14 ;
-  color: black;
-  font-weight: 800;
+  margin: auto;
   
   &::placeholder {
     color: black; /* Adjust the opacity as needed */
@@ -77,8 +66,21 @@ export const AddText = styled.textarea`
     border-color: #007bff; /* Highlights the textarea when focused */
   }
   
-  @media (max-width: 600px){
-    width: 320px;
+  @media (min-width: 600px){
+    width: 520px;
+    height: 400px;
+    margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
+    border-radius: 15px;
+    padding: 20px; /* Adds some space inside the textarea */
+    box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px; /* Sets a comfortable font size for reading and writing */
+    line-height: 1.5; /* Improves the readability of multiline text */
+    outline: none; /* emoves the default focus outline to use a custom style if desired */
+    background-color:#2138cd14 ;
+    color: black;
+    font-weight: 800;
   }
 `;
 

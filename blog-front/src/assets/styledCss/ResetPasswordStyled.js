@@ -42,11 +42,12 @@ export const BackContainer = styled.div`
       width: 5%;
     }
   
-  p{
+  a{
     margin-left: 15px;
     font-size: 15px;
     color: black;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
+    text-decoration: none;
   }
 `;

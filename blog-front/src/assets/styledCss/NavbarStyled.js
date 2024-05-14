@@ -39,6 +39,8 @@ export const AuthButton = styled.button`
   }
   a{
     text-decoration: none;
+    color: black;
+    font-weight: 800;
   }
 `;
 
@@ -82,7 +84,9 @@ export const AuthButtonCom = styled.button`
 export const SignUpButton = styled(AuthButton)`
   background-color: #0f24a8;
   color: white;
-
+  a{
+    color: white;
+  }
 `;
 
 export const SearchField = styled.input`
@@ -136,7 +140,7 @@ export const NavigationContainer = styled.div`
   flex-direction: column;
   position: absolute;
   z-index: 1;
-  background-color: #050303;
+  background-color: #545353;
   border-radius: 10px;
   border-top: 1px solid #e7e7e9;
   padding: 10px;
@@ -157,7 +161,13 @@ export const NavigationElement = styled.div`
     //background-color: white;
     border-radius: 10px;
     max-width: 90%;
-    color: white;
+    color: black;
+    font-weight: 600;
+  
+    a{
+      text-decoration: none;
+      color: black;
+    }
 `;
 
 
@@ -166,12 +176,22 @@ export const NavbarElement = styled.div`
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   font-weight: 1000;
-  width: 120px;
+  width: 200px;
   height: 50px;
   align-items: center;
 
+  a {
+    text-decoration: none;
+    color: black;
+    
+    &:hover {
+      color: blue;
+      transition: 0.1s color linear;
+    }
+  }
+
   &:hover {
-    color: #656869;
+    color: #248db0;
     transition: 0.1s color linear;
   }
 `;

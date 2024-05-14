@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar/Navbar";
-import ResetPasswordPanel from "../components/ResetPasswordPanel/ResetPasswordPanel";
+import Navbar from "../../components/Navbar/Navbar";
+import ResetPasswordPanel from "../../components/ResetPasswordPanel/ResetPasswordPanel";
 function ResetPasswordDisplay(){
     return (
         <>

@@ -1,4 +1,4 @@
-import {PostListContainer, PostListPhoto} from "../../../assets/styledCss/PostListStyled";
+import {PostListContainer, PostListPhoto, PostMovingContainer} from "../../../assets/styledCss/PostListStyled";
 import blog_image from "../../../assets/icons/blog_image.png";
 import {
     HomeCategory,
@@ -9,6 +9,13 @@ import {
     HomeTitle,
     HomeTitlePost
 } from "../../../assets/styledCss/PostStyled";
+import NextButton from "../../Button/NextButton";
+import React from "react";
+import PreviousButton from "../../Button/PreviousButton";
+
+const filterContentFunction = () => {
+    
+}
 
 function PostList(){
     return (
@@ -21,7 +28,7 @@ function PostList(){
                 </PostListPhoto>
                 <div>
                     <HomeDate>DEC 19, 2023</HomeDate>
-                    <HomeTitle>4 Web Desgn Trends to Watch in 2024</HomeTitle>
+                    <HomeTitle>0 Web Desgn Trends to Watch in 2024</HomeTitle>
                     <HomeContentContainer>
                         <HomeContentText>
                             Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
@@ -40,7 +47,7 @@ function PostList(){
                         <HomeDate>DEC 19, 2023</HomeDate>
                         <HomeCategory>Interview</HomeCategory>
                     </HomeTitlePost>
-                    <HomeTitle>4 Web Desgn Trends to Watch in 2024</HomeTitle>
+                    <HomeTitle>1 Web Desgn Trends to Watch in 2024</HomeTitle>
                     <HomeContentContainer>
                         <HomeContentText>
                             Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
@@ -56,7 +63,7 @@ function PostList(){
                 </PostListPhoto>
                 <div>
                     <HomeDate>DEC 19, 2023</HomeDate>
-                    <HomeTitle>4 Web Desgn Trends to Watch in 2024</HomeTitle>
+                    <HomeTitle>2 Web Desgn Trends to Watch in 2024</HomeTitle>
                     <HomeContentContainer>
                         <HomeContentText>
                             Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
@@ -73,7 +80,7 @@ function PostList(){
                 </PostListPhoto>
                 <div>
                     <HomeDate>DEC 19, 2023</HomeDate>
-                    <HomeTitle>4 Web Desgn Trends to Watch in 2024</HomeTitle>
+                    <HomeTitle>3 Web Desgn Trends to Watch in 2024</HomeTitle>
                     <HomeContentContainer>
                         <HomeContentText>
                             Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
@@ -81,6 +88,10 @@ function PostList(){
                     </HomeContentContainer>
                 </div>
             </PostListContainer>
+            <PostMovingContainer>
+                <PreviousButton/>
+                <NextButton/>
+            </PostMovingContainer>
         </div>
     )
 }

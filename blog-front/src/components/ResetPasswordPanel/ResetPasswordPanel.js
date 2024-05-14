@@ -38,7 +38,9 @@ function ResetPasswordPanel(){
                 </ResetPasswordForm>
                 <BackContainer>
                     <img src={turn_back}/>
-                    <p>Back to login panel</p>
+                    <a href="/login">
+                        Back to login panel
+                    </a>
                 </BackContainer>
             </PostDetailContainer>
         </>

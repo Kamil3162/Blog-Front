@@ -11,6 +11,8 @@ import {
 import upimage from "../../../assets/icons/upload.png";
 import {AuthButtonComponent} from "../../Button/AuthButtonComponent";
 import {HomeTitle} from "../../../assets/styledCss/PostStyled";
+import postCreate from "../../../services/post_service";
+
 function PostCreate(){
 
     const [image, setImage] = useState(null);

@@ -74,6 +74,10 @@ export const fetchValidateUser = (setCurrentUser) => {
 
 export const logout = () => {
     console.log("invoke logout function");
+    const cookie = new Cookies();
+    cookie.remove("user_data");
+    cookie.remove("access_token");
+    cookie.remove("refresh_token");
     return axios.get(API_URL + '/logout', {
         withCredentials: true
     }).then(response => {

@@ -10,6 +10,8 @@ export const CommentsContainer = styled.div`
 `;
 export const CommentContainer = styled.div`
     display: flex;
+    width: 50%;
+  margin: auto;
 `;
 
 export const PhotoContainer = styled.div`

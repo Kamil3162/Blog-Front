@@ -1,21 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomeScreen from "./views/HomeScreen";
-import Login from "./views/Login";
-import Register from "./views/Register";
-import MainScreenApplication from "./views/MainScreenApplication";
+import HomeScreen from "./views/home/HomeScreen";
+import Login from "./views/auth/Login";
+import Register from "./views/auth/Register";
+import MainScreenApplication from "./views/home/MainScreenApplication";
 import WindowSizeContext from "./context/WindowsSizeContext";
 import NavigationVisibilityProvider from "./context/NavigationVisibilityContext";
-import PostDisplay from "./views/PostDisplay";
-import PostCreateView from "./views/PostCreateView";
-import ResetPasswordDisplay from "./views/ResetPasswordDisplay";
-import SetNewPasswordDisplay from "./views/SetNewPasswordDisplay";
-import ChatPanelView from "./views/ChatPanelView";
+import PostDisplay from "./views/post/PostDisplay";
+import PostCreateView from "./views/post/PostCreateView";
+import ResetPasswordDisplay from "./views/auth/ResetPasswordDisplay";
+import SetNewPasswordDisplay from "./views/auth/SetNewPasswordDisplay";
+import ChatPanelView from "./views/chat/ChatPanelView";
 import {AuthProvider} from "./context/AuthContext";
-import AdminPanelView from "./views/AdminPanelView";
-import CategoryCreateView from "./views/CategoryCreateView";
-import CategoriesView from "./views/CategoriesView";
+import AdminPanelView from "./views/auth/AdminPanelView";
+import CategoryCreateView from "./views/category/CategoryCreateView";
+import CategoriesView from "./views/category/CategoriesView";
+import PrivateRoute from "./context/PrivateRoute";
 
 function App() {
     return (
@@ -36,8 +37,9 @@ function App() {
                                 <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
                                 <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
                                 <Route path="/chat-panel" element={< ChatPanelView/>} />
-                                <Route path="/admin-panel" element={< AdminPanelView/>} />
+                                <Route path="/admin-panel" element={<PrivateRoute><AdminPanelView/></PrivateRoute>} />
                                 <Route path="/user" element={< AdminPanelView/>} />
+                                <Route path="/about/me" element={< AdminPanelView/>} />
                             </Routes>
                         </MainScreenApplication>
                     </NavigationVisibilityProvider>

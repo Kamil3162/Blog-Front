@@ -79,3 +79,9 @@ export const PostDetailInformation = styled.div`
     padding-left: 100px; // Adjust this value to match the negative margin
   }
 `;
+
+export const PostModifyContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+  gap: 10px;
+`;

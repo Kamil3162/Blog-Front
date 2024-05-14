@@ -2,7 +2,7 @@ import React from "react";
 import {
     AuthButton,
     NavbarContainer, NavbarElement,
-    NavbarElementsContainer,
+    NavbarElementsContainer, NavigationElement,
     SearchContainer,
     SearchField, SignUpButton
 } from "../../assets/styledCss/NavbarStyled";
@@ -12,11 +12,14 @@ import photo1 from "../../assets/icons/loop.png";
 import listview from "../../assets/icons/listview.png";
 import {useContext} from "react";
 import { logout } from "../../services/login_service";
+import { getUserDataCookies } from "../../utils/tools_functions";
+import {useAuth} from "../../context/AuthContext";
 
 function Navbar(){
 
     const { width } = useContext(WindowSizeContext);
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
+    const {authToken} = useAuth();
 
     const handleLogout = () =>{
         console.log("click");
@@ -26,15 +29,44 @@ function Navbar(){
     const toggleNavVisibility = () => {
         setIsNavVisible(!isNavVisible);
     }
+
     return (
         <NavbarContainer>
             <NavbarElementsContainer alignment="flex-start">
                 {width > 500 ? (
                     // Content for screens wider than the breakpoint
                     <>
-                        <NavbarElement>About me</NavbarElement>
-                        <NavbarElement>Home</NavbarElement>
-                        <NavbarElement onClick={handleLogout}>Logout</NavbarElement>
+                        <NavbarElement>
+                            <a href="/category/create">
+                                About me
+                            </a>
+                        </NavbarElement>
+                        <NavbarElement>
+                            <a href="/home">
+                                Home
+                            </a>
+                        </NavbarElement>
+                        {
+                            authToken && (
+                                <>
+                                    <NavbarElement>
+                                        <a href="/post-create">
+                                            Post Create
+                                        </a>
+                                    </NavbarElement>
+                                    <NavbarElement>
+                                        <a href="/category/create">
+                                            Category Create
+                                        </a>
+                                    </NavbarElement>
+                                    <NavbarElement>
+                                        <a href="/admin-panel">
+                                            Admin Panel
+                                        </a>
+                                    </NavbarElement>
+                                </>
+                            )
+                        }
                     </>
                 ) : (
                     // Content for smaller screens
@@ -44,7 +76,6 @@ function Navbar(){
                 )}
             </NavbarElementsContainer>
             <NavbarElementsContainer alignment="center">
-                <NavbarElement>Logo</NavbarElement>
             </NavbarElementsContainer>
             <NavbarElementsContainer alignment="flex-end">
                 <SearchContainer>
@@ -53,16 +84,28 @@ function Navbar(){
                     </div>
                     <SearchField type="text" placeholder="Search..." />
                 </SearchContainer>
-                <AuthButton text="Log in">
-                    <a href="/login">
-                        Log in
-                    </a>
-                </AuthButton>
-                <SignUpButton text="Sign up">
-                    <a href="/sing-up">
-                        Sign up
-                    </a>
-                </SignUpButton>
+                {
+                    authToken ? (
+                        <AuthButton text="Log in" onClick={handleLogout}>
+                            <a href="/home">
+                                Logout
+                            </a>
+                        </AuthButton>
+                    ) : (
+                        <>
+                        <AuthButton text="Log in">
+                            <a href="/login">
+                                Log in
+                            </a>
+                        </AuthButton>
+                        <SignUpButton text="Sign up">
+                            <a href="/sing-up">
+                                Sign up
+                            </a>
+                        </SignUpButton>
+                        </>
+                    )
+                }
             </NavbarElementsContainer>
         </NavbarContainer>
     )

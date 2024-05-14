@@ -2,9 +2,10 @@ import {ButtonContainer} from "./button_styled/ButtonStyled";
 import delete_icon from "../../assets/icons/x-mark.png";
 
 
-function CancelButton(){
+function CancelButton({onClick}){
+    console.log("cancel ");
     return (
-        <ButtonContainer>
+        <ButtonContainer onClick={onClick}>
             Cancel Changes
         </ButtonContainer>
     )

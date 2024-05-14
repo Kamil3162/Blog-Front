@@ -20,7 +20,7 @@ export const PostHeader = styled.div`
 
 export const SiteContentContainer = styled.div`
     display: block;
-  
+    padding: 10px;
     @media (min-width: 600px){
       margin-top: 10vh; // Adjust the value as needed
       width: 100%;
@@ -71,6 +71,7 @@ export const HomeTitle = styled.p`
   font-weight: 800;
   font-size: 30px;
   padding: 0;
+  
 `;
 export const HomeDataContainer = styled.div`
     width: 50%;
