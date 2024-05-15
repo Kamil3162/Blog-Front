@@ -10,8 +10,16 @@ import {
 } from "../../../assets/styledCss/PostCreateStyled";
 import upimage from "../../../assets/icons/upload.png";
 import {AuthButtonComponent} from "../../Button/AuthButtonComponent";
-import {HomeTitle} from "../../../assets/styledCss/PostStyled";
+import {
+    HomeContentContainer,
+    HomeContentText,
+    HomeDate,
+    HomeTitle,
+    HomeTitlePost
+} from "../../../assets/styledCss/PostStyled";
 import postCreate from "../../../services/post_service";
+import {CategoryUnderline} from "../../Categories/CategoriesStyled/CategoryCreateStyled";
+import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
 
 function PostCreate(){
 
@@ -27,7 +35,16 @@ function PostCreate(){
 
     return(
         <PhotoContainer>
-            <HomeTitle>Add Post</HomeTitle>
+            <PostListCategory>
+                <div>
+                    <HomeTitle>Post create panel</HomeTitle>
+                    <HomeContentContainer>
+                        <HomeContentText>
+                            Here you can create your dream blog post and upload on home page.
+                        </HomeContentText>
+                    </HomeContentContainer>
+                </div>
+            </PostListCategory>
             <AddFileForm action="">
                 <InputDataPostCreate
                     placeholder="Title..."

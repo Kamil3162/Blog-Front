@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     AuthButton,
     NavbarContainer, NavbarElement,
@@ -14,9 +14,9 @@ import {useContext} from "react";
 import { logout } from "../../services/login_service";
 import { getUserDataCookies } from "../../utils/tools_functions";
 import {useAuth} from "../../context/AuthContext";
-
+import {searchPost} from "../../utils/search_field_functions";
 function Navbar(){
-
+    const [searchTerm, setSearchTerm] = useState("");
     const { width } = useContext(WindowSizeContext);
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
     const {authToken} = useAuth();
@@ -29,6 +29,11 @@ function Navbar(){
     const toggleNavVisibility = () => {
         setIsNavVisible(!isNavVisible);
     }
+
+    const handleSearchInputChange = (event) => {
+        const { value } = event.target;
+        searchPost(value);
+    };
 
     return (
         <NavbarContainer>
@@ -82,7 +87,12 @@ function Navbar(){
                     <div>
                         <img src={photo1} width="20px" height="20px"/>
                     </div>
-                    <SearchField type="text" placeholder="Search..." />
+                    <SearchField
+                        type="text"
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={handleSearchInputChange}
+                    />
                 </SearchContainer>
                 {
                     authToken ? (
