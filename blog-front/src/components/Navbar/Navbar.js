@@ -15,11 +15,18 @@ import { logout } from "../../services/login_service";
 import { getUserDataCookies } from "../../utils/tools_functions";
 import {useAuth} from "../../context/AuthContext";
 import {searchPost} from "../../utils/search_field_functions";
+import NavContext from "../../context/NavbarContext";
+import NavbarContext from "../../context/nav_contextes/nav_context";
+
+
 function Navbar(){
     const [searchTerm, setSearchTerm] = useState("");
     const { width } = useContext(WindowSizeContext);
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
     const {authToken} = useAuth();
+
+    const { handlePostSearch } = useContext(NavbarContext);
+
 
     const handleLogout = () =>{
         console.log("click");
@@ -32,7 +39,8 @@ function Navbar(){
 
     const handleSearchInputChange = (event) => {
         const { value } = event.target;
-        searchPost(value);
+        console.log("yes");
+        handlePostSearch(value);
     };
 
     return (

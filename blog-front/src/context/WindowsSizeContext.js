@@ -11,7 +11,6 @@ function WindowsSizeContext({children}) {
 
         handleResizeWindow();
 
-
         console.log(width);
         return () => {
             window.removeEventListener("resize", handleResizeWindow);

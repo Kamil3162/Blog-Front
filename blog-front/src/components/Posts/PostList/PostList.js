@@ -10,14 +10,22 @@ import {
     HomeTitlePost
 } from "../../../assets/styledCss/PostStyled";
 import NextButton from "../../Button/NextButton";
-import React from "react";
+import React, {useEffect} from "react";
 import PreviousButton from "../../Button/PreviousButton";
-
-const filterContentFunction = () => {
-    
-}
+import {useContext} from "react";
+import NavbarContext from "../../../context/nav_contextes/nav_context";
 
 function PostList(){
+
+    const { searchedPosts } = useContext(NavbarContext);
+    console.log("searchedPosts");
+    console.log(searchedPosts);
+
+    // useEffect(() => {
+    //
+    // }, [searchedPosts]);
+
+
     return (
         <div>
             <PostListContainer>
