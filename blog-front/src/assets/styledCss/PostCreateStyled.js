@@ -54,10 +54,11 @@ export const AddTitle = styled.input`
 `;
 
 export const AddText = styled.textarea`
-  width: 200px;
-  height: 400px;
-  margin: auto;
-  
+  //width: 300px;
+  //height: 200px;
+  //margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
+
+
   &::placeholder {
     color: black; /* Adjust the opacity as needed */
   }
@@ -66,14 +67,14 @@ export const AddText = styled.textarea`
     border-color: #007bff; /* Highlights the textarea when focused */
   }
   
-  @media (min-width: 600px){
-    width: 520px;
+  //@media (min-width: 600px){
+    width: 420px;
     height: 400px;
     margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
     border-radius: 15px;
     padding: 20px; /* Adds some space inside the textarea */
     box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
-    resize: vertical; /* Allows the user to resize the textarea vertically */
+    //resize: vertical; /* Allows the user to resize the textarea vertically */
     font-family: 'Raleway', sans-serif;
     font-size: 16px; /* Sets a comfortable font size for reading and writing */
     line-height: 1.5; /* Improves the readability of multiline text */
@@ -81,7 +82,7 @@ export const AddText = styled.textarea`
     background-color:#2138cd14 ;
     color: black;
     font-weight: 800;
-  }
+  //}
 `;
 
 

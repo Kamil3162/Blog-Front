@@ -1,4 +1,4 @@
-import {PostDetailContainer} from "../../../assets/styledCss/PostDetailStyled";
+// import {PostDetailContainer} from "../../../assets/styledCss/PostDetailStyled";
 import React, {useState} from "react";
 import {
     AddFileForm,
@@ -17,8 +17,8 @@ import {
     HomeTitle,
     HomeTitlePost
 } from "../../../assets/styledCss/PostStyled";
-import postCreate from "../../../services/post_service";
-import {CategoryUnderline} from "../../Categories/CategoriesStyled/CategoryCreateStyled";
+// import postCreate from "../../../services/post_service";
+// import {CategoryUnderline} from "../../Categories/CategoriesStyled/CategoryCreateStyled";
 import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
 
 function PostCreate(){
@@ -56,7 +56,6 @@ function PostCreate(){
                     <option value="mercedes">Mercedes</option>
                     <option value="audi">Audi</option>
                 </StyledSelect>
-
 
                 <AddText
                     placeholder="Add content..."

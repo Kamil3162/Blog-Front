@@ -49,18 +49,17 @@ function Navbar(){
                 {width > 500 ? (
                     // Content for screens wider than the breakpoint
                     <>
-                        <NavbarElement>
-                            <a href="/category/create">
-                                About me
-                            </a>
-                        </NavbarElement>
+                        {/*<NavbarElement>*/}
+                        {/*    <a href="/category/create">*/}
+                        {/*        About me*/}
+                        {/*    </a>*/}
+                        {/*</NavbarElement>*/}
                         <NavbarElement>
                             <a href="/home">
                                 Home
                             </a>
                         </NavbarElement>
-                        {
-                            authToken && (
+
                                 <>
                                     <NavbarElement>
                                         <a href="/post-create">
@@ -78,8 +77,7 @@ function Navbar(){
                                         </a>
                                     </NavbarElement>
                                 </>
-                            )
-                        }
+
                     </>
                 ) : (
                     // Content for smaller screens

@@ -20,12 +20,13 @@ import {
     CategoryCreateContainer,
     CategoryFieldsContainer, CategoryUnderline
 } from "../../components/Categories/CategoriesStyled/CategoryCreateStyled";
-import {AddFileForm, AddText, InputDataPostCreate, StyledSelect} from "../../assets/styledCss/PostCreateStyled";
-import upimage from "../../assets/icons/upload.png";
-import {AuthButtonComponent} from "../../components/Button/AuthButtonComponent";
-import ArrowAnimation from "../../components/Categories/ArrowAnimation";
-import {createCategory} from "../../services/categories_service";
 import CategoryCreate from "../../components/Categories/CategoryCreate";
+
+// import {AddFileForm, AddText, InputDataPostCreate, StyledSelect} from "../../assets/styledCss/PostCreateStyled";
+// import upimage from "../../assets/icons/upload.png";
+// import {AuthButtonComponent} from "../../components/Button/AuthButtonComponent";
+// import ArrowAnimation from "../../components/Categories/ArrowAnimation";
+// import {createCategory} from "../../services/categories_service";
 
 function CategoryCreateView(){
 

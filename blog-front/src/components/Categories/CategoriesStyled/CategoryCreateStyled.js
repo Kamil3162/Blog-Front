@@ -7,7 +7,7 @@ export const CategoryCreateContainer = styled.div`
   display: block;
   
     @media(min-width: 600px){
-      display: flex;
+      //display: flex;
       height: 650px;
       flex-direction: row;
       justify-content: space-between;
@@ -25,6 +25,7 @@ export const CategoryFieldsContainer = styled.div`
     flex-direction: column;
     //height: 100vh;
     text-align: center;
+    padding-top: 30px;
   }
   
 `;

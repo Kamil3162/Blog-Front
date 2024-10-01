@@ -37,9 +37,9 @@ function App() {
                                 <Route path="/reset/password" element={< ResetPasswordDisplay/>} />
                                 <Route path="/reset/password/:token" element={< SetNewPasswordDisplay/>} />
                                 <Route path="/chat-panel" element={< ChatPanelView/>} />
-                                <Route path="/admin-panel" element={<PrivateRoute><AdminPanelView/></PrivateRoute>} />
+                                <Route path="/admin-panel" element={<AdminPanelView/>} />
                                 <Route path="/user" element={< AdminPanelView/>} />
-                                <Route path="/about/me" element={< AdminPanelView/>} />
+                                {/*<Route path="/about/me" element={< AdminPanelView/>} />*/}
                             </Routes>
                         </MainScreenApplication>
                     </NavigationVisibilityProvider>
