@@ -6,7 +6,7 @@ import {
     AddTitle,
     InputDataPostCreate,
     PhotoContainer,
-    PostImagesList, StyledSelect
+    PostImagesList, StyledPhotoTable, StyledSelect
 } from "../../../assets/styledCss/PostCreateStyled";
 import upimage from "../../../assets/icons/upload.png";
 import {AuthButtonComponent} from "../../Button/AuthButtonComponent";
@@ -22,18 +22,32 @@ import {
 import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
 
 function PostCreate(){
+    const [images, setImages] = useState([]); // To store multiple image URLs
+    const [fileNames, setFileNames] = useState([]); // To store multiple file names
 
-    const [image, setImage] = useState(null);
-    const [fileName, setFileName] = useState("No selected file");
-
+    // Clear selected files
     const backImage = () => {
         const image_container = document.querySelector(".input-field");
         image_container.value = "";
-        setImage(null);
-        setFileName("");
+        setImages([]);  // Clear images
+        setFileNames([]); // Clear file names
     }
 
-    return(
+    // Handle file input change
+    const handleFileChange = ({ target: { files } }) => {
+        const selectedFiles = Array.from(files);
+        const fileNamesArray = selectedFiles.map(file => file.name);
+        const imageUrlsArray = selectedFiles.map(file => URL.createObjectURL(file));
+
+        setFileNames(fileNamesArray); // Update file names
+        setImages(imageUrlsArray);    // Update images
+    }
+
+    const handleFileDelete = (inx_img) => {
+
+    }
+
+    return (
         <PhotoContainer>
             <PostListCategory>
                 <div>
@@ -62,29 +76,75 @@ function PostCreate(){
                     placeholderTextColor="black"
                 />
 
+                <input type="file" accept="image/*" className='input-field' hidden multiple
+                       onChange={handleFileChange}
+                />
 
-                <input type="file" accept="image/*" className='input-field' hidden
-                       onChange={({target: {files}}) => {
-                           files[0] && setFileName(files[0].name)
-                           if(files){
-                               setImage(URL.createObjectURL(files[0]))
-                           }
-                       }}/>
                 {
-                    image ?
+                    images.length > 0 ? (
+
                         <>
-                            <img src={image}  style={{ maxWidth: '200px', height: '350px' }}/>
-                            <button onClick={backImage}>Clear</button>
+                            <StyledPhotoTable>
+                                <thead>
+                                    <tr>
+                                        <th>File Name</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                {
+                                    images.map((img, index)=> (
+                                        <>
+                                            <tr key={index}>
+                                                <td>{fileNames[index]}</td>
+                                                <td><button>Delete</button></td>
+                                            </tr>
+                                        </>
+                                    ))
+                                }
+                                </tbody>
+                            </StyledPhotoTable>
                         </>
-                        :
-                        <>
-                            <img src={upimage}
-                                 width={60}
-                                 height={60}
-                                 onClick={() => document.querySelector(".input-field").click()}/>
-                            <p>Browse file to upload</p>
-                        </>
+                    ) : (
+                        <div>
+
+                        </div>
+                    )
                 }
+
+
+
+                {images.length > 0 ? (
+                    <>
+                        {images.map((img, index) => {
+                            return (
+                                <>
+                                    <div key={index}>
+                                        <img
+                                            src={img}
+                                            alt={`file-${index}`}
+                                            style={{
+                                                maxWidth: '200px',
+                                                height: '350px'
+                                            }} />
+                                        <p>{fileNames[index]}</p>
+                                        <button onClick={backImage}>Clear</button>
+                                    </div>
+                                    <img src={upimage} width={60} height={60}
+                                         onClick={() => document.querySelector(".input-field").click()}/>
+                                    <p>Browse file to upload</p>
+                                </>
+                            );
+                        })}
+                    </>
+                ) : (
+                    <>
+                        <img src={upimage} width={60} height={60}
+                             onClick={() => document.querySelector(".input-field").click()}/>
+                        <p>Browse file to upload</p>
+                    </>
+                )}
             </AddFileForm>
 
             <AuthButtonComponent
@@ -93,7 +153,8 @@ function PostCreate(){
                 height={50}
                 background={"blue"}
                 color={"white"}
-                text="Upload post"/>
+                text="Upload post"
+            />
         </PhotoContainer>
     )
 }

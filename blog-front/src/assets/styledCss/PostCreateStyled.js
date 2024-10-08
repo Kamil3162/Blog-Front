@@ -22,9 +22,10 @@ export const AddFileForm = styled.form`
   cursor: pointer;
   padding-top: 10px;
   margin-top: 50px;
+  
   @media (max-width: 600px){
-    height: 150px;
-    width: 150px;
+    height: 450px;
+    width: 350px;
     margin-left: 10%;
   }
 `;
@@ -54,35 +55,38 @@ export const AddTitle = styled.input`
 `;
 
 export const AddText = styled.textarea`
-  //width: 300px;
-  //height: 200px;
-  //margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
-
-
-  &::placeholder {
-    color: black; /* Adjust the opacity as needed */
-  }
-  
-  &:focus {
-    border-color: #007bff; /* Highlights the textarea when focused */
-  }
-  
-  //@media (min-width: 600px){
-    width: 420px;
-    height: 400px;
-    margin: 10px auto 20px auto; /* Top, Right&Left, Bottom, Right&Left */
-    border-radius: 15px;
-    padding: 20px; /* Adds some space inside the textarea */
-    box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
-    //resize: vertical; /* Allows the user to resize the textarea vertically */
+    width: 300px;
+    height: 200px;
+    margin: 10px auto 20px auto;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px; /* Sets a comfortable font size for reading and writing */
-    line-height: 1.5; /* Improves the readability of multiline text */
-    outline: none; /* emoves the default focus outline to use a custom style if desired */
-    background-color:#2138cd14 ;
+    font-weight: 600;
+    background-color: #f0f0f0;
     color: black;
-    font-weight: 800;
-  //}
+    
+    &::placeholder {
+        color: black;
+    }
+    
+    &:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+    
+    @media (min-width: 600px) {
+        width: 420px;
+        height: 200px;
+        margin: 10px auto 20px auto;
+        border-radius: 15px;
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        background-color: #2138cd14;
+        font-weight: 800;
+    }
 `;
 
 
@@ -121,5 +125,8 @@ export const StyledSelect = styled.select`
   }
   
 `;
+export const StyledPhotoTable = styled.table`
+    
+`
 
 

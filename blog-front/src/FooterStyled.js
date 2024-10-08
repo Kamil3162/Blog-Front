@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  position: static;
+  //position: static;
   bottom: 0;
   left: 0;
   background-color: rgba(6, 7, 16, 0.82);
