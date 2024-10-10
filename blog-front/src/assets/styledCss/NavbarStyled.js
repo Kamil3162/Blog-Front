@@ -1,6 +1,17 @@
 import styled, {keyframes} from "styled-components";
 
 
+const fadeIn = keyframes`
+  from { 
+      opacity: 0; 
+      transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+`;
+
 export const NavbarContainer = styled.div`
     /*
       using display flex my screen will ajust autotaticly during 
@@ -101,12 +112,15 @@ export const SearchField = styled.input`
       font-family: 'Raleway', sans-serif;
       color: black;
       font-size: 1.5vh;
+      flex: 3;
+      
     }
 `;
 
 export const SearchContainer = styled.div`
     width: 150px;
     display: flex;
+    align-items: center;
   
   @media (min-width: 1060px){
     /*
@@ -121,9 +135,18 @@ export const SearchContainer = styled.div`
     width: 300px;
     justify-items: center;
     align-items: center;
+    
   }
 `;
 
+export const SearchIconContainer = styled.div`
+    flex: 1;
+    
+    img{
+      width: 20px;
+      height: 20px;
+    }
+`;
 export const LogBtn = styled.button`
     
 `;
@@ -133,10 +156,6 @@ export const NavbarElementsContainer = styled.div`
     justify-content: ${props => props.alignment};
     align-items: center;
     gap: 24px;
-`;
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
 `;
 
 export const NavigationContainer = styled.nav`
@@ -148,7 +167,7 @@ export const NavigationContainer = styled.nav`
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 15px;
-  width: 85%;
+  width: 90%;
   max-width: 300px;
   gap: 12px;
   animation: ${fadeIn} 0.3s ease-out;
@@ -156,14 +175,16 @@ export const NavigationContainer = styled.nav`
   @media (min-width: 500px) {
     display: ${props => props.showOnSite ? "flex" : "none"};
     width: 200px;
-    box-shadow: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    background-color: #2c3e50;
     padding: 0;
-    background-color: #f3f2f3;
+    gap: 12px;
+    
   }
 `;
 
 export const NavigationElement = styled.div`
-  width: 100%;
+  width: 85%;
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   padding: 12px 15px;
@@ -174,7 +195,7 @@ export const NavigationElement = styled.div`
 
   &:hover {
     background-color: rgba(236, 240, 241, 0.1);
-    transform: translateX(5px);
+    transform: translateX(0px);
   }
 
   a {
@@ -189,9 +210,9 @@ export const NavigationElement = styled.div`
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
+      width: 100px;
       height: 2px;
-      background-color: #3498db;
+      background-color: #cccdd2;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
     }
@@ -202,18 +223,115 @@ export const NavigationElement = styled.div`
   }
 
   @media (min-width: 500px) {
-    color: #2c3e50;
+    color: #ffffff;
     padding: 8px 12px;
 
     &:hover {
       background-color: rgba(44, 62, 80, 0.1);
-      transform: translateY(-2px);
+      //transform: translateY(-2px);
     }
   }
 `;
 
 
+const pulse = keyframes`
+  0% {
+    box-shadow: 0 0 0 0 rgba(23, 30, 155, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(23, 30, 155, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(23, 30, 155, 0);
+  }
+`;
+
 export const NavbarElement = styled.div`
+  display: flex;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  width: 180px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  background-color: #171e9b;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(23, 30, 155, 0.1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(23, 30, 155, 0.2);
+
+    &::before {
+      left: 100%;
+    }
+  }
+
+   &:active {
+     transform: translateY(-1px);
+     box-shadow: 0 3px 8px rgba(23, 30, 155, 0.3);
+   }
+  
+   a {
+     text-decoration: none;
+     color: inherit;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     height: 100%;
+     position: relative;
+     z-index: 1;
+     //
+     &::after {
+       content: '';
+       position: absolute;
+       bottom: 0;
+       left: 50%;
+       width: 0;
+       height: 2px;
+       background-color: #ffffff;
+       transition: all 0.3s ease;
+     }
+   }
+  //
+  //   &:hover::after {
+  //     width: 80%;
+  //     left: 10%;
+  //   }
+  // }
+  //
+  // &:hover {
+  //   animation: ${pulse} 1s infinite;
+  //   background-color: #1a237e;
+  // }
+`;
+
+
+/*
+    export const NavbarElement = styled.div`
   display: flex;
   font-family: 'DM Sans', sans-serif;
   font-size: 18px;
@@ -221,21 +339,31 @@ export const NavbarElement = styled.div`
   width: 200px;
   height: 50px;
   align-items: center;
+  background-color: #171e9b;
+  justify-content: center;
+  border-radius: 8px;
+  opacity: 1;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: #171e9b;
+    opacity: 0.6;
+    transform: translateY(-2px);
+  }
 
   a {
     text-decoration: none;
-    color: black;
-    
-    &:hover {
-      color: blue;
-      transition: 0.1s color linear;
-    }
+    color: white;
+
+    //&:hover {
+    //  color: blue;
+    //  transition: 0.1s color linear;
+    //}
   }
 
   &:hover {
-    color: #248db0;
-    transition: 0.1s color linear;
+    color: #0d93c5;
+    transition: 0.3s color linear;
   }
 `;
-
-
+ */

@@ -4,7 +4,7 @@ import {
     NavbarContainer, NavbarElement,
     NavbarElementsContainer, NavigationElement,
     SearchContainer,
-    SearchField, SignUpButton
+    SearchField, SearchIconContainer, SignUpButton
 } from "../../assets/styledCss/NavbarStyled";
 import { WindowSizeContext} from "../../context/WindowsSizeContext";
 import { NavigationVisibilityContext} from "../../context/NavigationVisibilityContext";
@@ -27,7 +27,6 @@ function Navbar(){
     const {authToken} = useAuth();
 
     const { handlePostSearch } = useContext(NavbarContext);
-
     console.log("Navbar", width, isNavVisible);
 
     const handleLogout = () =>{
@@ -38,8 +37,6 @@ function Navbar(){
     const toggleNavVisibility = () => {
         setIsNavVisible(!isNavVisible);
     }
-
-
 
     const handleSearchInputChange = (event) => {
         const { value } = event.target;
@@ -71,6 +68,11 @@ function Navbar(){
                                 Admin Panel
                             </a>
                         </NavbarElement>
+                        <NavbarElement>
+                            <a href="/post-detail">
+                                Post Detail
+                            </a>
+                        </NavbarElement>
                     </>
                 </>
             )
@@ -83,7 +85,6 @@ function Navbar(){
             )
         }
     }
-
     return (
         <>
 
@@ -95,15 +96,15 @@ function Navbar(){
                 </NavbarElementsContainer>
                 <NavbarElementsContainer alignment="flex-end">
                     <SearchContainer>
-                        <div>
-                            <img src={photo1} width="20px" height="20px"/>
-                        </div>
                         <SearchField
                             type="text"
                             placeholder="Search..."
                             value={searchTerm}
                             onChange={handleSearchInputChange}
                         />
+                        <SearchIconContainer>
+                            <img src={photo1} width="20px" height="20px"/>
+                        </SearchIconContainer>
                     </SearchContainer>
                     {
                         authToken ? (

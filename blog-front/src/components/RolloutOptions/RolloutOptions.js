@@ -8,30 +8,22 @@ import {navigationItems} from "./navigationConfig";
 
 
 function RolloutOptions(){
-    const { isNavVisible } = useContext(NavigationVisibilityContext);
+    const { isNavVisible} = useContext(NavigationVisibilityContext);
+    const { setIsNavVisible } = useContext(NavigationVisibilityContext);
+
     const { width } = useContext(WindowSizeContext);
 
-    const generateRolloutPanel = () =>{
-        if (width <= 500 && !isNavVisible){
-            return (
-                <>
-                    <NavigationContainer>
-                        {navigationItems.map((item, index) => (
-                            <NavigationElement key={index}>
-                                <Link to={item.href}>{item.label}</Link>
-                            </NavigationElement>
-                        ))}
-                    </NavigationContainer>
-                </>
-            )
-        }
+    const changeClickNavVisible = (event) => {
+        setIsNavVisible(false);
     }
 
     return (
         <NavigationContainer showOnSite={width <= 500 && isNavVisible}>
             {navigationItems.map((item, index) => (
                 <NavigationElement key={index}>
-                    <Link to={item.href}>{item.label}</Link>
+                    <Link to={item.href} onClick={changeClickNavVisible}>
+                        {item.label}
+                    </Link>
                 </NavigationElement>
             ))}
         </NavigationContainer>
