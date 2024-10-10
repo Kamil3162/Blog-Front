@@ -7,7 +7,7 @@ import {
     HomeTitle,
     HomeTitlePost
 } from "../../assets/styledCss/PostStyled";
-import {createCategory} from "../../services/categories_service";
+import {createCategory} from "../../services/categories";
 import {CategoryFieldsContainer} from "./CategoriesStyled/CategoryCreateStyled";
 import {AddFileForm, InputDataPostCreate} from "../../assets/styledCss/PostCreateStyled";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";

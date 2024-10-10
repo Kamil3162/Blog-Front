@@ -1,53 +1,37 @@
+import React from "react";
+
 import {
     AdminPanelContainer,
     DashBoardBussinesInfoContainer,
-    DashBoardBussinessElement,
-    DashBoardBussinessTextContainer,
     DashBoardContainer,
     DashBoardInfoContainer,
-    DashBoardInfoFont, DashBoardPanelsFonts, LeftDashBoardImageContainer,
-    LeftDashBoardInfoContainer,
-    LeftDashBoardPanelEsa, RightDashBoardBackGround,
-    RightDashBoardInfoContainer
-} from "./styles/AdminPanelStyled";
-import {
-    BreakPanel,
-    IconPanelContainer,
-    LeftPanelContainer,
-    LeftPanelElement,
-    LeftPanelElementIcon,
-    LeftPanelElementText
-} from "./styles/LeftPanelStyled";
-import account from "../../assets/admin_icons/account.png";
-import monitor from "../../assets/admin_icons/monitor.png";
-import table from "../../assets/admin_icons/table.png";
-import enter from "../../assets/admin_icons/enter.png";
-import power_off from "../../assets/admin_icons/power-off.png";
-import user from "../../assets/admin_icons/user.png";
-import chart from "../../assets/icons/chart.png";
-import money  from "../../assets/icons/money-bag.png";
-import view  from "../../assets/icons/view.png";
-import group  from "../../assets/icons/group.png";
-import star from "../../assets/icons/star.png";
-import categories from "../../assets/icons/categories.png";
-import right_panel_color  from "../../assets/icons/rightpanel_color.jpg";
-import bc_esa  from "../../assets/icons/bc_esa.jpg";
 
-import {TopBarContainer} from "./styles/TopBarStyled";
-import TopBar from "./components/TopBar";
-import Navbar from "../Navbar/Navbar";
+} from "./styles/AdminPanelStyled";
+import {DASHBOARD_INFO} from "./constants/constant_panel";
+import BusinessInfoCard from "./components/BusinessInfoCard";
+import PostsTable from "./components/PostsTable";
+import LeftPanel from "./components/LeftPanel";
+import DashboardInfoPanel from "./components/DashboardInfoPanel";
+import {InfoBlogsContainer} from "./styles/InfoBlogsStyled";
+
 
 function AdminPanel(){
     return (
         <AdminPanelContainer>
+            <LeftPanel />
             <DashBoardContainer>
-                <DashBoardBussinessTextContainer>
-                    <h1>Dashboard</h1>
-                </DashBoardBussinessTextContainer>
-
+                <h1>Dashboard</h1>
+                <DashBoardBussinesInfoContainer>
+                    {DASHBOARD_INFO.map((info, index) => (
+                        <BusinessInfoCard key={index} {...info} />
+                    ))}
+                </DashBoardBussinesInfoContainer>
                 <DashBoardInfoContainer>
-
+                    <DashboardInfoPanel />
                 </ DashBoardInfoContainer>
+                <InfoBlogsContainer>
+                    <PostsTable />
+                </InfoBlogsContainer>
             </DashBoardContainer>
         </AdminPanelContainer>
     )

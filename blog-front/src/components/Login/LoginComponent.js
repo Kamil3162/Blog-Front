@@ -11,7 +11,7 @@ import {AuthButton, SignUpButton} from "../../assets/styledCss/NavbarStyled";
 import React, {useState} from "react";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
 import { useAuth} from "../../context/AuthContext";
-import {login_user, register} from "../../services/login_service";
+import {login_user, register} from "../../services/user";
 import { handleValueChange} from "../../utils/tools_functions";
 
 

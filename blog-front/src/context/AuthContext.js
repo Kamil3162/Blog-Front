@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import Cookies from "universal-cookie";
-import {fetchValidateUser} from "../services/login_service";
+import {fetchValidateUser} from "../services/user";
 
 import jwt, {jwtDecode} from "jwt-decode";
 

@@ -9,7 +9,6 @@ import RolloutOptions from "../../components/RolloutOptions/RolloutOptions";
 import Categories from "../../components/Categories/Categories";
 import Footer from "../../components/Footer/Footer";
 function HomeScreen(){
-    console.log("generowanie home screen");
     return (
         <HomeContainer>
             <Navbar/>

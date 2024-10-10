@@ -10,7 +10,7 @@ import {
 } from "../../assets/styledCss/AccountingStyled";
 import logo_login from "../../assets/icons/logo_login.png";
 import {AuthButtonComponent} from "../Button/AuthButtonComponent";
-import {register} from "../../services/login_service";
+import {register} from "../../services/user";
 import { handleValueChange } from "../../utils/tools_functions";
 
 function RegisterComponent(){

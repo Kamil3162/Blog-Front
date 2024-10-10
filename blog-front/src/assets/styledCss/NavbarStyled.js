@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 
 export const NavbarContainer = styled.div`
@@ -134,40 +134,82 @@ export const NavbarElementsContainer = styled.div`
     align-items: center;
     gap: 24px;
 `;
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
 
-export const NavigationContainer = styled.div`
+export const NavigationContainer = styled.nav`
   display: flex;
   flex-direction: column;
   position: absolute;
   z-index: 1;
-  background-color: #545353;
-  border-radius: 10px;
-  border-top: 1px solid #e7e7e9;
-  padding: 10px;
-  width: 80%;
-  gap: 10px;
+  background-color: #2c3e50;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  width: 85%;
+  max-width: 300px;
+  gap: 12px;
+  animation: ${fadeIn} 0.3s ease-out;
 
   @media (min-width: 500px) {
-    display: ${props => props.display ? "initial" : "none"};
-    border: none;
+    display: ${props => props.showOnSite ? "flex" : "none"};
+    width: 200px;
+    box-shadow: none;
+    padding: 0;
+    background-color: #f3f2f3;
   }
 `;
 
 export const NavigationElement = styled.div`
-    width: 100%;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 20px;
-    padding: 10px;
-    //background-color: white;
-    border-radius: 10px;
-    max-width: 90%;
-    color: black;
-    font-weight: 600;
-  
-    a{
-      text-decoration: none;
-      color: black;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #ecf0f1;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(236, 240, 241, 0.1);
+    transform: translateX(5px);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #3498db;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
     }
+
+    &:hover::after {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 500px) {
+    color: #2c3e50;
+    padding: 8px 12px;
+
+    &:hover {
+      background-color: rgba(44, 62, 80, 0.1);
+      transform: translateY(-2px);
+    }
+  }
 `;
 
 

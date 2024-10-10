@@ -12,7 +12,6 @@ import categories from "../../../assets/icons/categories.png";
 import power_off from "../../../assets/admin_icons/power-off.png";
 import user from "../../../assets/admin_icons/user.png";
 import enter from "../../../assets/admin_icons/enter.png";
-import {useAuth} from "../../../context/AuthContext";
 
 
 function LeftPanel({ userData }){
@@ -87,3 +86,5 @@ function LeftPanel({ userData }){
         </LeftPanelContainer>
     )
 }
+
+export default LeftPanel;

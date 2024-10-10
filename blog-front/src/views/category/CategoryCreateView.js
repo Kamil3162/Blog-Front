@@ -5,7 +5,7 @@ import HeaderPost from "../../components/HeaderPost/HeaderPost";
 import Categories from "../../components/Categories/Categories";
 import Footer from "../../components/Footer/Footer";
 import {HomeContainer} from "../../assets/styledCss/HomeStyled";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {PostListCategory, PostListContainer, PostListPhoto} from "../../assets/styledCss/PostListStyled";
 import {
     HomeCategory,
@@ -21,15 +21,16 @@ import {
     CategoryFieldsContainer, CategoryUnderline
 } from "../../components/Categories/CategoriesStyled/CategoryCreateStyled";
 import CategoryCreate from "../../components/Categories/CategoryCreate";
-
-// import {AddFileForm, AddText, InputDataPostCreate, StyledSelect} from "../../assets/styledCss/PostCreateStyled";
-// import upimage from "../../assets/icons/upload.png";
-// import {AuthButtonComponent} from "../../components/Button/AuthButtonComponent";
-// import ArrowAnimation from "../../components/Categories/ArrowAnimation";
-// import {createCategory} from "../../services/categories_service";
+import {WindowSizeContext} from "../../context/WindowsSizeContext";
+import {NavigationVisibilityContext} from "../../context/NavigationVisibilityContext";
 
 function CategoryCreateView(){
 
+    const { width } = useContext(WindowSizeContext);
+    const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
+
+    console.log(width);
+    console.log(isNavVisible);
 
     return(
         <HomeContainer>
