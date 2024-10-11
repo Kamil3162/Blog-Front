@@ -1,17 +1,53 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+export const inputAnimation = keyframes`
+     0% { background-position: -1000px 0; }
+     100% { background-position: 1000px 0; }
+`;
+
+const shimmer = keyframes`
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+`;
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+export const PostListAllContainer = styled.div`
+    padding: 20px;
+    animation: ${inputAnimation} 5s infinite;
+`;
 
 export const PostListContainer = styled.div`
-  
+     
     margin-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
- 
+    border-bottom: 1px solid #ddd;  
+    transition: all 0.5s ease;
+    
     @media (min-width: 600px){
-      display: grid;
-      grid-template-columns: 1fr 4fr;
-      &:hover p{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    animation: ${fadeIn} 0.5s ease-out;
+    
+    &:hover p{
         color: purple;
       }
+    }
+    
+    /* Apply the hover effect to all direct child paragraphs */
+    & > p {
+      transition: color 0.3s ease;
+    }
+    
+    &:hover > p {
+      color: purple;
     }
 `;
 
@@ -44,8 +80,8 @@ export const PostMovingButton = styled.div`
   }
  
  &:hover img{
-  transform: translateX(10px);
- }
+    transform: translateX(10px);
+  }
 `;
 
 export const PostBackButton = styled.div`

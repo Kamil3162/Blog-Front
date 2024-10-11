@@ -171,6 +171,7 @@ export const NavigationContainer = styled.nav`
   max-width: 300px;
   gap: 12px;
   animation: ${fadeIn} 0.3s ease-out;
+  
 
   @media (min-width: 500px) {
     display: ${props => props.showOnSite ? "flex" : "none"};
@@ -179,7 +180,6 @@ export const NavigationContainer = styled.nav`
     background-color: #2c3e50;
     padding: 0;
     gap: 12px;
-    
   }
 `;
 
@@ -271,12 +271,10 @@ export const NavbarElement = styled.div`
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      120deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
+    background: linear-gradient(120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent);
     transition: all 0.4s;
   }
 
@@ -289,33 +287,40 @@ export const NavbarElement = styled.div`
     }
   }
 
-   &:active {
-     transform: translateY(-1px);
-     box-shadow: 0 3px 8px rgba(23, 30, 155, 0.3);
-   }
-  
-   a {
-     text-decoration: none;
-     color: inherit;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 100%;
-     height: 100%;
-     position: relative;
-     z-index: 1;
-     //
-     &::after {
-       content: '';
-       position: absolute;
-       bottom: 0;
-       left: 50%;
-       width: 0;
-       height: 2px;
-       background-color: #ffffff;
-       transition: all 0.3s ease;
-     }
-   }
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(23, 30, 155, 0.3);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    //
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+  }
+
+  @media (max-width: 500px) {
+    background-color: white;
+    opacity: 0.6;
+    border: 1px solid black;
+    margin-top: 5px;
+  }
   //
   //   &:hover::after {
   //     width: 80%;
@@ -324,7 +329,7 @@ export const NavbarElement = styled.div`
   // }
   //
   // &:hover {
-  //   animation: ${pulse} 1s infinite;
+    //   animation: ${pulse} 1s infinite;
   //   background-color: #1a237e;
   // }
 `;

@@ -1,5 +1,12 @@
-import styled from "styled-components";
-
+import styled, {keyframes} from "styled-components";
+const fadeIn = keyframes`
+    from{
+      transform: translateY(20px);
+    } 
+    to{
+      transform: translateY(0px);
+    }
+`;
 export const PostHeader = styled.div`
   display: block;
   font-family: 'Lexend', sans-serif;
@@ -10,7 +17,8 @@ export const PostHeader = styled.div`
   @media (min-width: 600px){
     flex: 2;
     margin-left: 100px;
-    
+    animation: ${fadeIn} 0.2s ease-out;
+
   }
   h1{
     font-size: 50px;

@@ -62,8 +62,7 @@ function PostDetail(){ // add here button edit
     const handlePostBtnDelete = (e) => {
         console.log("handle delete click");
         console.log(e);
-        // Perform deletion action or show confirmation dialog
-        // For now, let's just toggle the modify status to show the Notification
+
         setPostDeleteStatus(true);
     };
 
@@ -105,11 +104,11 @@ function PostDetail(){ // add here button edit
                     </>
                     ):(
                     <>
-                        <PostModifyContainer>
-                            <DeleteButton onClick={handlePostBtnDelete} />
-                            <ModifyButton onClick={handleModifyElements} />
-                            <CancelButton onClick={handleCancelBtn}/>
-                        </PostModifyContainer>
+                        {/*<PostModifyContainer>*/}
+                        {/*    <DeleteButton onClick={handlePostBtnDelete} />*/}
+                        {/*    <ModifyButton onClick={handleModifyElements} />*/}
+                        {/*    <CancelButton onClick={handleCancelBtn}/>*/}
+                        {/*</PostModifyContainer>*/}
                         <PostDetailHeader>
                             <PostDetailPhotoContainer>
                                 <img src={blog_image}/>

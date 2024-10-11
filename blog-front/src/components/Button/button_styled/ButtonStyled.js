@@ -8,7 +8,7 @@ export const ButtonContainer = styled(IconPanelContainer)`
   border-radius: 15px;
   padding: 10px;
   border: none;
-  transition: background-color 0.5s linear 0.1s; /* Add a delay of 0.5s */
+  transition: background-color 0.2s linear 0.2s; /* Add a delay of 0.5s */
   
   &:hover {
     background-color: red;

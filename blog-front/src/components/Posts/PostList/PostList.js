@@ -1,4 +1,8 @@
-import {PostListContainer, PostListPhoto, PostMovingContainer} from "../../../assets/styledCss/PostListStyled";
+import {
+    PostListContainer,
+    PostListPhoto,
+    PostMovingContainer,
+    PostListAllContainer} from "../../../assets/styledCss/PostListStyled";
 import blog_image from "../../../assets/icons/blog_image.png";
 import {
     HomeCategory,
@@ -18,16 +22,9 @@ import NavbarContext from "../../../context/nav_contextes/nav_context";
 function PostList(){
 
     const { searchedPosts } = useContext(NavbarContext);
-    console.log("searchedPosts");
-    console.log(searchedPosts);
-
-    // useEffect(() => {
-    //
-    // }, [searchedPosts]);
-
 
     return (
-        <div>
+        <PostListAllContainer>
             <PostListContainer>
                 <PostListPhoto>
                     <HomePhotoContainer>
@@ -100,7 +97,7 @@ function PostList(){
                 <PreviousButton/>
                 <NextButton/>
             </PostMovingContainer>
-        </div>
+        </PostListAllContainer>
     )
 }
 

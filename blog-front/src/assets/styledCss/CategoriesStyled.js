@@ -1,8 +1,22 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
+const fadeIn = keyframes`
+    from{
+      transform: translateY(-20px);
+    } 
+    to{
+      transform: translateY(20px);
+    }
+`;
+
+const fadeIn1 = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 export const CategoriesContainer = styled.div`
-  
+  font-size: 20px;
+  animation: ${fadeIn1} 1s ease-out;
   p{
     font-size: 15px;
     font-family: 'Raleway',sans-serif;
@@ -22,4 +36,6 @@ export const CategoryTitle = styled.div`
     font-family: 'Raleway',sans-serif;
     font-size: 25px;
     font-weight: 800;
+    animation: ${fadeIn1} 1.3s ease-out;
+
 `;

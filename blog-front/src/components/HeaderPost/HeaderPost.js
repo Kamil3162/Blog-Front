@@ -11,11 +11,8 @@ import PostList from "../Posts/PostList/PostList";
 
 
 function HeaderPost({title}){
-    console.log("Generowanie Header Post");
     return (
         <PostHeader>
-            <h1>To jest rendering post</h1>
-            {/*{title}*/}
             <HomeHeaderContainer>
                 <HomeDate>DEC 19, 2023</HomeDate>
                 <HomeTitle>4 Web Design Trends to Watch in 2024</HomeTitle>

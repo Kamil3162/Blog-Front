@@ -14,7 +14,7 @@ function HomeScreen(){
             <Navbar/>
             <RolloutOptions/>
             <ContentPart>
-                <HeaderPost title="tytul">dsa</HeaderPost>
+                <HeaderPost title="tytul"></HeaderPost>
                 <Categories/>
             </ContentPart>
             <Footer/>
