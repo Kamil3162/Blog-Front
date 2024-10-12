@@ -2,14 +2,14 @@
 FROM node:19 as build
 
 # Step 2: Set working directory
-WORKDIR /app/blog-front
+WORKDIR /app
 
 # Step 3: Copy package.json files and install dependencies
-COPY blog-front/package*.json ./
+COPY package*.json ./
 RUN npm install
 
 # Step 4: Copy your application code
-COPY blog-front ./
+COPY . ./
 
 # Step 5: Build the React application
 RUN npm run build

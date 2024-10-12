@@ -10,5 +10,5 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - ./blog-front:/app/blog-front
+      - /app/blog-front
       - /app/blog-front/node_modules
