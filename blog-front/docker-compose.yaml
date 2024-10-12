@@ -2,11 +2,13 @@ version: '3.8'
 
 services:
   react-app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "3000:80"
     environment:
       - NODE_ENV=production
     volumes:
-      - ./:/app
-      - /app/node_modules
+      - ./blog-front:/app/blog-front
+      - /app/blog-front/node_modules
