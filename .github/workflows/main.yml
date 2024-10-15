@@ -12,7 +12,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '19'
+          node-version: '19.9.0'
       - name: Install dependencies
         run: |
           cd blog-front
