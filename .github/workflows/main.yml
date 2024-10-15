@@ -36,12 +36,6 @@ jobs:
             echo "Connection successful"
             cd /home/ubuntu/Blog-Front/blog-front
             sudo su
-            echo "test"
-            whoami 
-            echo "test"
-            sudo -l
-            echo "Can I use sudo?"
-            docker ps
             git pull origin master
             docker-compose down
             docker-compose up -d
