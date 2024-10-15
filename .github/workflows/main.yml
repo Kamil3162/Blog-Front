@@ -40,6 +40,7 @@ jobs:
             whoami 
             echo "test"
             sudo -l
+            docker ps
             echo "Can I use sudo?"
             git pull origin master
             docker-compose down
