@@ -36,6 +36,7 @@ jobs:
             echo "Connection successful"
             cd /home/ubuntu/Blog-Front/blog-front
             sudo su
+            whoami 
             git pull origin master
             docker-compose down
             docker-compose up -d
