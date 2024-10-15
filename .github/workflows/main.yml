@@ -39,6 +39,8 @@ jobs:
             echo "test"
             whoami 
             echo "test"
+            sudo -l
+            echo "Can I use sudo?"
             git pull origin master
             docker-compose down
             docker-compose up -d
