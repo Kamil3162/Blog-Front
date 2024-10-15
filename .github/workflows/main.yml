@@ -1,32 +1,30 @@
 name: CI/CD
-
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '19'
-
       - name: Install dependencies
-        run: npm ci
-
+        run: |
+          cd blog-front
+          npm ci
       - name: Build
-        run: npm run build
-
+        run: |
+          cd blog-front
+          npm run build
       - name: Run tests
-        run: npm test
-
+        run: |
+          cd blog-front
+          npm test
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
@@ -35,5 +33,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            cd /home/ubuntu/Blog-Front/blog-front
+            git pull origin master
             docker-compose down
             docker-compose up -d
