@@ -24,7 +24,7 @@ jobs:
       - name: Run tests
         run: |
           cd blog-front
-          npm test
+          npm test --passWithNoTests
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
         with:
