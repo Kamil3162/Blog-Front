@@ -1,5 +1,5 @@
-import axios from "axios";
-import jwt, {jwtDecode} from "jwt-decode";
+import {axios} from "axios";
+import {jwtDecode}  from "jwt-decode";
 import Cookies from "universal-cookie";
 
 // import API_URL from "../config/api_path.js";
