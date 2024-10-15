@@ -34,8 +34,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "Connection successful"
-            pwd
-            ls -la
             cd /home/ubuntu/Blog-Front/blog-front
             sudo su
             git pull origin master
