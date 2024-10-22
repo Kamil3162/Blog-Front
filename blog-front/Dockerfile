@@ -16,6 +16,6 @@ RUN npm run build
 
 # Step 6: Use nginx to serve the static files
 FROM nginx:alpine
-COPY --from=build /app/blog-front/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
