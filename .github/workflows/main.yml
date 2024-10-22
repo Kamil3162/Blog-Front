@@ -34,7 +34,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             echo "Connection successful"
-            cd /home/ubuntu/Blog-Front/blog-front
+            cd /home/ubuntu/blog_test_front/Blog-Front/blog-front
             sudo su
             git pull origin master
             docker-compose down
