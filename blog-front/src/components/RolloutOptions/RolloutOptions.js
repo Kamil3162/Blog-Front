@@ -16,6 +16,7 @@ function RolloutOptions(){
     console.log(isNavVisible);
     console.log(width);
     console.log(width <= 500 && isNavVisible);
+
     const changeClickNavVisible = (event) => {
         setIsNavVisible(false);
         console.log("changeclicknav visible");
