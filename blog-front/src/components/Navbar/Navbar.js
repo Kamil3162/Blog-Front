@@ -28,6 +28,9 @@ function Navbar(){
 
     const { handlePostSearch } = useContext(NavbarContext);
     console.log("Navbar", width, isNavVisible);
+    console.log("test message navbar generation");
+    console.log("test isnavVisible status", isNavVisible);
+
 
     const handleLogout = () =>{
         console.log("click");
@@ -36,6 +39,7 @@ function Navbar(){
 
     const toggleNavVisibility = () => {
         setIsNavVisible(!isNavVisible);
+	console.log(isNavVisible);
     }
 
     const handleSearchInputChange = (event) => {
