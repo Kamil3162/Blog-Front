@@ -10,3 +10,4 @@ services:
     volumes:
       - ./:/app
       - /app/node_modules
+#      - /var/www/kamilholub.pl/html:/var/www/kamilholub.pl/html
