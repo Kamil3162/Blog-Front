@@ -18,6 +18,7 @@ export const register = (name, username, email, password) => {
             console.log(response);
         });
 };
+ // function responsible for send data during login
 export const login_user = (username, password) => {
     const formData = new FormData();
 
