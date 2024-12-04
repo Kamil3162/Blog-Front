@@ -16,7 +16,7 @@ import { handleValueChange} from "../../utils/tools_functions";
 
 
 export function LoginComponent(){
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -34,7 +34,7 @@ export function LoginComponent(){
             console.log(response.access_token);
             login();
             // setAuthToken(true);
-            history('/home');
+            navigate('/', { replace: true });
         } catch (error) {
             console.error("Registration failed", error);
             // Handle errors (e.g., display an error message)
@@ -84,7 +84,7 @@ export function LoginComponent(){
                 </p>
                 <p>
                     Go to Home
-                    <a href="/home"> Home</a>
+                    <a href="/"> Home</a>
                 </p>
             </AuthFields>
         </AccountingContainer>

@@ -32,6 +32,7 @@ export const AuthProvider = ({ children }) => {
 
     const getUserDataCookies = () =>{
         console.log("wykonywanie fukncji getUserdataCookies");
+
         const cookies = new Cookies();
         const user_information = cookies.get('user_data');
         const access_token = cookies.get('access_token');

@@ -17,7 +17,7 @@ const AppRoutes = () => (
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sing-up" element={<Register />} />
-        <Route path="/categories" element={<CategoriesView />} />
+        <Route path="/categories" element={<CategoriesView />} />  /
         <Route path="/category/create" element={<CategoryCreateView />} />
         <Route path="/posts/:page" element={<AdminPanelView />} />
         <Route path="/post-detail" element={<PostDisplay />} />

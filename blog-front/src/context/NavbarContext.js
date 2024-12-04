@@ -6,8 +6,10 @@ function NavContext({children}){
     const [searchedPosts, setSearchedPosts] = useState([]);
     const handlePostSearch = (postTitle) =>{
         const posts = searchPost("HomeTitle", postTitle);
+
         console.log(postTitle);
         console.log(posts);
+
         setSearchedPosts(posts);
     }
 

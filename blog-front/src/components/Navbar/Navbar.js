@@ -24,7 +24,7 @@ function Navbar(){
     const [searchTerm, setSearchTerm] = useState("");
     const { width } = useContext(WindowSizeContext);
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
-    const {authToken} = useAuth();
+    const { authToken } = useAuth();
 
     const { handlePostSearch } = useContext(NavbarContext);
     console.log("Navbar", width, isNavVisible);

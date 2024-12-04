@@ -29,7 +29,7 @@ export const login_user = (username, password) => {
     console.log(username, password);
 
     // Use axios to post the form data
-    return axios.post(API_URL + '/token', formData, {
+    return axios.post(API_URL + '/auth/token', formData, {
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             // Inform the server about the form-data content type
@@ -41,7 +41,7 @@ export const login_user = (username, password) => {
         .then((response) => {
             console.log(jwtDecode(response.data.access_token));
             const user_data = cookies.get('user_data');
-            console.log(user_data.id)
+            console.log(user_data)
 
             if (response.data.access_token) {
                 console.log(response.data);
@@ -75,10 +75,13 @@ export const fetchValidateUser = (setCurrentUser) => {
 
 export const logout = () => {
     console.log("invoke logout function");
+
     const cookie = new Cookies();
+
     cookie.remove("user_data");
     cookie.remove("access_token");
     cookie.remove("refresh_token");
+
     return axios.get(API_URL + '/logout', {
         withCredentials: true
     }).then(response => {
