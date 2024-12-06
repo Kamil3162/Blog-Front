@@ -3,7 +3,7 @@ import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
 
-const API_URL = "http://127.0.0.1:10000";
+const API_URL = "http://127.0.0.1:10000/posts";
 
 export const postCreate = (title, category, content, photo) => {
     const formData = new FormData();
@@ -45,7 +45,7 @@ export const postUpdate = (post_id, title, content) =>{
 
 export const postDelete = (post_id) =>{
 
-    axios.delete(API_URL + `/post-update/{post_id}`,{
+    axios.delete(API_URL + `/post-delete/{post_id}`,{
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -71,12 +71,15 @@ export const postDetail = (post_id) =>{
     })
 }
 
-export const fetchPosts = (page_number=1) => {
-    axios.get(API_URL + `/posts/{page_number}`,{
-
-    }).then(response =>{
-        console.log(response);
-    }).catch(error =>{
-        console.log(error);
-    })
-}
+export const fetchPosts = async (page = 1) => {
+    try {
+        const response = await axios.get(`${API_URL}/post-list`, {
+            // params: { page },
+            // withCredentials: true
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching posts:', error);
+        throw error;
+    }
+};

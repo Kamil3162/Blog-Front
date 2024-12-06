@@ -17,7 +17,6 @@ function CategoryCreate(){
     const [category, setCategoryName] = useState("");
 
     const handleSubmit = (e) => {
-        console.log("wcisnieto przycisk");
         e.preventDefault();
         const status = createCategory(category);
         console.log(status);

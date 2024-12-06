@@ -4,7 +4,7 @@ import Cookies from "universal-cookie";
 
 
 const cookies = new Cookies();
-const API_URL = "http://127.0.0.1:10000"
+const API_URL = "http://127.0.0.1:10000/categories"
 
 const config = {
     withCredentials: true,
@@ -16,7 +16,7 @@ const config = {
 export const fetchCategories = async () => {
 
     try {
-        const response = await axios.post(`${API_URL}/categories`, {}, config);
+        const response = await axios.get(`${API_URL}/categories`, config);
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {
@@ -27,6 +27,7 @@ export const fetchCategories = async () => {
 
 export const createCategory = async (category_name) => {
     const category_data = new FormData();
+
     category_data.set('category_name', category_name);
 
     try {
@@ -43,7 +44,7 @@ export const createCategory = async (category_name) => {
 
 export const deleteCategory = async(category_id) => {
     try {
-        const response = await axios.delete(API_URL + `/delete-category/${category_id}`, {},config);
+        const response = await axios.delete(API_URL + `/delete-category/${category_id}`, config);
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {

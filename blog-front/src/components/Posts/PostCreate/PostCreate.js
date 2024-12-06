@@ -1,5 +1,5 @@
 // import {PostDetailContainer} from "../../../assets/styledCss/PostDetailStyled";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     AddFileForm,
     AddText,
@@ -20,12 +20,50 @@ import {
 // import postCreate from "../../../services/post_service";
 // import {CategoryUnderline} from "../../Categories/CategoriesStyled/CategoryCreateStyled";
 import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
+import {fetchCategories} from "../../../services/categories";
+// import * as wasi from "wasi";
 
 function PostCreate(){
     const [images, setImages] = useState([]); // To store multiple image URLs
     const [fileNames, setFileNames] = useState([]); // To store multiple file names
+    const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Clear selected files
+    const [selectedCategory, setSelectedCategory] = useState({
+        id: null,
+        category_name: ''
+    });
+
+
+
+    const loadCategories = async () => {
+        const data = await fetchCategories();
+        setCategories(data);
+
+        // set the first category as default
+        setSelectedCategory({
+            id: data[0].id,
+            category_name: data[0].category_name
+        })
+
+        setLoading(false);
+
+    };
+
+    useEffect(() => {
+        loadCategories();
+    }, []);
+
+    const displayCategories = () => {
+        return categories.map((category, index) => {
+            return (
+                <option key={index} value={category.category_name}>
+                    {category.category_name}
+                </option>
+            );
+        });
+    };
+
     const backImage = () => {
         const image_container = document.querySelector(".input-field");
         image_container.value = "";
@@ -43,9 +81,6 @@ function PostCreate(){
         setImages(imageUrlsArray);    // Update images
     }
 
-    const handleFileDelete = (inx_img) => {
-
-    }
 
     return (
         <PhotoContainer>
@@ -64,11 +99,22 @@ function PostCreate(){
                     placeholder="Title..."
                 />
 
-                <StyledSelect name="cars" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                <StyledSelect
+                    name="cars"
+                    id="cars"
+                    value={selectedCategory.category_name}
+                    onChange={(e) => {
+                        const category = categories.find(c => c.category_name === e.target.value);
+                        setSelectedCategory({
+                            id: category.id,
+                            category_name: category.category_name
+                        });
+                    }}
+                >
+                    {loading ? (
+                        <option>Loading...</option>
+                    ) :(displayCategories())
+                    }
                 </StyledSelect>
 
                 <AddText

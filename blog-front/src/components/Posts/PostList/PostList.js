@@ -14,91 +14,66 @@ import {
     HomeTitlePost
 } from "../../../assets/styledCss/PostStyled";
 import NextButton from "../../Button/NextButton";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import PreviousButton from "../../Button/PreviousButton";
 import {useContext} from "react";
 import NavbarContext from "../../../context/nav_contextes/nav_context";
+import {fetchPosts} from "../../../services/post";
 
-function PostList(){
-
+function PostList() {
     const { searchedPosts } = useContext(NavbarContext);
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const loadPosts = async () => {
+            try {
+                const posts_data = await fetchPosts();
+                setPosts(posts_data);
+            } catch (error) {
+                console.error("Failed to load posts:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        loadPosts();
+    }, []);
 
     return (
         <PostListAllContainer>
-            <PostListContainer>
-                <PostListPhoto>
-                    <HomePhotoContainer>
-                        <img src={blog_image}/>
-                    </HomePhotoContainer>
-                </PostListPhoto>
-                <div>
-                    <HomeDate>DEC 19, 2023</HomeDate>
-                    <HomeTitle>0 Web Desgn Trends to Watch in 2024</HomeTitle>
-                    <HomeContentContainer>
-                        <HomeContentText>
-                            Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
-                        </HomeContentText>
-                    </HomeContentContainer>
-                </div>
-            </PostListContainer>
-            <PostListContainer>
-                <PostListPhoto>
-                    <HomePhotoContainer>
-                        <img src={blog_image}/>
-                    </HomePhotoContainer>
-                </PostListPhoto>
-                <div>
-                    <HomeTitlePost>
-                        <HomeDate>DEC 19, 2023</HomeDate>
-                        <HomeCategory>Interview</HomeCategory>
-                    </HomeTitlePost>
-                    <HomeTitle>1 Web Desgn Trends to Watch in 2024</HomeTitle>
-                    <HomeContentContainer>
-                        <HomeContentText>
-                            Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
-                        </HomeContentText>
-                    </HomeContentContainer>
-                </div>
-            </PostListContainer>
-            <PostListContainer>
-                <PostListPhoto>
-                    <HomePhotoContainer>
-                        <img src={blog_image}/>
-                    </HomePhotoContainer>
-                </PostListPhoto>
-                <div>
-                    <HomeDate>DEC 19, 2023</HomeDate>
-                    <HomeTitle>2 Web Desgn Trends to Watch in 2024</HomeTitle>
-                    <HomeContentContainer>
-                        <HomeContentText>
-                            Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
-                        </HomeContentText>
-                    </HomeContentContainer>
-                </div>
-            </PostListContainer>
-
-            <PostListContainer>
-                <PostListPhoto>
-                    <HomePhotoContainer>
-                        <img src={blog_image}/>
-                    </HomePhotoContainer>
-                </PostListPhoto>
-                <div>
-                    <HomeDate>DEC 19, 2023</HomeDate>
-                    <HomeTitle>3 Web Desgn Trends to Watch in 2024</HomeTitle>
-                    <HomeContentContainer>
-                        <HomeContentText>
-                            Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight.
-                        </HomeContentText>
-                    </HomeContentContainer>
-                </div>
-            </PostListContainer>
-            <PostMovingContainer>
-                <PreviousButton/>
-                <NextButton/>
-            </PostMovingContainer>
+            {loading ? (
+                <div>Loading...</div>
+            ) : (
+                <>
+                    {posts.map((post, index) => (
+                        <PostListContainer key={post.id || index}>
+                            <PostListPhoto>
+                                <HomePhotoContainer>
+                                    <img src={blog_image} alt="Blog post" />
+                                </HomePhotoContainer>
+                            </PostListPhoto>
+                            <div>
+                                <HomeTitlePost>
+                                    <HomeDate>DEC 19, 2023</HomeDate>
+                                    <HomeCategory>{post.category?.category_name}</HomeCategory>
+                                </HomeTitlePost>
+                                <HomeTitle>{post.title}</HomeTitle>
+                                <HomeContentContainer>
+                                    <HomeContentText>
+                                        {post.content}
+                                    </HomeContentText>
+                                </HomeContentContainer>
+                            </div>
+                        </PostListContainer>
+                    ))}
+                    <PostMovingContainer>
+                        <PreviousButton />
+                        <NextButton />
+                    </PostMovingContainer>
+                </>
+            )}
         </PostListAllContainer>
-    )
+    );
 }
 
 export default PostList;
