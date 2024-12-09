@@ -65,17 +65,33 @@ export const postDetail = (post_id) =>{
             'Content-Type': 'multipart/form-data',
         },
     }).then(response => {
-        console.log(response);
+        return response;
     }).catch(error => {
         console.log(error);
     })
 }
 
-export const fetchPosts = async (page = 1) => {
+export const postGenDetail = async (post_id) => {
     try {
-        const response = await axios.get(`${API_URL}/post-list`, {
+        const response = await axios.get(API_URL + `/post/${post_id}`, {
+            // withCredentials: true,
+            // headers: {
+            //     'Content-Type': 'multipart/form-data',
+            // },
+        });
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        throw error; // Re-throw the error for handling in the component
+    }
+}
+
+export const fetchPosts = async (page = 1) => {
+    console.log(page)
+    try {
+        const response = await axios.get(`${API_URL}/post-list/?page=${page}`, {
             // params: { page },
-            // withCredentials: true
+            withCredentials: true
         });
         return response.data;
     } catch (error) {

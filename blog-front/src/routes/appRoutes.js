@@ -20,7 +20,7 @@ const AppRoutes = () => (
         <Route path="/categories" element={<CategoriesView />} />  /
         <Route path="/category/create" element={<CategoryCreateView />} />
         <Route path="/posts/:page" element={<AdminPanelView />} />
-        <Route path="/post-detail" element={<PostDisplay />} />
+        <Route path="/post-detail/:id" element={<PostDisplay />} />
         <Route path="/post-create" element={<PostCreateView />} />
         <Route path="/reset/password" element={<ResetPasswordDisplay />} />
         <Route path="/reset/password/:token" element={<SetNewPasswordDisplay />} />
