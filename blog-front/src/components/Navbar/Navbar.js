@@ -15,7 +15,6 @@ import { logout } from "../../services/user";
 import { getUserDataCookies } from "../../utils/tools_functions";
 import {useAuth} from "../../context/AuthContext";
 import {searchPost} from "../../utils/search_field_functions";
-import NavContext from "../../context/NavbarContext";
 import NavbarContext from "../../context/nav_contextes/nav_context";
 import RolloutOptions from "../RolloutOptions/RolloutOptions";
 
@@ -27,10 +26,6 @@ function Navbar(){
     const { authToken } = useAuth();
 
     const { handlePostSearch } = useContext(NavbarContext);
-    console.log("Navbar", width, isNavVisible);
-    console.log("test message navbar generation");
-    console.log("test isnavVisible status", isNavVisible);
-
 
     const handleLogout = () =>{
         console.log("click");
@@ -39,13 +34,16 @@ function Navbar(){
 
     const toggleNavVisibility = () => {
         setIsNavVisible(!isNavVisible);
-	console.log(isNavVisible);
+        console.log(isNavVisible);
     }
 
     const handleSearchInputChange = (event) => {
-        const { value } = event.target;
-        handlePostSearch(value);
+        setSearchTerm(event.target.value);
     };
+
+    const handleSearchClick = () => {
+        handlePostSearch(searchTerm);
+    }
 
     const renderNavItems = () => {
         if (width > 500){
@@ -70,11 +68,6 @@ function Navbar(){
                         <NavbarElement>
                             <a href="/admin-panel">
                                 Admin Panel
-                            </a>
-                        </NavbarElement>
-                        <NavbarElement>
-                            <a href="/post-detail">
-                                Post Detail
                             </a>
                         </NavbarElement>
                     </>
@@ -103,11 +96,10 @@ function Navbar(){
                         <SearchField
                             type="text"
                             placeholder="Search..."
-                            value={searchTerm}
                             onChange={handleSearchInputChange}
                         />
                         <SearchIconContainer>
-                            <img src={photo1} width="20px" height="20px"/>
+                            <img src={photo1} width="20px" height="20px" onClick={handleSearchClick}/>
                         </SearchIconContainer>
                     </SearchContainer>
                     {

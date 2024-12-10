@@ -1,6 +1,7 @@
 import NavbarContext from "./nav_contextes/nav_context";
 import {useContext, useState} from "react";
 import {searchPost} from "../utils/search_field_functions";
+
 function NavContext({children}){
 
     const [searchedPosts, setSearchedPosts] = useState([]);

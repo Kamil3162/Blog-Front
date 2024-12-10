@@ -1,4 +1,4 @@
-import {PostDetailContainer} from "../../assets/styledCss/PostDetailStyled";
+import {PostDetailContainer, ResetPasswordContainer} from "../../assets/styledCss/PostDetailStyled";
 import {
     BackContainer,
     ImageResetPasswordContainer,
@@ -11,6 +11,7 @@ import {AuthButtonComponent} from "../Button/AuthButtonComponent";
 import key_chain from "../../assets/icons/key-chain.png";
 import React, {useEffect, useState} from "react";
 import { check_password } from ".//utils/checker";
+import turn_back from "../../assets/icons/turn-back.png";
 
 function NewPasswordSetPanel(){
 
@@ -29,7 +30,7 @@ function NewPasswordSetPanel(){
 
     return (
         <>
-            <PostDetailContainer>
+            <ResetPasswordContainer>
                 <ImageResetPasswordContainer>
                     <img src={key_chain}/>
                 </ImageResetPasswordContainer>
@@ -68,7 +69,13 @@ function NewPasswordSetPanel(){
                         }}>Passwords do not match!</p>
                     )}
                 </ResetPasswordForm>
-            </PostDetailContainer>
+                <BackContainer>
+                    <img src={turn_back}/>
+                    <a href="/login">
+                        Back to login panel
+                    </a>
+                </BackContainer>
+            </ResetPasswordContainer>
         </>
     )
 }

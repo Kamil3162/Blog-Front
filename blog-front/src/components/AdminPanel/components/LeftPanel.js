@@ -21,7 +21,7 @@ function LeftPanel({ userData }){
 
             <IconPanelContainer>
                 <img src={account}/>
-                <p>KamilDev Admin Panel</p>
+                <h1>KamilDev Admin Panel</h1>
             </IconPanelContainer>
             <LeftPanelElement>
                 <LeftPanelElementIcon>

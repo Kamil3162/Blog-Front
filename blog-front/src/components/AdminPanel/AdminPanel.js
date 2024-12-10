@@ -13,14 +13,14 @@ import PostsTable from "./components/PostsTable";
 import LeftPanel from "./components/LeftPanel";
 import DashboardInfoPanel from "./components/DashboardInfoPanel";
 import {InfoBlogsContainer} from "./styles/InfoBlogsStyled";
-
+import image from "../../assets/icons/image.png";
 
 function AdminPanel(){
     return (
         <AdminPanelContainer>
             <LeftPanel />
             <DashBoardContainer>
-                <h1>Dashboard</h1>
+                <p>Dashboard</p>
                 <DashBoardBussinesInfoContainer>
                     {DASHBOARD_INFO.map((info, index) => (
                         <BusinessInfoCard key={index} {...info} />

@@ -8,12 +8,18 @@ export const AdminPanelContainer = styled.div`
   display: flex;
   min-width: 100vh;
   min-height: 100vh;
-  //background-color: #fdfdfd;
+  background-color: #939292;
   background-repeat: no-repeat;
+  //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
+  
 `;
 
 export const DashBoardContainer = styled.div`
     flex: 5;
+    p{
+      font-family: 'Lexend', sans-serif;
+      font-size: 30px;
+    }
 `;
 
 export const DashBoardBussinesInfoContainer = styled.div`
@@ -23,16 +29,19 @@ export const DashBoardBussinesInfoContainer = styled.div`
 
 `;
 export const DashBoardBussinessElement = styled.div`
-  background-color: #f1efef;
+  background-color: white;
   display: flex;
   padding: 5px;
   width: 250px;
   border-radius: 15px;
+  justify-content: center;
   
 `;
 export const DashBoardBussinessTextContainer = styled.div`
-  flex: 3;
-
+  //flex: 3;
+  justify-content: center;
+  justify-items: center;
+  
   p {
     color: #070606;
     font-size: 20px;

@@ -7,6 +7,9 @@ export const LeftPanelContainer = styled.div`
     flex-direction: column;
     justify-items: center;
     margin-left: 20px;
+    //background-color: #282c34;
+    //opacity: 0.2;
+    padding: 10px;
 `;
 
 export const LeftPanelElement = styled.div`
@@ -15,7 +18,7 @@ export const LeftPanelElement = styled.div`
   cursor: pointer;
   padding: 10px;
   border-radius: 15px;
-  background-color: #e5e3e3;
+  background-color: #dee0e0;
 `;
 
 export const IconPanelContainer = styled.div`
@@ -32,6 +35,11 @@ export const IconPanelContainer = styled.div`
       width: auto;
       height: 5vh; /* Example: Set height relative to the viewport size */
     }
+  h1{
+    font-size: 20px;
+    color: white;
+    background:
+  }
     
 `;
 export const LeftPanelElementText = styled.div`
@@ -50,10 +58,11 @@ export const LeftPanelElementIcon = styled.div`
   padding: 5px;
   //background-color: #8899c5;
   border-radius: 15px;
-  height: 40px; /* Fixed height of the container */
+  //height: 40px; /* Fixed height of the container */
+  justify-items: center;
 
   img {
-    max-height: 40%; /* Reduced to make the image smaller */
+    max-height: 50px; /* Reduced to make the image smaller */
     object-fit: contain; /* Maintains aspect ratio without cropping */
     min-height: 30px; /* Adjusted down to allow the image to become smaller */
   }

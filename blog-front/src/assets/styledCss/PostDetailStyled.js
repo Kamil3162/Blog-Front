@@ -20,6 +20,12 @@ export const PostDetailContainer = styled.div`
   animation: ${fadeIn} 0.5s ease-out;
 `;
 
+export const ResetPasswordContainer = styled(PostDetailContainer)`
+    //margin-top: 100px;
+  width: 100%;
+  height: 100%;
+`
+
 export const PostDetailHeader = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,7 +70,6 @@ export const PostDetailPhotoContainer = styled(HomePhotoContainer)`
   }
 
   &:hover img {
-    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
 
@@ -158,4 +163,28 @@ export const PostModifyContainer = styled.div`
       transform: translateY(0);
     }
   }
+`;
+
+// code responsible for adjustment like icons to post detail
+export const IconVote = styled.img`
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;  // Add smooth transitions
+  cursor: pointer;  // Show clickable cursor
+
+  &:hover {
+    transform: scale(1.1);  // Grow slightly on hover
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Add subtle shadow on hover
+    background-color: ${props => props.backgroundColor};
+  }
+`;
+
+export const IconContainer = styled.div`
+  display: flex;
+  background-color: white;
+  justify-content: flex-end;  // 'right' is not a valid value, use flex-end
+  gap: 20px;
+  padding: 15px;  // Add some padding
 `;

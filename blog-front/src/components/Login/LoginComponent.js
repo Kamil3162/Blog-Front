@@ -44,9 +44,9 @@ export function LoginComponent(){
 
     return(
         <AccountingContainer>
-            <ImageAccount>
-                <img src={logo_login}/>
-            </ImageAccount>
+            {/*<ImageAccount>*/}
+            {/*    <img src={logo_login}/>*/}
+            {/*</ImageAccount>*/}
             <AuthFields>
                 <h1>Sign in to Blog</h1>
                 <LoginForm onSubmit={handleSubmit}>

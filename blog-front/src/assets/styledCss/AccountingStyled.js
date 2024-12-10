@@ -6,6 +6,8 @@ export const AccountingContainer = styled.div`
     min-height: 100vh; // Use viewport height to ensure it stretches to the bottom
     overflow: hidden;
     padding: 0;
+    //background: linear-gradient(to top left, #61dafb, #007bff);
+    background-color: #f8f9fa;
   
     p{
       font-family: 'Plus Jakarta Sans', sans-serif;

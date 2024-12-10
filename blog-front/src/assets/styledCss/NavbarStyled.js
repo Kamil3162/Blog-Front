@@ -13,21 +13,22 @@ const fadeIn = keyframes`
 `;
 
 export const NavbarContainer = styled.div`
-    /*
-      using display flex my screen will ajust autotaticly during 
-      making small screen
-      
-      justify co
-     */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  /*
+    using display flex my screen will ajust autotaticly during 
+    making small screen
     
-    @media (min-width: 768px){
-      padding: 10px;
-      display: grid;
-      grid-template-columns: 1fr 94px 1fr;
-    }
+    justify co
+   */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to top left, #eeeeee 0%, #a4a4a4 100%);
+
+  @media (min-width: 768px) {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 94px 1fr;
+  }
 `;
 
 export const AuthButton = styled.button`
@@ -127,24 +128,33 @@ export const SearchContainer = styled.div`
       this will work if screen will have minimum 768px
      */
     border-radius: 20px;
-    background-color: #e7e7e7;
     padding: 5px;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 4fr 1fr;
     height: 40px;
     width: 300px;
     justify-items: center;
     align-items: center;
+    background-color: white;
     
   }
 `;
 
 export const SearchIconContainer = styled.div`
-    flex: 1;
+    display: flex;
+    justify-content: flex-end;  // This is the correct property to align to the right
+    align-items: center;        // This vertically centers the icon
     
-    img{
-      width: 20px;
-      height: 20px;
+    img {
+        width: 20px;
+        height: 20px;
+      
+        &:hover {
+            opacity: 0.8;           // Makes it slightly transparent
+            transform: scale(1.1);  // Makes it slightly bigger
+            cursor: pointer;
+        }
+      
     }
 `;
 export const LogBtn = styled.button`
@@ -255,9 +265,9 @@ export const NavbarElement = styled.div`
   height: 48px;
   align-items: center;
   justify-content: center;
-  background-color: #171e9b;
+  background-color: white;
   border-radius: 24px;
-  color: white;
+  color: black;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;

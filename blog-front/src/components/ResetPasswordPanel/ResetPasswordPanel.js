@@ -1,4 +1,4 @@
-import {PostDetailContainer} from "../../assets/styledCss/PostDetailStyled";
+import {PostDetailContainer, ResetPasswordContainer} from "../../assets/styledCss/PostDetailStyled";
 import {
     BackContainer,
     ImageResetPasswordContainer,
@@ -16,7 +16,7 @@ import turn_back from "../../assets/icons/turn-back.png";
 function ResetPasswordPanel(){
     return (
         <>
-            <PostDetailContainer>
+            <ResetPasswordContainer>
                 <ImageResetPasswordContainer>
                     <img src={key}/>
                 </ImageResetPasswordContainer>
@@ -42,7 +42,7 @@ function ResetPasswordPanel(){
                         Back to login panel
                     </a>
                 </BackContainer>
-            </PostDetailContainer>
+            </ResetPasswordContainer>
         </>
 
     )

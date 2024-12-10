@@ -1,4 +1,6 @@
 import {
+    IconContainer,
+    IconVote,
     PostDetailContainer, PostDetailContent, PostDetailContentContainer,
     PostDetailHeader,
     PostDetailHeaderTitle,
@@ -18,12 +20,14 @@ import {
 import Photo from "../../../assets/icons/Photo.png";
 import {CreateCommentContainer, CreateCommentField} from "../../../assets/styledCss/PostCommentStyled";
 import {AuthButtonComponent} from "../../Button/AuthButtonComponent";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import AddComment from "../../Comments/AddComment";
 import DeleteButton from "../../Button/DeleteButton";
 import ModifyButton from "../../Button/ModifyButton";
 import Notification from "../../Notifications/Notification";
 import CancelButton from "../../Button/CancelButton";
+import upvote from "../../../assets/icons/upvote.png";
+import downvote from "../../../assets/icons/down_vote.png";
 
 function PostDetail({post}){ // add here button edit
 
@@ -34,7 +38,11 @@ function PostDetail({post}){ // add here button edit
 
     const [postDeleteApprove, setPostDeleteApprove] = useState(false);
     const [postUpdateApprove, setPostUpdateApprove] = useState(false);
+    const [comments, setComments] = useState([]);
 
+    useEffect(() => {
+        setComments(post.comments);
+    }, []);
 
     const highlightStyle = {
         border: "1px solid #ccc",
@@ -66,6 +74,10 @@ function PostDetail({post}){ // add here button edit
 
         setPostDeleteStatus(true);
     };
+
+    const displayPostComments = () => {
+
+    }
 
     const handleCancelBtn = (e) => {
         const title = document.querySelector('.post-title');
@@ -141,29 +153,43 @@ function PostDetail({post}){ // add here button edit
                                 {/*<br/>*/}
                                 {/*Before we sign off for the year, here’s four web design trends our team at Webflow is keeping our eyes on for 2024.*/}
                             </PostDetailContent>
+                            <IconContainer>
+                                <IconVote name="upvote" backgroundColor="#4CAF50" src={upvote} />
+                                <IconVote name="downvote" backgroundColor="#FF5252" src={downvote} />
+                            </IconContainer>
                         </PostDetailContentContainer>
-
                         <CommentsContainer>
                             <HomeTitle>Comments</HomeTitle>
                             <AddComment/>
-                            <CommentContainer>
-                                <PhotoContainer>
-                                    <img src={Photo}/>
-                                </PhotoContainer>
-                                <TextTitleContainer>
-                                    <NameContainer>
-                                        <p>Kamil Holub</p>
-                                        <p> now</p>
-                                    </NameContainer>
-                                    <TextContainer>
-                                        dsadas
-                                    </TextContainer>
-                                </TextTitleContainer>
-                            </CommentContainer>
+                            {
+                                comments ? (
+                                    comments.map((comment, index) => {
+                                        return(
+                                            <CommentContainer>
+                                                <PhotoContainer>
+                                                    <img src={Photo}/>
+                                                </PhotoContainer>
+                                                <TextTitleContainer>
+                                                    <NameContainer>
+                                                        <p>Kamil Holub</p>
+                                                        <p> now</p>
+                                                    </NameContainer>
+                                                    <TextContainer>
+                                                        dsadas
+                                                    </TextContainer>
+                                                </TextTitleContainer>
+                                            </CommentContainer>
+                                        )
+                                    })
+                                ) : (
+                                    <p></p>
+                                )
+                            }
                         </CommentsContainer>
                     </>
                 )
             }
+
         </PostDetailContainer>
     );
 }

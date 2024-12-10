@@ -7,6 +7,7 @@ export const PhotoContainer = styled.div`
   //height: 100vh;
   text-align: center;
   justify-content: center;
+  align-items: center;
   margin-top: 40px;
   width: 100%;
   margin-bottom: 50px;
@@ -24,9 +25,10 @@ export const AddFileForm = styled.form`
   margin-top: 50px;
   
   @media (max-width: 600px){
+    display: block;
     height: 450px;
     width: 350px;
-    margin-left: 10%;
+    //margin-left: 10%;
   }
 `;
 
