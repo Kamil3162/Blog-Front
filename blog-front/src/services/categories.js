@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt, {jwtDecode} from "jwt-decode";
 import Cookies from "universal-cookie";
-
+import apiClient from "./apiService";
 
 const cookies = new Cookies();
 const API_URL = "http://127.0.0.1:10000/categories"
@@ -16,7 +16,7 @@ const config = {
 export const fetchCategories = async () => {
 
     try {
-        const response = await axios.get(`${API_URL}/categories`, config);
+        const response = await axios.get(API_URL + "/categories", config);
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {

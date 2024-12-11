@@ -4,6 +4,13 @@ import Cookies from "universal-cookie";
 
 // import API_URL from "../config/api_path.js";
 
+axios.create({
+    baseURL: "http://127.0.0.1:10000",
+    timeout: 1000,
+    headers: {'X-Custom-Header': 'foobar'}
+
+})
+
 const cookies = new Cookies();
 const API_URL = "http://127.0.0.1:10000"
 
@@ -51,7 +58,6 @@ export const login_user = (username, password) => {
 }
 
 export const fetchValidateUser = (setCurrentUser) => {
-    console.log(API_URL);
     axios.get(API_URL + '/validate', {
         withCredentials: true, // This enables cross-origin requests to include cookies
         // credentials: 'include', // Important to include cookies

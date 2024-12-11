@@ -1,5 +1,8 @@
 import axios from "axios";
 import Cookies from "universal-cookie";
+import apiClient from "./apiService";
+import {useNotification} from "../components/Error/GlobalError";
+import {NotificationType} from "../context/error_context";
 
 const cookies = new Cookies();
 
@@ -89,13 +92,17 @@ export const postGenDetail = async (post_id) => {
 export const fetchPosts = async (page = 1) => {
     console.log(page)
     try {
-        const response = await axios.get(`${API_URL}/post-list/?page=${page}`, {
+        const response = await apiClient.get(`/posts/post-list/?page=${page}`, {
             // params: { page },
             withCredentials: true
         });
         return response.data;
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        // useNotification().showNotification(
+        //     error.message,
+        //     NotificationType.ERROR
+        // );
+        console.log("handle fetch post error");
         throw error;
     }
 };

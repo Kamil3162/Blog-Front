@@ -11,23 +11,28 @@ import PostCreateView from "../views/post/PostCreateView";
 import ResetPasswordDisplay from "../views/auth/ResetPasswordDisplay";
 import SetNewPasswordDisplay from "../views/auth/SetNewPasswordDisplay";
 import ChatPanelView from "../views/chat/ChatPanelView";
+import {ErrorProvider} from "../context/error_context";
+import {NotificationDisplay} from "../components/Error/GlobalError";
 
 const AppRoutes = () => (
-    <Routes>
-        <Route path="/" element={<HomeScreen />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/sing-up" element={<Register />} />
-        <Route path="/categories" element={<CategoriesView />} />  /
-        <Route path="/category/create" element={<CategoryCreateView />} />
-        <Route path="/posts/:page" element={<AdminPanelView />} />
-        <Route path="/post-detail/:id" element={<PostDisplay />} />
-        <Route path="/post-create" element={<PostCreateView />} />
-        <Route path="/reset/password" element={<ResetPasswordDisplay />} />
-        <Route path="/reset/password/:token" element={<SetNewPasswordDisplay />} />
-        <Route path="/chat-panel" element={<ChatPanelView />} />
-        <Route path="/admin-panel" element={<AdminPanelView />} />
-        <Route path="/user" element={<AdminPanelView />} />
-    </Routes>
+    // <ErrorProvider>
+            <Routes>
+                    <Route path="/" element={<HomeScreen />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/sing-up" element={<Register />} />
+                    <Route path="/categories" element={<CategoriesView />} />  /
+                    <Route path="/category/create" element={<CategoryCreateView />} />
+                    <Route path="/posts/:page" element={<AdminPanelView />} />
+                    <Route path="/post-detail/:id" element={<PostDisplay />} />
+                    <Route path="/post-create" element={<PostCreateView />} />
+                    <Route path="/reset/password" element={<ResetPasswordDisplay />} />
+                    <Route path="/reset/password/:token" element={<SetNewPasswordDisplay />} />
+                    <Route path="/chat-panel" element={<ChatPanelView />} />
+                    <Route path="/admin-panel" element={<AdminPanelView />} />
+                    <Route path="/user" element={<AdminPanelView />} />
+            </Routes>
+    // </ErrorProvider>
+
 );
 
 export default AppRoutes;

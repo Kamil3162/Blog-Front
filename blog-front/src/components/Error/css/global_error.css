@@ -1,0 +1,25 @@
+.global-error {
+    max-width: 300px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.global-error button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #721c24;
+    cursor: pointer;
+}

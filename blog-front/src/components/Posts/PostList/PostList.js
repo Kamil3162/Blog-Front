@@ -20,6 +20,8 @@ import {useContext} from "react";
 import NavbarContext from "../../../context/nav_contextes/nav_context";
 import {fetchPosts} from "../../../services/post";
 import {useNavigate} from "react-router-dom";
+import {NotificationType, useError} from "../../../context/error_context";
+import {NotificationDisplay, useNotification} from "../../Error/GlobalError";
 
 function PostList() {
     const { searchedPosts } = useContext(NavbarContext);
@@ -27,6 +29,7 @@ function PostList() {
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const navigate = useNavigate();
+    // const { showNotification } = useNotification();
 
     const generatePostDetail = (postId) => {
         navigate(`/post-detail/${postId}`); // Navigate to post detail page
@@ -39,7 +42,8 @@ function PostList() {
                 setPosts(posts_data);
                 console.log(currentPage);
             } catch (error) {
-                console.error("Failed to load posts:", error);
+                console.log("failed to load posts")
+                // showNotification(error.message, NotificationType.ERROR); // Use it here
             } finally {
                 setLoading(false);
             }
