@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 
 export const LeftPanelContainer = styled.div`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-items: center;
-    margin-left: 20px;
-    //background-color: #282c34;
-    //opacity: 0.2;
-    padding: 10px;
+  //flex: 1;
+  width: 60px;
+  height: 90vh;
+  margin-top: 2rem;
+  margin-left: 20px;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-items: center;
+  background-color: rgba(253, 253, 253, 0.8);
+  padding: 10px;
 `;
 
 export const LeftPanelElement = styled.div`
@@ -18,7 +20,8 @@ export const LeftPanelElement = styled.div`
   cursor: pointer;
   padding: 10px;
   border-radius: 15px;
-  background-color: #dee0e0;
+  background-color: rgba(255, 255, 255, 0.9);
+
 `;
 
 export const IconPanelContainer = styled.div`
@@ -35,10 +38,10 @@ export const IconPanelContainer = styled.div`
       width: auto;
       height: 5vh; /* Example: Set height relative to the viewport size */
     }
+  
   h1{
     font-size: 20px;
-    color: white;
-    background:
+    color: black;
   }
     
 `;
@@ -62,10 +65,16 @@ export const LeftPanelElementIcon = styled.div`
   justify-items: center;
 
   img {
-    max-height: 50px; /* Reduced to make the image smaller */
+    max-height: 30px; /* Reduced to make the image smaller */
     object-fit: contain; /* Maintains aspect ratio without cropping */
     min-height: 30px; /* Adjusted down to allow the image to become smaller */
   }
+
+  &:hover {
+    transition: all 0.5s ease-out;
+    background: linear-gradient(135deg, #dde0ee 0%, #707072 100%);
+  }
+
 `;
 
 export const BreakPanel = styled(LeftPanelElement)`

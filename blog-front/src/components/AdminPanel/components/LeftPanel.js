@@ -18,38 +18,24 @@ function LeftPanel({ userData }){
 
     return (
         <LeftPanelContainer>
-
             <IconPanelContainer>
-                <img src={account}/>
-                <h1>KamilDev Admin Panel</h1>
+                <p>KamilDev</p>
             </IconPanelContainer>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
                     <img src={monitor}/>
                 </LeftPanelElementIcon>
-                <LeftPanelElementText>
-                    <p>Dashboard</p>
-                </LeftPanelElementText>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
                     <img src={table}/>
                 </LeftPanelElementIcon>
-                <LeftPanelElementText>
-                    <p>Table</p>
-                </LeftPanelElementText>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
                     <img src={categories}/>
                 </LeftPanelElementIcon>
-                <LeftPanelElementText>
-                    <p>Categories</p>
-                </LeftPanelElementText>
             </LeftPanelElement>
-            <BreakPanel>
-                <LeftPanelElementText>ACCOUNT PAGES</LeftPanelElementText>
-            </BreakPanel>
             {
                 userData ? (
                     <>
@@ -57,9 +43,6 @@ function LeftPanel({ userData }){
                             <LeftPanelElementIcon>
                                 <img src={power_off}/>
                             </LeftPanelElementIcon>
-                            <LeftPanelElementText>
-                                <p>Logout</p>
-                            </LeftPanelElementText>
                         </LeftPanelElement>
                     </>
                 ):(
@@ -68,17 +51,11 @@ function LeftPanel({ userData }){
                             <LeftPanelElementIcon>
                                 <img src={user}/>
                             </LeftPanelElementIcon>
-                            <LeftPanelElementText>
-                                <p>Register</p>
-                            </LeftPanelElementText>
                         </LeftPanelElement>
                         <LeftPanelElement>
                             <LeftPanelElementIcon>
                                 <img src={enter}/>
                             </LeftPanelElementIcon>
-                            <LeftPanelElementText>
-                                <p>Login</p>
-                            </LeftPanelElementText>
                         </LeftPanelElement>
                     </>
                 )

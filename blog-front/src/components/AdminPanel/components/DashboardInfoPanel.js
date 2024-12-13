@@ -57,7 +57,14 @@ const data = [
 
 const DashboardChart = () => {
     return (
-        <div style={{ width: '100%', height: 300 }}>
+        <div style={{
+            width: '100%',
+            height: 300 ,
+            backgroundColor: "#FFFFFF99",
+            padding:  "10px",
+            borderRadius: 20,
+            maxWidth: 800
+        }}>
             <ResponsiveContainer>
                 <ComposedChart
                     data={data}
@@ -123,7 +130,7 @@ const DashboardInfoPanel = () => {
                 </LeftPanelElementText>
             </LeftDashBoardPanelEsa>
             <LeftDashBoardImageContainer>
-                <img src={chart} alt="Chart"/>
+                {/*<img src={chart} alt="Chart"/>*/}
             </LeftDashBoardImageContainer>
         </LeftDashBoardInfoContainer>
         {/*<RightDashBoardInfoContainer>*/}
