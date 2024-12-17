@@ -23,17 +23,23 @@ function LeftPanel({ userData }){
             </IconPanelContainer>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <img src={monitor}/>
+                    <a href="/admin-panel">
+                        <img src={monitor}/>
+                    </a>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <img src={table}/>
+                    <a href="/admin-panel/posts">
+                        <img src={table}/>
+                    </a>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <img src={categories}/>
+                    <a href="/admin-panel/options">
+                        <img src={categories}/>
+                    </a>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             {

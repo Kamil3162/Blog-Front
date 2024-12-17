@@ -12,8 +12,6 @@ export const AdminPanelContainer = styled.div`
   //background-repeat: no-repeat;
   //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  
-
 `;
 
 export const DashBoardContainer = styled.div`
@@ -31,7 +29,7 @@ export const DashBoardBussinesInfoContainer = styled.div`
 
 `;
 export const DashBoardBussinessElement = styled.div`
-  background-color: white;
+  background-color: #f7f7f7;
   display: flex;
   padding: 5px;
   width: 250px;

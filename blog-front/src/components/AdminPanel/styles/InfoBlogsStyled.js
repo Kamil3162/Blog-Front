@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const InfoBlogsContainer = styled.div`
   margin-left: 30px;
   margin-right: 30px;
-  
-  background-color: #b9b9b9;
+
+  background-color: #e5e3e3;
   border-radius: 15px;
   padding: 10px;
   margin-top: 30px;

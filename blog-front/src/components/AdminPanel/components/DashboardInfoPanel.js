@@ -7,7 +7,60 @@ import {
 import {LeftPanelElementText} from "../styles/LeftPanelStyled";
 import chart from "../../../assets/icons/chart.png";
 
-import { ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import {ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend} from 'recharts';
+import styled from "styled-components";
+
+
+const DashboardContainer = styled.div`
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+`;
+
+const ChartTitle = styled.h2`
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+`;
+
+const ChartWrapper = styled.div`
+  height: 400px;
+  width: 100%;
+`;
+
+const CustomTooltip = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+
+  .label {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .data-item {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .value {
+      margin-left: 4px;
+      font-weight: 500;
+    }
+  }
+`;
 
 // Sample data
 const data = [
@@ -56,60 +109,98 @@ const data = [
 ];
 
 const DashboardChart = () => {
+
+    const CustomTooltipContent = ({ active, payload, label }) => {
+        if (!active || !payload) return null;
+
+        return (
+            <CustomTooltip>
+                <div className="label">{label}</div>
+                {payload.map((entry, index) => (
+                    <div key={index} className="data-item">
+                        <div
+                            className="dot"
+                            style={{ backgroundColor: entry.color }}
+                        />
+                        {entry.name}:
+                        <span className="value">
+              {entry.value.toLocaleString()}
+            </span>
+                    </div>
+                ))}
+            </CustomTooltip>
+        );
+    };
+
     return (
-        <div style={{
-            width: '100%',
-            height: 300 ,
-            backgroundColor: "#FFFFFF99",
-            padding:  "10px",
-            borderRadius: 20,
-            maxWidth: 800
-        }}>
-            <ResponsiveContainer>
-                <ComposedChart
-                    data={data}
-                    margin={{
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                        left: 20,
-                    }}
-                >
-                    <CartesianGrid stroke="#f5f5f5" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip
-                        contentStyle={{
-                            backgroundColor: 'white',
-                            borderRadius: '8px',
-                            border: 'none',
-                            boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+        <DashboardContainer>
+            <ChartTitle>Performance Dashboard</ChartTitle>
+            <ChartWrapper>
+                <ResponsiveContainer>
+                    <ComposedChart
+                        data={data}
+                        margin={{
+                            top: 20,
+                            right: 30,
+                            left: 20,
+                            bottom: 20,
                         }}
-                    />
-                    <Area
-                        type="monotone"
-                        dataKey="revenue"
-                        fill="rgba(114, 87, 178, 0.2)"
-                        stroke="rgba(114, 87, 178, 0.8)"
-                        strokeWidth={2}
-                    />
-                    <Line
-                        type="monotone"
-                        dataKey="users"
-                        stroke="#2c2c77"
-                        strokeWidth={2}
-                        dot={{ r: 4 }}
-                    />
-                    <Line
-                        type="monotone"
-                        dataKey="engagement"
-                        stroke="#82ca9d"
-                        strokeWidth={2}
-                        dot={{ r: 4 }}
-                    />
-                </ComposedChart>
-            </ResponsiveContainer>
-        </div>
+                    >
+                        <defs>
+                            <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#8884d8" stopOpacity={0.1}/>
+                            </linearGradient>
+                        </defs>
+                        <CartesianGrid
+                            strokeDasharray="3 3"
+                            vertical={false}
+                            stroke="#f0f0f0"
+                        />
+                        <XAxis
+                            dataKey="name"
+                            tick={{ fill: '#666' }}
+                            axisLine={{ stroke: '#e0e0e0' }}
+                        />
+                        <YAxis
+                            tick={{ fill: '#666' }}
+                            axisLine={{ stroke: '#e0e0e0' }}
+                            width={60}
+                        />
+                        <Tooltip content={<CustomTooltipContent />} />
+                        <Legend
+                            verticalAlign="top"
+                            height={36}
+                            iconType="circle"
+                        />
+                        <Area
+                            type="monotone"
+                            dataKey="revenue"
+                            fill="url(#revenueGradient)"
+                            stroke="#8884d8"
+                            strokeWidth={3}
+                            name="Revenue"
+                        />
+                        <Line
+                            type="monotone"
+                            dataKey="users"
+                            stroke="#2c2c77"
+                            strokeWidth={3}
+                            dot={{ r: 4, strokeWidth: 2 }}
+                            name="Users"
+                        />
+                        <Line
+                            type="monotone"
+                            dataKey="engagement"
+                            stroke="#399999"
+                            strokeWidth={3}
+                            dot={{ r: 4, strokeWidth: 2 }}
+                            name="Engagement"
+                        />
+                    </ComposedChart>
+                </ResponsiveContainer>
+            </ChartWrapper>
+        </DashboardContainer>
     );
 };
 

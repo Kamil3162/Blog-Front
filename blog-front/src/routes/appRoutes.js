@@ -13,6 +13,10 @@ import SetNewPasswordDisplay from "../views/auth/SetNewPasswordDisplay";
 import ChatPanelView from "../views/chat/ChatPanelView";
 import {ErrorProvider} from "../context/error_context";
 import {NotificationDisplay} from "../components/Error/GlobalError";
+import AdminApplicationView from "../views/auth/admin_panel_options";
+import AdminPosts from "../views/auth/admin_posts";
+import AdminCategories from "../views/auth/admin_categories";
+import AdminUsers from "../views/auth/admin_users";
 
 const AppRoutes = () => (
     // <ErrorProvider>
@@ -29,6 +33,10 @@ const AppRoutes = () => (
                     <Route path="/reset/password/:token" element={<SetNewPasswordDisplay />} />
                     <Route path="/chat-panel" element={<ChatPanelView />} />
                     <Route path="/admin-panel" element={<AdminPanelView />} />
+                    <Route path="/admin-panel/posts" element={<AdminPosts />} />
+                    <Route path="/admin-panel/categories" element={<AdminCategories />} />
+                    <Route path="/admin-panel/options" element={<AdminApplicationView />} />
+                    <Route path="/admin-panel/users" element={<AdminUsers />} />
                     <Route path="/user" element={<AdminPanelView />} />
             </Routes>
     // </ErrorProvider>
