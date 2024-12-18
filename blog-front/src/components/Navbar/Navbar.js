@@ -86,7 +86,7 @@ function Navbar(){
         <>
 
         <NavbarContainer>
-                <NavbarElementsContainer alignment="flex-start">
+                <NavbarElementsContainer alignment="flex-end">
                     {renderNavItems()}
                 </NavbarElementsContainer>
                 <NavbarElementsContainer alignment="center">

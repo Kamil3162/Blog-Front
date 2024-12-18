@@ -12,7 +12,7 @@ import categories from "../../../assets/icons/categories.png";
 import power_off from "../../../assets/admin_icons/power-off.png";
 import user from "../../../assets/admin_icons/user.png";
 import enter from "../../../assets/admin_icons/enter.png";
-
+import users from "../../../assets/icons/users.png";
 
 function LeftPanel({ userData }){
 
@@ -37,7 +37,14 @@ function LeftPanel({ userData }){
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <a href="/admin-panel/options">
+                    <a href="/admin-panel/users">
+                        <img src={users}/>
+                    </a>
+                </LeftPanelElementIcon>
+            </LeftPanelElement>
+            <LeftPanelElement>
+                <LeftPanelElementIcon>
+                    <a href="/admin-panel/categories">
                         <img src={categories}/>
                     </a>
                 </LeftPanelElementIcon>
@@ -55,7 +62,9 @@ function LeftPanel({ userData }){
                     <>
                         <LeftPanelElement>
                             <LeftPanelElementIcon>
-                                <img src={user}/>
+                                <a href="/admin-panel/user">
+                                    <img src={user}/>
+                                </a>
                             </LeftPanelElementIcon>
                         </LeftPanelElement>
                         <LeftPanelElement>

@@ -30,14 +30,12 @@ const TRANSITIONS = {
 export const OptionsContainer = styled.div`
   display: block;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   padding: 24px;
   margin: 0 auto;
   
   
 `;
-
-
 
 // Container for option changes with improved grid layout
 export const OptionChangeContainer = styled.div`
@@ -129,6 +127,7 @@ export const TableContainer = styled.div`
   border: 1px solid ${COLORS.border};
   background-color: ${COLORS.white};
   box-shadow: ${SHADOWS.small};
+  margin-bottom: 50px;
 `;
 
 export const TableHeader = styled.div`

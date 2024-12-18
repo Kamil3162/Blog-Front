@@ -14,11 +14,17 @@ import React, {useContext, useState} from "react";
 import {SearchContainer, SearchField, SearchIconContainer} from "../../assets/styledCss/NavbarStyled";
 import photo1 from "../../assets/icons/loop.png";
 import NavbarContext from "../../context/nav_contextes/nav_context";
+import PreviousButton from "../../components/Button/PreviousButton";
+import NextButton from "../../components/Button/NextButton";
+import {PostMovingContainer} from "../../assets/styledCss/PostListStyled";
 
 
 function AdminUsers(){
     const [searchTerm, setSearchTerm] = useState("");
     const { handlePostSearch } = useContext(NavbarContext);
+    const [currentPage, setCurrentPage] = useState("");
+
+
 
     const handleSearchInputChange = (event) => {
         setSearchTerm(event.target.value);
@@ -107,6 +113,10 @@ function AdminUsers(){
                         <TableCell>Active</TableCell>
                     </TableRow>
                 </TableContainer>
+                <PostMovingContainer>
+                    <PreviousButton page_number={currentPage} setCurrentPage={setCurrentPage}/>
+                    <NextButton page_number={currentPage} setCurrentPage={setCurrentPage}/>
+                </PostMovingContainer>
             </OptionsContainer>
             <p>Top users</p>
 

@@ -22,7 +22,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to top left, #eeeeee 0%, #a4a4a4 100%);
+  //background: linear-gradient(to top left, #eeeeee 0%, #a4a4a4 100%);
 
   @media (min-width: 768px) {
     padding: 10px;
@@ -259,15 +259,16 @@ const pulse = keyframes`
 export const NavbarElement = styled.div`
   display: flex;
   font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  width: 180px;
+  width: 150px;
   height: 48px;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #070606;
+  border: 1px solid black;
   border-radius: 24px;
-  color: black;
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
