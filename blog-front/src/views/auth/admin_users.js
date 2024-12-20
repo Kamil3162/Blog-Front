@@ -43,13 +43,20 @@ function AdminUsers(){
                     <p>Admin Dashboard > Users</p>
                 </TopHeader>
                 <UserSearchContainerAdmin>
-                    <SearchContainer>
+                    <SearchContainer
+                        backgroundColor="black"
+                    >
                         <SearchField
                             type="text"
                             placeholder="Search..."
                             onChange={handleSearchInputChange}
+                            fontColor="white"
                         />
-                        <SearchIconContainer>
+                        <SearchIconContainer
+                            backgroundColor="white"
+                            padding="7px"
+                            borderRadius="20px"
+                        >
                             <img src={photo1} width="20px" height="20px" onClick={handleSearchClick}/>
                         </SearchIconContainer>
                     </SearchContainer>

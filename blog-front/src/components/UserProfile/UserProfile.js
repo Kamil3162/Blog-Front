@@ -4,13 +4,25 @@ import {AdminPanelContainer} from "../AdminPanel/styles/AdminPanelStyled";
 import LeftPanel from "../AdminPanel/components/LeftPanel";
 import {
     Avatar,
-    Header, Label,
+    Header,
+    Label,
     LeftSection,
-    OrganizationText, PersonalInfoShort, PersonImage, PersonNamePosition, PersonStaffInfo,
+    OrganizationText,
+    PersonalInfoAdd,
+    PersonalInformationContainer,
+    PersonalInfoShort,
+    PersonImage,
+    PersonNamePosition,
+    PersonStaffInfo,
     PhotoHolder,
     RightSection,
-    UserDetail, UserInformationContainer, Username,
-    UserOnline, UserProfile1
+    UserDetail,
+    UserInfoAccContainer,
+    UserInformationAccess,
+    UserInformationContainer,
+    Username,
+    UserOnline,
+    UserProfile1
 } from "./user_styles";
 import {OptionsContainer} from "../AdminPanel/components/app_options";
 import key from "../../assets/icons/key.png";
@@ -47,10 +59,117 @@ function UserProfile(){
                                 <p>dsadsa</p>
                             </PersonStaffInfo>
                         </PersonNamePosition>
-                        <PersonStaffInfo>
-
-                        </PersonStaffInfo>
+                        <UserInformationAccess>
+                            <UserInfoAccContainer>
+                                <h1>
+                                    Staff Account:
+                                </h1>
+                                <p>
+                                    testowy32
+                                </p>
+                            </UserInfoAccContainer>
+                            <UserInfoAccContainer>
+                                <h1>
+                                    Staff Account:
+                                </h1>
+                                <p>
+                                    testowy32
+                                </p>
+                            </UserInfoAccContainer>
+                            <UserInfoAccContainer>
+                                <h1>
+                                    Staff Account:
+                                </h1>
+                                <p>
+                                    testowy32
+                                </p>
+                            </UserInfoAccContainer>
+                        </UserInformationAccess>
                     </PersonalInfoShort>
+                    <PersonalInformationContainer>
+                        <PersonalInfoAdd>
+                            <div>
+                                <UserInfoAccContainer>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                            </div>
+                            <div >
+                                <UserInfoAccContainer >
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                    <h1>
+                                        Staff Account:
+                                    </h1>
+                                    <p>
+                                        testowy32
+                                    </p>
+                                </UserInfoAccContainer>
+                            </div>
+                        </PersonalInfoAdd>
+                        <PersonalInfoAdd>
+
+                            <UserInfoAccContainer>
+                                <h1>
+                                    Staff Account:
+                                </h1>
+                                <p>
+                                    testowy32
+                                </p>
+                            </UserInfoAccContainer>
+
+                        </PersonalInfoAdd>
+                    </PersonalInformationContainer>
                 </UserInformationContainer>
 
             </OptionsContainer>

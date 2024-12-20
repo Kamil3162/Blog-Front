@@ -107,7 +107,7 @@ export const Username = styled.span`
 `;
 
 export const UserInformationContainer = styled.div`
-  background-color: rgba(253, 253, 253, 0.8);
+  background-color: rgba(7, 6, 6, 0.11);
   padding: 20px;
   border-radius: 0 0 10px 10px;
   width: 100%;
@@ -120,7 +120,6 @@ export const PersonalInfoShort = styled.div`
     background-color: white;
     border-radius: 20px;
     align-items: center;
-  
 `;
 
 export const PersonNamePosition = styled.div`
@@ -161,3 +160,47 @@ export const PersonStaffInfo = styled.div`
     font-size: 15px;
   }
 `;
+
+export const UserInformationAccess = styled.div`
+    display: flex;
+    gap: 50px;
+    margin-left: 50px;
+`;
+
+export const UserInfoAccContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  h1{
+    color: darkgray;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    margin: 0 10px 0 0;
+  
+  }
+  p{
+    color: black;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    margin: 0 ;
+  }
+`;
+
+export const PersonalInformationContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+`;
+
+export const PersonalInfoAdd = styled(PersonalInfoShort)`
+    flex: 1;
+    padding: 20px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+  height: 600px;
+    
+`

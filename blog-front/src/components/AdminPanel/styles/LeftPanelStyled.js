@@ -10,8 +10,9 @@ export const LeftPanelContainer = styled.div`
   border-radius: 20px;
   flex-direction: column;
   justify-items: center;
-  background-color: rgba(253, 253, 253, 0.8);
-  padding: 10px;
+  background-color: rgba(7, 6, 6, 0.05);
+  padding: 20px;
+  border: 1px solid black;
 `;
 
 export const LeftPanelElement = styled.div`
@@ -20,8 +21,12 @@ export const LeftPanelElement = styled.div`
   cursor: pointer;
   padding: 10px;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.9);
+  //background-color: rgba(255, 255, 255, 0.9);
 
+  &:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 10px 5px;
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 export const IconPanelContainer = styled.div`
@@ -69,11 +74,12 @@ export const LeftPanelElementIcon = styled.div`
     object-fit: contain; /* Maintains aspect ratio without cropping */
     min-height: 30px; /* Adjusted down to allow the image to become smaller */
   }
-
-  &:hover {
-    transition: all 0.5s ease-out;
-    background: linear-gradient(135deg, #dde0ee 0%, #707072 100%);
-  }
+  
+  
+  //&:hover {
+  //  transition: all 0.5s ease-out;
+  //  background: linear-gradient(135deg, #dde0ee 0%, #707072 100%);
+  //}
 
 `;
 

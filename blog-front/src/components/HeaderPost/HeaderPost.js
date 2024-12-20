@@ -15,8 +15,6 @@ function HeaderPost({title}){
         <PostHeader>
             <HomeHeaderContainer>
                 <HomeDate>DEC 19, 2023</HomeDate>
-		<HomeDate>DEC 19, 2023</HomeDate>
-		<HomeDate>DEC 19, 2023</HomeDate>
                 <HomeTitle>4 Web Design Trends to Watch in 2024</HomeTitle>
                 <HomePhotoContainer>
                     <img src={blog_image}/>

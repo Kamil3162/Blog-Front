@@ -1,15 +1,8 @@
 import LeftPanel from "../../components/AdminPanel/components/LeftPanel";
 import {
     AdminPanelContainer,
-    DashBoardBussinesInfoContainer,
-    DashBoardContainer,
-    DashBoardInfoContainer
 } from "../../components/AdminPanel/styles/AdminPanelStyled";
-import {DASHBOARD_INFO} from "../../components/AdminPanel/constants/constant_panel";
-import BusinessInfoCard from "../../components/AdminPanel/components/BusinessInfoCard";
-import DashboardInfoPanel from "../../components/AdminPanel/components/DashboardInfoPanel";
-import {InfoBlogsContainer} from "../../components/AdminPanel/styles/InfoBlogsStyled";
-import PostsTable from "../../components/AdminPanel/components/PostsTable";
+
 import React, {useContext, useState} from "react";
 import {
     OptionsContainer, TableCell, TableContainer, TableHeader, TableHeaderElement, TableRow,
@@ -27,7 +20,7 @@ import NavbarContext from "../../context/nav_contextes/nav_context";
 function AdminPosts(){
     const [searchTerm, setSearchTerm] = useState("");
     const { handlePostSearch } = useContext(NavbarContext);
-    const [currentPage, setCurrentPage] = useState("");
+    const [currentPage, setCurrentPage] = useState("0");
 
     const handleSearchInputChange = (event) => {
         setSearchTerm(event.target.value);
@@ -47,13 +40,19 @@ function AdminPosts(){
                     <p>Admin Dashboard > Posts</p>
                 </TopHeader>
                 <UserSearchContainerAdmin>
-                    <SearchContainer>
+                    <p>Search post by Post Title:</p>
+                    <SearchContainer backgroundColor="black">
                         <SearchField
                             type="text"
                             placeholder="Search..."
+                            fontColor="white"
                             onChange={handleSearchInputChange}
                         />
-                        <SearchIconContainer>
+                        <SearchIconContainer
+                            backgroundColor="white"
+                            padding="7px"
+                            borderRadius="20px"
+                        >
                             <img src={photo1} width="20px" height="20px" onClick={handleSearchClick}/>
                         </SearchIconContainer>
                     </SearchContainer>
@@ -105,6 +104,7 @@ function AdminPosts(){
                 <PostMovingContainer>
                     <PreviousButton page_number={currentPage} setCurrentPage={setCurrentPage}/>
                     <NextButton page_number={currentPage} setCurrentPage={setCurrentPage}/>
+                    <p>Current page: {currentPage}</p>
                 </PostMovingContainer>
             </OptionsContainer>
         </AdminPanelContainer>

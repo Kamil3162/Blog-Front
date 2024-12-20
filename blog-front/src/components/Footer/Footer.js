@@ -13,34 +13,36 @@ function Footer(){
     return (
         <FooterContainer>
             <ConterContainerFooter>
+
                 <ColumnFooterContainer>
-                    <FooterImageContainer>
-                        <img src={kamildevlogo} width={100} height={100}/>
-                    </FooterImageContainer>
-                    <h1>All rights reserved </h1>
+                    <h1>Company</h1>
+                    <FooterTitle>
+
+                        <p>About me</p>
+                        <p>History</p>
+                    </FooterTitle>
                 </ColumnFooterContainer>
                 <ColumnFooterContainer>
+                    <h1>Product</h1>
                     <FooterTitle>
-                        Company
-                    </FooterTitle>
-                    <p>About Me</p>
-                    <p>Contact</p>
-                </ColumnFooterContainer>
-                <ColumnFooterContainer>
-                    <FooterTitle>
-                        Product
-                    </FooterTitle>
+
                     <p>Business</p>
                     <p>Security</p>
+                    </FooterTitle>
                 </ColumnFooterContainer>
                 <ColumnFooterContainer>
+                    <h1>Social</h1>
                     <FooterTitle>
-                        Social
+                        <p>Instagram</p>
+                        <p>Linkedin</p>
                     </FooterTitle>
-                    <p>Instagram</p>
-                    <p>Linkedin</p>
                 </ColumnFooterContainer>
+
+
             </ConterContainerFooter>
+            <ColumnFooterContainer>
+                <h1>Copyright ©. All right reserved. </h1>
+            </ColumnFooterContainer>
         </FooterContainer>
     )
 }

@@ -5,9 +5,9 @@ export const FooterContainer = styled.div`
   //position: static;
   bottom: 0;
   left: 0;
-  background-color: rgba(6, 7, 16, 0.82);
   height: 150px;
   padding: 20px;
+  background-color: black;
 `;
 
 export const ConterContainerFooter = styled.div`
@@ -16,6 +16,7 @@ export const ConterContainerFooter = styled.div`
   justify-content: space-between;
   width: 100%; // Ensure the footer takes the full width of its parent
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
 `;
 
 export const ColumnFooterContainer = styled.div`
@@ -26,21 +27,24 @@ export const ColumnFooterContainer = styled.div`
   //align-items: center; // Center the content horizontally inside the column
   padding: 0 10px; // Add some padding on the sides of each column for spacing, adjust as needed
   //text-align: center; // Ensure the text within each column is centered, if that's your desired outcom
-
+  margin-bottom: 40px;
+  text-align: right;
+  
   p {
     margin-top: 5px; // Removes the top margin
     margin-bottom: 0; // Adjusts or removes the bottom margin as needed
     font-family: 'Raleway', sans-serif;
-    color: #8b8b8f;
+    color: ${props => props.fontColor || "#8b8b8f"} ;
 
   }
 
   h1 {
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 5px; // Removes the top margin
     margin-bottom: 0; // Adjusts or removes the bottom margin as needed
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
+    color: ${props => props.fontColor || "white"} ;
     
   }
 `;
@@ -55,6 +59,6 @@ export const FooterImageContainer = styled.div`
 
 export const FooterTitle = styled.p`
   font-family: 'Raleway',sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
 `;

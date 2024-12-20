@@ -13,6 +13,8 @@ import power_off from "../../../assets/admin_icons/power-off.png";
 import user from "../../../assets/admin_icons/user.png";
 import enter from "../../../assets/admin_icons/enter.png";
 import users from "../../../assets/icons/users.png";
+import home from "../../../assets/icons/house.png";
+import {Link} from "react-router-dom";
 
 function LeftPanel({ userData }){
 
@@ -22,31 +24,48 @@ function LeftPanel({ userData }){
                 <p>KamilDev</p>
             </IconPanelContainer>
             <LeftPanelElement>
+                {/*<LeftPanelElementIcon>*/}
+                {/*    <a href="/">*/}
+                {/*        <img src={house}/>*/}
+                {/*    </a>*/}
+                {/*</LeftPanelElementIcon>*/}
                 <LeftPanelElementIcon>
-                    <a href="/admin-panel">
+                    <Link to="/">
+                        <img src={home}/>
+                    </Link>
+                </LeftPanelElementIcon>
+            </LeftPanelElement>
+            <LeftPanelElement>
+                {/*<LeftPanelElementIcon>*/}
+                {/*    <a href="/">*/}
+                {/*        <img src={house}/>*/}
+                {/*    </a>*/}
+                {/*</LeftPanelElementIcon>*/}
+                <LeftPanelElementIcon>
+                    <Link to="/admin-panel">
                         <img src={monitor}/>
-                    </a>
+                    </Link>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <a href="/admin-panel/posts">
+                    <Link to="/admin-panel/posts">
                         <img src={table}/>
-                    </a>
+                    </Link>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <a href="/admin-panel/users">
+                    <Link to="/admin-panel/users">
                         <img src={users}/>
-                    </a>
+                    </Link>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             <LeftPanelElement>
                 <LeftPanelElementIcon>
-                    <a href="/admin-panel/categories">
+                    <Link to="/admin-panel/categories">
                         <img src={categories}/>
-                    </a>
+                    </Link>
                 </LeftPanelElementIcon>
             </LeftPanelElement>
             {
@@ -62,9 +81,9 @@ function LeftPanel({ userData }){
                     <>
                         <LeftPanelElement>
                             <LeftPanelElementIcon>
-                                <a href="/admin-panel/user">
+                                <Link to="/admin-panel/user">
                                     <img src={user}/>
-                                </a>
+                                </Link>
                             </LeftPanelElementIcon>
                         </LeftPanelElement>
                         <LeftPanelElement>

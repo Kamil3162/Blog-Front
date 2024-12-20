@@ -9,56 +9,88 @@ export const AdminPanelContainer = styled.div`
   min-width: 100vh;
   min-height: 100vh;
   //background-color: #c0bfbf;
-  //background-repeat: no-repeat;
   //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
+  //background-repeat: no-repeat;
   //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(91, 88, 88, 0.07);
 `;
 
 export const DashBoardContainer = styled.div`
     flex: 5;
+  
     p{
       font-family: 'Lexend', sans-serif;
       font-size: 20px;
+      margin-left: 35px;
     }
 `;
 
 export const DashBoardBussinesInfoContainer = styled.div`
     display: flex;
-  margin-left: 30px;
   gap: 100px; /* Adjust this value as needed */
-
+  width: 60%;
+  //margin-left: 30px;
+  margin: auto;
+  justify-content: space-between;
 `;
 export const DashBoardBussinessElement = styled.div`
-  background-color: #f7f7f7;
+  //background: linear-gradient(135deg, rgba(179, 182, 182, 0.95) 0%, rgba(23, 76, 145, 0.42) 100%);
+  background-color: rgba(169, 169, 169, 0.24);
   display: flex;
-  padding: 5px;
-  width: 250px;
-  border-radius: 15px;
-  justify-content: center;
-  
+  padding: 24px;
+  width: 300px;
+  height: 50px;
+  border-radius: 16px;
+  justify-content: space-between;
+
+
 `;
 export const DashBoardBussinessTextContainer = styled.div`
-  //flex: 3;
+  flex: 3;
+  display: flex;
+  //flex-direction: column;
   justify-content: center;
-  justify-items: center;
-  
-  p {
-    color: #070606;
-    font-size: 20px;
-    font-family: 'Lexend', sans-serif;
-    font-weight: 800;
-    margin-top: 8px; /* Adjusted for additional spacing */
-    margin-bottom: 0;
-  }
-
+  margin: auto;
+  padding: 0 16px;
+  gap: 10px;
   h1 {
-    color: #82899b;
+    color: #070707;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
+    //margin: 0 0 8px 0;
+    margin:5px;
+    font-weight: 500;
+  }
 
+  p {
+    color: #070606;
+    font-size: 28px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 700;
+    margin: 0;
   }
 `;
+
+export const DashboardBussinessInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+`;
+
+
 
 export const DashBoardInfoContainer = styled.div`
   margin-left: 30px;

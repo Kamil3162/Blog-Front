@@ -12,12 +12,9 @@ import photo1 from "../../assets/icons/loop.png";
 import listview from "../../assets/icons/listview.png";
 import {useContext} from "react";
 import { logout } from "../../services/user";
-import { getUserDataCookies } from "../../utils/tools_functions";
 import {useAuth} from "../../context/AuthContext";
-import {searchPost} from "../../utils/search_field_functions";
 import NavbarContext from "../../context/nav_contextes/nav_context";
-import RolloutOptions from "../RolloutOptions/RolloutOptions";
-
+import {Link} from "react-router-dom";
 
 function Navbar(){
     const [searchTerm, setSearchTerm] = useState("");
@@ -46,47 +43,45 @@ function Navbar(){
     }
 
     const renderNavItems = () => {
-        if (width > 500){
-            return (
-                <>
-                    <NavbarElement>
-                        <a href="/">
-                            Home
-                        </a>
-                    </NavbarElement>
-                    <>
-                        <NavbarElement>
-                            <a href="/post-create">
-                                Post Create
-                            </a>
-                        </NavbarElement>
-                        <NavbarElement>
-                            <a href="/category/create">
-                                Category Create
-                            </a>
-                        </NavbarElement>
-                        <NavbarElement>
-                            <a href="/admin-panel">
-                                Admin Panel
-                            </a>
-                        </NavbarElement>
-                    </>
-                </>
-            )
-        }
-        else {
+        // if (width > 500){
+        //     return (
+        //         <>
+        //             <NavbarElement>
+        //                 <a href="/">
+        //                     Home
+        //                 </a>
+        //             </NavbarElement>
+        //             <NavbarElement>
+        //                 <a href="/post-create">
+        //                     Post Create
+        //                 </a>
+        //             </NavbarElement>
+        //             <NavbarElement>
+        //                 <a href="/category/create">
+        //                     Category Create
+        //                 </a>
+        //             </NavbarElement>
+        //             <NavbarElement>
+        //                 <a href="/admin-panel">
+        //                     Admin Panel
+        //                 </a>
+        //             </NavbarElement>
+        //         </>
+        //     )
+        // }
+        // else {
             return (
                 <NavbarElement onClick={toggleNavVisibility}>
                     <img src={listview} width="30px" height="30px"/>
                 </NavbarElement>
             )
-        }
+        // }
     }
     return (
         <>
 
         <NavbarContainer>
-                <NavbarElementsContainer alignment="flex-end">
+                <NavbarElementsContainer alignment="flex-start">
                     {renderNavItems()}
                 </NavbarElementsContainer>
                 <NavbarElementsContainer alignment="center">
@@ -105,21 +100,21 @@ function Navbar(){
                     {
                         authToken ? (
                             <AuthButton text="Log in" onClick={handleLogout}>
-                                <a href="/home">
+                                <Link to="/home">
                                     Logout
-                                </a>
+                                </Link>
                             </AuthButton>
                         ) : (
                             <>
                             <AuthButton text="Log in">
-                                <a href="/login">
+                                <Link to="/login">
                                     Log in
-                                </a>
+                                </Link>
                             </AuthButton>
                             <SignUpButton text="Sign up">
-                                <a href="/sing-up">
+                                <Link to="/sing-up">
                                     Sign up
-                                </a>
+                                </Link>
                             </SignUpButton>
                             </>
                         )

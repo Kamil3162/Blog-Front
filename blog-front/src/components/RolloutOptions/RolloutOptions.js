@@ -11,6 +11,8 @@ function RolloutOptions(){
     const { isNavVisible} = useContext(NavigationVisibilityContext);
     const { setIsNavVisible } = useContext(NavigationVisibilityContext);
 
+    console.log(isNavVisible);
+
     const { width } = useContext(WindowSizeContext);
 
     console.log(isNavVisible);
@@ -25,8 +27,8 @@ function RolloutOptions(){
     console.log("test message");
 
     return (
-         width <= 500 && isNavVisible &&
-                <NavigationContainer showOnSite={width <= 500 && isNavVisible}>
+          isNavVisible &&
+                <NavigationContainer showOnSite={true}>
                     {navigationItems.map((item, index) => (
                         <NavigationElement key={index}>
                             <Link to={item.href} onClick={changeClickNavVisible}>

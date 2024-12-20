@@ -37,7 +37,7 @@ export const PostDetailHeader = styled.div`
 
   @media (min-width: 600px) {
     padding-bottom: 40px;
-    background: linear-gradient(55deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, #FFF5FC 45%, #FFF5FC 45%);
+    //background: linear-gradient(55deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, #FFF5FC 45%, #FFF5FC 45%);
     align-items: center;
     justify-content: center;
     min-height: 400px;

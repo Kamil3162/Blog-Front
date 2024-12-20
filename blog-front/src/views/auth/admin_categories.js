@@ -1,15 +1,8 @@
 import LeftPanel from "../../components/AdminPanel/components/LeftPanel";
 import {
     AdminPanelContainer,
-    DashBoardBussinesInfoContainer,
-    DashBoardContainer,
-    DashBoardInfoContainer
 } from "../../components/AdminPanel/styles/AdminPanelStyled";
-import {DASHBOARD_INFO} from "../../components/AdminPanel/constants/constant_panel";
-import BusinessInfoCard from "../../components/AdminPanel/components/BusinessInfoCard";
-import DashboardInfoPanel from "../../components/AdminPanel/components/DashboardInfoPanel";
-import {InfoBlogsContainer} from "../../components/AdminPanel/styles/InfoBlogsStyled";
-import PostsTable from "../../components/AdminPanel/components/PostsTable";
+
 import React, {useContext, useState} from "react";
 import {
     OptionsContainer, TableCell, TableContainer, TableHeader, TableHeaderElement, TableRow,
@@ -48,13 +41,19 @@ function AdminCategories(){
                     <p>Admin Dashboard > Categories</p>
                 </TopHeader>
                 <UserSearchContainerAdmin>
-                    <SearchContainer>
+                    <SearchContainer
+                        backgroundColor="black"
+                    >
                         <SearchField
                             type="text"
                             placeholder="Search..."
                             onChange={handleSearchInputChange}
                         />
-                        <SearchIconContainer>
+                        <SearchIconContainer
+                            backgroundColor="white"
+                            padding="7px"
+                            borderRadius="20px"
+                        >
                             <img src={photo1} width="20px" height="20px" onClick={handleSearchClick}/>
                         </SearchIconContainer>
                     </SearchContainer>

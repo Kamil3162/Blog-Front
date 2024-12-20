@@ -22,7 +22,7 @@ export const NavbarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //background: linear-gradient(to top left, #eeeeee 0%, #a4a4a4 100%);
+  //background: linear-gradient(to top left, #eeeeee 0%, rgba(164, 164, 164, 0.35) 100%);
 
   @media (min-width: 768px) {
     padding: 10px;
@@ -39,7 +39,7 @@ export const AuthButton = styled.button`
 
   @media (min-width: 768px){
     display: block;
-    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Raleway', sans-serif;
     content: ${props => props.text};
     padding: 10px;
     font-weight: 1000;
@@ -111,10 +111,9 @@ export const SearchField = styled.input`
       outline: none;
       font-weight: 600;
       font-family: 'Raleway', sans-serif;
-      color: black;
+      color: ${props => props.fontColor || "black"};
       font-size: 1.5vh;
       flex: 3;
-      
     }
 `;
 
@@ -135,16 +134,20 @@ export const SearchContainer = styled.div`
     width: 300px;
     justify-items: center;
     align-items: center;
-    background-color: white;
-    
+    background-color: ${props => props.backgroundColor || "#f1f3f4"};
   }
 `;
+
+
 
 export const SearchIconContainer = styled.div`
     display: flex;
     justify-content: flex-end;  // This is the correct property to align to the right
     align-items: center;        // This vertically centers the icon
-    
+    background-color: ${props => props.backgroundColor || "none"};
+    padding: ${props => props.padding || 0};
+    border-radius: ${props => props.borderRadius || "0"};
+  
     img {
         width: 20px;
         height: 20px;
@@ -174,7 +177,7 @@ export const NavigationContainer = styled.nav`
   position: absolute;
   z-index: 1;
   background-color: #2c3e50;
-  border-radius: 15px;
+  border: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 15px;
   width: 90%;
@@ -188,8 +191,10 @@ export const NavigationContainer = styled.nav`
     width: 200px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     background-color: #2c3e50;
-    padding: 0;
+    padding: 20px;
     gap: 12px;
+    margin-left: 10px;
+    border-radius: 20px;
   }
 `;
 
@@ -261,12 +266,12 @@ export const NavbarElement = styled.div`
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  width: 150px;
+  width: 100px;
   height: 48px;
   align-items: center;
   justify-content: center;
-  background-color: #070606;
-  border: 1px solid black;
+  background-color: #f6f6f6;
+  //border: 1px solid black;
   border-radius: 24px;
   color: white;
   cursor: pointer;

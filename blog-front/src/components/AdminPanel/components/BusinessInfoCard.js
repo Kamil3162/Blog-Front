@@ -1,6 +1,9 @@
 import {LeftPanelElement, LeftPanelElementIcon} from "../styles/LeftPanelStyled";
-import {DashBoardBussinessElement, DashBoardBussinessTextContainer} from "../styles/AdminPanelStyled";
-import money from "../../../assets/icons/money-bag.png";
+import {
+    DashBoardBussinessElement,
+    DashboardBussinessInfo,
+    DashBoardBussinessTextContainer
+} from "../styles/AdminPanelStyled";
 
 
 function BusinessInfoCard ({ title, value, icon}){
@@ -10,9 +13,9 @@ function BusinessInfoCard ({ title, value, icon}){
                 <h1> {title} </h1>
                 <p> {value} </p>
             </DashBoardBussinessTextContainer>
-            <LeftPanelElementIcon>
+            <DashboardBussinessInfo>
                 <img src={icon}/>
-            </LeftPanelElementIcon>
+            </DashboardBussinessInfo>
         </DashBoardBussinessElement>
     )
 }

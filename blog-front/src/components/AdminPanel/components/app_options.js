@@ -34,7 +34,15 @@ export const OptionsContainer = styled.div`
   padding: 24px;
   margin: 0 auto;
   
-  
+  p{
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: ${COLORS.text.secondary};
+    color: black;
+    margin: 0;
+    line-height: 1.5;
+    
+  }
 `;
 
 // Container for option changes with improved grid layout
