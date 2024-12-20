@@ -19,6 +19,7 @@ import AdminCategories from "../views/auth/admin_categories";
 import AdminUsers from "../views/auth/admin_users";
 import {UserDetail} from "../components/UserProfile/user_styles";
 import UserProfile from "../components/UserProfile/UserProfile";
+import WebSocketChat from "../services/ws";
 
 const AppRoutes = () => (
     // <ErrorProvider>
@@ -41,6 +42,7 @@ const AppRoutes = () => (
                     <Route path="/admin-panel/users" element={<AdminUsers />} />
                     <Route path="/admin-panel/user" element={<UserProfile />} />
                     <Route path="/user" element={<AdminPanelView />} />
+                    <Route path="/chat" element={<WebSocketChat />} />
             </Routes>
     // </ErrorProvider>
 
