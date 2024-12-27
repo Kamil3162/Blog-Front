@@ -1,20 +1,12 @@
 import  axios  from "axios";
 import { jwtDecode }  from "jwt-decode";
 import Cookies from "universal-cookie";
-
-// import API_URL from "../config/api_path.js";
-
-axios.create({
-    baseURL: "/",
-    timeout: 1000,
-    headers: {'X-Custom-Header': 'foobar'}
-
-})
+import axiosClientAPI from "./base";
 
 const cookies = new Cookies();
 
 export const register = (name, username, email, password) => {
-    return axios.post('/auth/register', {
+    return axiosClientAPI.post('/auth/register', {
         first_name: name,
         last_name: username,
         email: email,
@@ -40,7 +32,7 @@ export const login_user = (username, password) => {
     console.log(username, password);
 
     // Use axios to post the form data
-    return axios.post('/auth/token', formData, {
+    return axiosClientAPI.post('/auth/token', formData, {
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             // Inform the server about the form-data content type
@@ -62,7 +54,7 @@ export const login_user = (username, password) => {
 }
 
 export const fetchValidateUser = (setCurrentUser) => {
-    axios.get('/auth/validate', {
+    axiosClientAPI.get('/auth/validate', {
         withCredentials: true, // This enables cross-origin requests to include cookies
         // credentials: 'include', // Important to include cookies
         headers: {
@@ -92,7 +84,7 @@ export const logout = () => {
     cookie.remove("access_token");
     cookie.remove("refresh_token");
 
-    return axios.get('/auth/logout', {
+    return axiosClientAPI.get('/auth/logout', {
         withCredentials: true
     }).then(response => {
         console.log(response);

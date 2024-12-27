@@ -1,12 +1,7 @@
-import axios from "axios";
 import Cookies from "universal-cookie";
-import apiClient from "./apiService";
-import {useNotification} from "../components/Error/GlobalError";
-import {NotificationType} from "../context/error_context";
+import axiosClientAPI from "./base";
 
 const cookies = new Cookies();
-
-const API_URL = "http://127.0.0.1:10000/posts";
 
 export const postCreate = (title, category, content, photo) => {
     const formData = new FormData();
@@ -16,7 +11,7 @@ export const postCreate = (title, category, content, photo) => {
     formData.set('content', content);
     formData.set('photo', photo);
 
-    axios.post(API_URL + '/post-create/',formData,{
+    axiosClientAPI.post('/posts/post-create/',formData,{
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -34,7 +29,7 @@ export const postUpdate = (post_id, title, content) =>{
     formData.append('content', content);
     formData.append('title', title);
 
-    axios.put(API_URL + `/post-update/{post_id}`, formData,{
+    axiosClientAPI.put(`/posts/post-update/{post_id}`, formData,{
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -48,7 +43,7 @@ export const postUpdate = (post_id, title, content) =>{
 
 export const postDelete = (post_id) =>{
 
-    axios.delete(API_URL + `/post-delete/{post_id}`,{
+    axiosClientAPI.delete(`/posts/post-delete/{post_id}`,{
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -62,7 +57,7 @@ export const postDelete = (post_id) =>{
 }
 
 export const postDetail = (post_id) =>{
-    axios.put(API_URL + `/post/{post_id}`,{
+    axiosClientAPI.put(`/posts/post/{post_id}`,{
         withCredentials: true, // This enables cross-origin requests to include cookies
         headers: {
             'Content-Type': 'multipart/form-data',
@@ -76,7 +71,7 @@ export const postDetail = (post_id) =>{
 
 export const postGenDetail = async (post_id) => {
     try {
-        const response = await axios.get(API_URL + `/post/${post_id}`, {
+        const response = await axiosClientAPI.get(`/posts/post/${post_id}`, {
             // withCredentials: true,
             // headers: {
             //     'Content-Type': 'multipart/form-data',
@@ -92,7 +87,7 @@ export const postGenDetail = async (post_id) => {
 export const fetchPosts = async (page = 1) => {
     console.log(page)
     try {
-        const response = await apiClient.get(`/posts/post-list/?page=${page}`, {
+        const response = await axiosClientAPI.get(`/posts/post-list/?page=${page}`, {
             // params: { page },
             withCredentials: true
         });

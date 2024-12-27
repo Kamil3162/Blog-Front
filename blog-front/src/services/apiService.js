@@ -1,9 +1,10 @@
 import axios from "axios";
 import {useNotification} from "../components/Error/GlobalError";
 import { toast } from "react-toastify";
+import env from "../config/environment";
 
 const apiClient = axios.create({
-    baseURL: "http://127.0.0.1:10000/",
+    baseURL: env.apiUrl,
     timeout: 10000
 });
 
