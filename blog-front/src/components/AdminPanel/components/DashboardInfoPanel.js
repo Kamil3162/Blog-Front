@@ -9,58 +9,147 @@ import chart from "../../../assets/icons/chart.png";
 
 import {ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend} from 'recharts';
 import styled from "styled-components";
+//
+//
+// const DashboardContainer = styled.div`
+//   background-color: rgba(255,255,255,0.6);
+//   border-radius: 12px;
+//   padding: 24px;
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+//   width: 100%;
+// `;
+//
+// const ChartTitle = styled.h2`
+//   font-size: 20px;
+//   font-weight: 600;
+//   color: #1a1a1a;
+//   margin: 0 0 24px 0;
+// `;
+//
+// const ChartWrapper = styled.div`
+//   height: 400px;
+//   width: 100%;
+// `;
+//
+// const CustomTooltip = styled.div`
+//   background-color: white;
+//   border-radius: 8px;
+//   padding: 12px;
+//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+//   border: none;
+//
+//   .label {
+//     font-weight: 600;
+//     margin-bottom: 8px;
+//   }
+//
+//   .data-item {
+//     display: flex;
+//     align-items: center;
+//     margin: 4px 0;
+//
+//     .dot {
+//       width: 8px;
+//       height: 8px;
+//       border-radius: 50%;
+//       margin-right: 8px;
+//     }
+//
+//     .value {
+//       margin-left: 4px;
+//       font-weight: 500;
+//     }
+//   }
+// `;
 
 
+// Styled Components
 const DashboardContainer = styled.div`
-  background-color: rgba(255,255,255,0.6);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-`;
+  max-width: 1200px;
+  margin: 0 auto;
 
-const ChartTitle = styled.h2`
-  font-size: 20px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0 0 24px 0;
+  @media (max-width: 600px) {
+    padding: 10px;
+    border-radius: 10px;
+    //margin: 0 10px;
+  }
 `;
 
 const ChartWrapper = styled.div`
-  height: 400px;
   width: 100%;
+  height: 500px;
+
+  @media (max-width: 600px) {
+    height: 300px;  // Smaller height on mobile
+  }
+`;
+
+const ChartTitle = styled.h2`
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
 `;
 
 const CustomTooltip = styled.div`
-  background-color: white;
+  background: white;
   border-radius: 8px;
   padding: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
 
   .label {
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 8px;
+    color: #333;
   }
 
   .data-item {
     display: flex;
     align-items: center;
     margin: 4px 0;
-    
+    font-size: 14px;
+    color: #666;
+
     .dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
       margin-right: 8px;
     }
-    
+
     .value {
       margin-left: 4px;
-      font-weight: 500;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 8px;
+    font-size: 12px;
+
+    .data-item {
+      font-size: 12px;
+      margin: 2px 0;
+
+      .dot {
+        width: 6px;
+        height: 6px;
+      }
     }
   }
 `;
+
 
 // Sample data
 const data = [

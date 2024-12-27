@@ -102,7 +102,14 @@ export const SignUpButton = styled(AuthButton)`
 `;
 
 export const SearchField = styled.input`
-    display: none;
+  background-color: black;
+  border:none;
+  outline: none;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  color: ${props => props.fontColor || "black"};
+  font-size: 15px;
+  flex: 3;
   
     @media (min-width: 768px){
       display: block;
@@ -118,9 +125,16 @@ export const SearchField = styled.input`
 `;
 
 export const SearchContainer = styled.div`
-    width: 150px;
-    display: flex;
     align-items: center;
+
+  border-radius: 20px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  height: 40px;
+  width: 300px;
+  justify-items: center;
+  background-color: ${props => props.backgroundColor || "#f1f3f4"};
   
   @media (min-width: 1060px){
     /*

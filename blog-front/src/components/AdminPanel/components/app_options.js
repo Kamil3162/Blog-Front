@@ -34,6 +34,9 @@ export const OptionsContainer = styled.div`
   padding: 24px;
   margin: 0 auto;
   
+  @media (max-width: 600px){
+    width: auto;
+  }
   p{
     font-size: 16px;
     font-family: 'Lexend', sans-serif;
@@ -92,6 +95,16 @@ export const OptionAdminContainer = styled.div`
 
 // Improved header component
 export const TopHeader = styled.div`
+
+  /* Mobile styles for the container */
+  @media (max-width: 600px) {
+    width: auto;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+  
   width: 100%;
   background-color: ${COLORS.white};
   border-radius: 12px;
@@ -155,8 +168,9 @@ export const TableHeaderElement = styled.div`
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
-  
+  padding: 5px;
+  width: 50px;
+  //max-width: 50px;
   &:not(:last-child) {
     border-right: 1px solid ${COLORS.border};
   }
@@ -184,9 +198,11 @@ export const TableCell = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
+  padding: 5px;
   color: ${COLORS.text.primary};
-  
+  width: 50px;
+  font-size: 10px;
+  flex-wrap: wrap;
   &:not(:last-child) {
     border-right: 1px solid ${COLORS.border};
   }

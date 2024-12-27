@@ -3,12 +3,19 @@ import {
     OptionsContainer,
     TopHeader,
     UserSearchContainerAdmin,
+    //TableContainer,
+    //TableHeader,
+    // TableHeaderElement,
+    // TableRow,
+    // TableCell
+} from "../../components/AdminPanel/components/app_options";
+import {
     TableContainer,
     TableHeader,
     TableHeaderElement,
     TableRow,
-    TableCell
-} from "../../components/AdminPanel/components/app_options";
+    TableCell, StatusIndicator
+} from "../../components/AdminPanel/components/app_options_test";
 import {AdminPanelContainer} from "../../components/AdminPanel/styles/AdminPanelStyled";
 import React, {useContext, useState} from "react";
 import {SearchContainer, SearchField, SearchIconContainer} from "../../assets/styledCss/NavbarStyled";
@@ -63,61 +70,90 @@ function AdminUsers(){
                 </UserSearchContainerAdmin>
                 <p>Admin Users</p>
                 <TableContainer>
+                    {/*<TableHeader>*/}
+                    {/*    <TableHeaderElement>First Name</TableHeaderElement>*/}
+                    {/*    <TableHeaderElement>Last Name</TableHeaderElement>*/}
+                    {/*    <TableHeaderElement>Email</TableHeaderElement>*/}
+                    {/*    <TableHeaderElement>Role</TableHeaderElement>*/}
+                    {/*    <TableHeaderElement>Verified</TableHeaderElement>*/}
+                    {/*    <TableHeaderElement>Active</TableHeaderElement>*/}
+                    {/*</TableHeader>*/}
+                    {/*<TableRow>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Email</TableCell>*/}
+                    {/*    <TableCell>Role</TableCell>*/}
+                    {/*    <TableCell>Verified</TableCell>*/}
+                    {/*    <TableCell>Active</TableCell>*/}
+                    {/*</TableRow>*/}
+                    {/*<TableRow>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Email</TableCell>*/}
+                    {/*    <TableCell>Role</TableCell>*/}
+                    {/*    <TableCell>Verified</TableCell>*/}
+                    {/*    <TableCell>Active</TableCell>*/}
+                    {/*</TableRow>*/}
+                    {/*<TableRow>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Email</TableCell>*/}
+                    {/*    <TableCell>Role</TableCell>*/}
+                    {/*    <TableCell>Verified</TableCell>*/}
+                    {/*    <TableCell>Active</TableCell>*/}
+                    {/*</TableRow>*/}
+                    {/*<TableRow>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Email</TableCell>*/}
+                    {/*    <TableCell>Role</TableCell>*/}
+                    {/*    <TableCell>Verified</TableCell>*/}
+                    {/*    <TableCell>Active</TableCell>*/}
+                    {/*</TableRow>*/}
+                    {/*<TableRow>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Name</TableCell>*/}
+                    {/*    <TableCell>Email</TableCell>*/}
+                    {/*    <TableCell>Role</TableCell>*/}
+                    {/*    <TableCell>Verified</TableCell>*/}
+                    {/*    <TableCell>Active</TableCell>*/}
+                    {/*</TableRow>*/}
+                    {/*<TableRow>*/}
+                    {/*    <TableCell>test</TableCell>*/}
+                    {/*    <TableCell>Test</TableCell>*/}
+                    {/*    <TableCell>test@test.pl</TableCell>*/}
+                    {/*    <TableCell>Blogger</TableCell>*/}
+                    {/*    <TableCell>Verified</TableCell>*/}
+                    {/*    <TableCell>Active</TableCell>*/}
+                    {/*</TableRow>*/}
                     <TableHeader>
                         <TableHeaderElement>First Name</TableHeaderElement>
                         <TableHeaderElement>Last Name</TableHeaderElement>
                         <TableHeaderElement>Email</TableHeaderElement>
                         <TableHeaderElement>Role</TableHeaderElement>
-                        <TableHeaderElement>Verified</TableHeaderElement>
-                        <TableHeaderElement>Active</TableHeaderElement>
+                        <TableHeaderElement>Status</TableHeaderElement>
+                        <TableHeaderElement>Account</TableHeaderElement>
                     </TableHeader>
+
                     <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Email</TableCell>
-                        <TableCell>Role</TableCell>
-                        <TableCell>Verified</TableCell>
-                        <TableCell>Active</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Email</TableCell>
-                        <TableCell>Role</TableCell>
-                        <TableCell>Verified</TableCell>
-                        <TableCell>Active</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Email</TableCell>
-                        <TableCell>Role</TableCell>
-                        <TableCell>Verified</TableCell>
-                        <TableCell>Active</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Email</TableCell>
-                        <TableCell>Role</TableCell>
-                        <TableCell>Verified</TableCell>
-                        <TableCell>Active</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Email</TableCell>
-                        <TableCell>Role</TableCell>
-                        <TableCell>Verified</TableCell>
-                        <TableCell>Active</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>test</TableCell>
-                        <TableCell>Test</TableCell>
-                        <TableCell>test@test.pl</TableCell>
-                        <TableCell>Blogger</TableCell>
-                        <TableCell>Verified</TableCell>
-                        <TableCell>Active</TableCell>
+                        <TableCell data-label="First Name">
+                            <span>John</span>
+                        </TableCell>
+                        <TableCell data-label="Last Name">
+                            <span>Doe</span>
+                        </TableCell>
+                        <TableCell data-label="Email">
+                            <span>john.doe@example.com</span>
+                        </TableCell>
+                        <TableCell data-label="Role">
+                            <span>Admin</span>
+                        </TableCell>
+                        <TableCell data-label="Status">
+                            <StatusIndicator status="Verified">Verified</StatusIndicator>
+                        </TableCell>
+                        <TableCell data-label="Account">
+                            <StatusIndicator status="Active">Active</StatusIndicator>
+                        </TableCell>
                     </TableRow>
                 </TableContainer>
                 <PostMovingContainer>

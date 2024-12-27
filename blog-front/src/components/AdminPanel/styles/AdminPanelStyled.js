@@ -5,45 +5,77 @@ import {LeftPanelElementText} from "./LeftPanelStyled";
 
 
 export const AdminPanelContainer = styled.div`
-  display: flex;
-  min-width: 100vh;
-  min-height: 100vh;
-  //background-color: #c0bfbf;
-  //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
-  //background-repeat: no-repeat;
-  //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-color: rgba(91, 88, 88, 0.07);
+  @media (max-width: 500px){
+    //min-width: 100vh;
+    //min-height: 100vh;
+    width: auto;
+    height: auto;
+    display: block;
+    //background-color: #c0bfbf;
+    //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
+    //background-repeat: no-repeat;
+    //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: rgba(91, 88, 88, 0.07);
+  }
+  
+  @media (min-width: 500px){
+    display: flex;
+    min-width: 100vh;
+    min-height: 100vh;
+    //background-color: #c0bfbf;
+    //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
+    //background-repeat: no-repeat;
+    //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-color: rgba(91, 88, 88, 0.07);
+  }
+    
 `;
 
 export const DashBoardContainer = styled.div`
+  //margin: 0;
+  @media (min-width: 600px){
     flex: 5;
-  
+
     p{
       font-family: 'Lexend', sans-serif;
       font-size: 20px;
       margin-left: 35px;
     }
+  }
 `;
 
 export const DashBoardBussinesInfoContainer = styled.div`
+   margin-left: 3rem;
+   margin-top: 3rem;
+   display: block;
+   
+  @media(min-width: 600px){
     display: flex;
-  gap: 100px; /* Adjust this value as needed */
-  width: 60%;
-  //margin-left: 30px;
-  margin: auto;
-  justify-content: space-between;
+    gap: 100px; /* Adjust this value as needed */
+    width: 60%;
+    //margin-left: 30px;
+    margin: auto;
+    justify-content: space-between;
+  }
 `;
 export const DashBoardBussinessElement = styled.div`
   //background: linear-gradient(135deg, rgba(179, 182, 182, 0.95) 0%, rgba(23, 76, 145, 0.42) 100%);
   background-color: rgba(169, 169, 169, 0.24);
   display: flex;
-  padding: 24px;
-  width: 300px;
-  height: 50px;
-  border-radius: 16px;
   justify-content: space-between;
-
-
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  padding: 5px;
+  @media (min-width: 600px) {
+    background-color: rgba(169, 169, 169, 0.24);
+    display: flex;
+    padding: 24px;
+    width: 300px;
+    height: 50px;
+    border-radius: 16px;
+    justify-content: space-between;
+  }
 `;
 export const DashBoardBussinessTextContainer = styled.div`
   flex: 3;
@@ -93,12 +125,14 @@ export const DashboardBussinessInfo = styled.div`
 
 
 export const DashBoardInfoContainer = styled.div`
-  margin-left: 30px;
-  margin-top: 20px;
-  margin-right: 30px;
-  display: flex;
-  gap: 50px;
-  max-height: 400px;
+  @media (min-width: 600px){
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-right: 30px;
+    display: flex;
+    gap: 50px;
+    max-height: 400px;
+  }
 `;
 
 export const LeftDashBoardInfoContainer = styled.div`
@@ -129,7 +163,10 @@ export const RightDashBoardInfoContainer = styled.div`
 
 
 export const LeftDashBoardPanelEsa = styled.div`
-    flex: 4;
+  margin-bottom: 40px;
+    @media (min-width: 600px){
+      flex: 4;
+    }
   
 `;
 export const DashBoardInfoFont = styled(LeftPanelElementText)`

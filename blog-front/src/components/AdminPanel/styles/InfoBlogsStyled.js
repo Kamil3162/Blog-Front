@@ -1,23 +1,32 @@
 import styled from "styled-components";
 
 export const InfoBlogsContainer = styled.div`
-  margin-left: 30px;
-  margin-right: 30px;
-
-  background-color: #e5e3e3;
-  border-radius: 15px;
   padding: 10px;
-  margin-top: 30px;
+  @media (min-width: 600px){
+    margin-left: 30px;
+    margin-right: 30px;
+
+    background-color: #e5e3e3;
+    border-radius: 15px;
+    padding: 10px;
+    margin-top: 30px;
+  }
 `;
 
 export const InfoBlogTableth = styled.th`
-  min-width: 50px;
-  color: #050505;
-  font-size: 15px;
   font-family: 'Raleway', sans-serif;
-  font-weight: 800;
-  opacity: 0.8;
-  width: 200px;
+  max-width: 50px;
+  width: auto;
+  
+  @media (min-width: 600px){
+    min-width: 30px;
+    color: #050505;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    opacity: 0.8;
+    width: 200px;
+  }
 `;
 export const InfoBlogTd = styled.td`
   width: 200px;

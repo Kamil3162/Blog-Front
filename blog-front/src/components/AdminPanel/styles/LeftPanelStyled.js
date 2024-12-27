@@ -2,52 +2,91 @@ import styled from "styled-components";
 
 
 export const LeftPanelContainer = styled.div`
+  @media (max-width: 600px){
+    position: fixed;
+    background-color: rgb(253, 253, 253);
+    z-index: 1;
+    top: 0;
+    //padding: 20px;
+    border-radius: 20px;
+    //border-bottom: none;
+    border: 1px solid black;
+    width: 150px;
+    height: auto;
+  }
   //flex: 1;
-  width: 60px;
-  height: 90vh;
-  margin-top: 2rem;
-  margin-left: 20px;
-  border-radius: 20px;
-  flex-direction: column;
-  justify-items: center;
-  background-color: rgba(7, 6, 6, 0.05);
-  padding: 20px;
-  border: 1px solid black;
-`;
+  
 
-export const LeftPanelElement = styled.div`
-  display: flex;
-  margin-top: 15px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 15px;
-  //background-color: rgba(255, 255, 255, 0.9);
+  @media (min-width: 600px) {
+    width: 60px;
+    height: 90vh;
+    margin-top: 2rem;
+    margin-left: 20px;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-items: center;
+    background-color: rgba(7, 6, 6, 0.05);
+    padding: 20px;
+    border: 1px solid #eeeeee;
+  }
 
-  &:hover {
-    box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 10px 5px;
-    transition: all 0.2s ease-in-out;
+  img {
+    //background-color: white;
+    padding: 10px;
   }
 `;
 
-export const IconPanelContainer = styled.div`
+export const LeftPanelElement = styled.div`
+  padding: 20px;
+  @media (min-width: 600px){
     display: flex;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 1000;
-    border-bottom: 1px solid black;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-    padding-bottom: 15px;
-  
-    img{
-      width: auto;
-      height: 5vh; /* Example: Set height relative to the viewport size */
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+    //background-color: rgba(255, 255, 255, 0.9);
+
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 2px 2px 10px 5px;
+      transition: all 0.2s ease-in-out;
     }
+  }
+  
+`;
+
+export const IconPanelContainer = styled.div`
+  display: flex;
+  align-content: center;
+  justify-content: center;  
+  max-height: 50px;
+  z-index: 1;
   
   h1{
     font-size: 20px;
     color: black;
   }
+  
+    @media (min-width: 600px){
+
+      display: flex;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 1000;
+      border-bottom: 1px solid black;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 15px;
+
+      img{
+        width: auto;
+        height: 5vh; /* Example: Set height relative to the viewport size */
+      }
+
+      h1{
+        font-size: 20px;
+        color: black;
+      }
+    }
     
 `;
 export const LeftPanelElementText = styled.div`
@@ -60,21 +99,32 @@ export const LeftPanelElementText = styled.div`
   
 `;
 export const LeftPanelElementIcon = styled.div`
-  display: flex; /* Enables flexbox */
-  //justify-content: center; /* Centers children horizontally */
-  align-items: center; /* Centers children vertically */
-  padding: 5px;
-  //background-color: #8899c5;
-  border-radius: 15px;
-  //height: 40px; /* Fixed height of the container */
-  justify-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
   img {
     max-height: 30px; /* Reduced to make the image smaller */
-    object-fit: contain; /* Maintains aspect ratio without cropping */
     min-height: 30px; /* Adjusted down to allow the image to become smaller */
   }
   
+  
+  @media (min-width: 600px){
+    display: flex; /* Enables flexbox */
+    //justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
+    padding: 5px;
+    //background-color: #8899c5;
+    border-radius: 15px;
+    //height: 40px; /* Fixed height of the container */
+    justify-items: center;
+
+    img {
+      max-height: 30px; /* Reduced to make the image smaller */
+      object-fit: contain; /* Maintains aspect ratio without cropping */
+      min-height: 30px; /* Adjusted down to allow the image to become smaller */
+    }
+  }
   
   //&:hover {
   //  transition: all 0.5s ease-out;
