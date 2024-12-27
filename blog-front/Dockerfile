@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Step 3: Copy package.json files and install dependencies
 COPY package*.json ./
+#RUN npm install dotenv
 RUN npm install
 
 # Step 4: Copy your application code
@@ -22,5 +23,5 @@ COPY --from=build /app/build /var/www/kamilholub.pl/html
 
 RUN chmod -R 755 /var/www/kamilholub.pl/html
 
-EXPOSE 3000
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
