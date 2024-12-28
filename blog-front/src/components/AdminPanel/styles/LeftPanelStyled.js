@@ -11,8 +11,9 @@ export const LeftPanelContainer = styled.div`
     border-radius: 20px;
     //border-bottom: none;
     border: 1px solid black;
-    width: 150px;
-    height: auto;
+    width: 75px;
+    max-height: 600px;
+    margin-left: 15px;
   }
   //flex: 1;
   
@@ -37,7 +38,8 @@ export const LeftPanelContainer = styled.div`
 `;
 
 export const LeftPanelElement = styled.div`
-  padding: 20px;
+  padding: 5px;
+  
   @media (min-width: 600px){
     display: flex;
     margin-top: 15px;

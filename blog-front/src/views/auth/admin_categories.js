@@ -47,7 +47,9 @@ function AdminCategories(){
                         <SearchField
                             type="text"
                             placeholder="Search..."
+                            fontColor="white"
                             onChange={handleSearchInputChange}
+
                         />
                         <SearchIconContainer
                             backgroundColor="white"
@@ -67,22 +69,33 @@ function AdminCategories(){
                     </TableHeader>
                     <TableRow>
                         <TableCell>Test</TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell>Test</TableCell>
+                        <TableCell>YEs</TableCell>
 
                     </TableRow>
                     <TableRow>
                         <TableCell>Test</TableCell>
+                        <TableCell>YEs</TableCell>
+
                     </TableRow>
                     <TableRow>
                         <TableCell>Test</TableCell>
+                        <TableCell>YEs</TableCell>
+
                     </TableRow>
                     <TableRow>
                         <TableCell>Test</TableCell>
+                        <TableCell>YEs</TableCell>
+
                     </TableRow>
                     <TableRow>
                         <TableCell>Test</TableCell>
+                        <TableCell>YEs</TableCell>
+
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>Test</TableCell>
+                        <TableCell>YEs</TableCell>
+
                     </TableRow>
                 </TableContainer>
                 <PostMovingContainer>

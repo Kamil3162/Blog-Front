@@ -33,6 +33,12 @@ export const AdminPanelContainer = styled.div`
 
 export const DashBoardContainer = styled.div`
   //margin: 0;
+  //p{
+  //  margin-left: 100px;
+  //  font-weight: 600;
+  //  font-family: 'Lexend', sans-serif;
+  //  
+  //}
   @media (min-width: 600px){
     flex: 5;
 
@@ -40,6 +46,7 @@ export const DashBoardContainer = styled.div`
       font-family: 'Lexend', sans-serif;
       font-size: 20px;
       margin-left: 35px;
+      
     }
   }
 `;

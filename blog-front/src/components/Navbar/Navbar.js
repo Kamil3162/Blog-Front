@@ -87,13 +87,21 @@ function Navbar(){
                 <NavbarElementsContainer alignment="center">
                 </NavbarElementsContainer>
                 <NavbarElementsContainer alignment="flex-end">
-                    <SearchContainer>
+                    <SearchContainer
+                        backgroundColor="black"
+                        width="200px"
+                    >
                         <SearchField
                             type="text"
                             placeholder="Search..."
+                            fontColor="white"
                             onChange={handleSearchInputChange}
                         />
-                        <SearchIconContainer>
+                        <SearchIconContainer
+                            backgroundColor="white"
+                            padding="7px"
+                            borderRadius="20px"
+                        >
                             <img src={photo1} width="20px" height="20px" onClick={handleSearchClick}/>
                         </SearchIconContainer>
                     </SearchContainer>

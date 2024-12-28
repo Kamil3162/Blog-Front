@@ -132,7 +132,7 @@ export const SearchContainer = styled.div`
   display: grid;
   grid-template-columns: 4fr 1fr;
   height: 40px;
-  width: 300px;
+  width: ${props => props.width || "300px"};
   justify-items: center;
   background-color: ${props => props.backgroundColor || "#f1f3f4"};
   

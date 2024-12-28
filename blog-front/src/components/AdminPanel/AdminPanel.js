@@ -29,9 +29,9 @@ function AdminPanel(){
                 <DashBoardInfoContainer>
                     <DashboardInfoPanel />
                 </ DashBoardInfoContainer>
-                <InfoBlogsContainer>
-                    <PostsTable />
-                </InfoBlogsContainer>
+                {/*<InfoBlogsContainer>*/}
+                {/*    <PostsTable />*/}
+                {/*</InfoBlogsContainer>*/}
             </DashBoardContainer>
         </AdminPanelContainer>
     )
