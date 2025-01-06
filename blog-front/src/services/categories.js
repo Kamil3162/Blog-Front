@@ -9,7 +9,7 @@ const API_URL = "http://127.0.0.1:10000/categories"
 export const fetchCategories = async () => {
 
     try {
-        const response = await axiosClientAPI.get('/categories/categories');
+        const response = await axiosClientAPI.get('categories/categories');
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {
@@ -24,7 +24,7 @@ export const createCategory = async (category_name) => {
     category_data.set('category_name', category_name);
 
     try {
-        const response = await axiosClientAPI.post('/categories/create-category', category_data);
+        const response = await axiosClientAPI.post('categories/create-category', category_data);
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {
@@ -37,7 +37,7 @@ export const createCategory = async (category_name) => {
 
 export const deleteCategory = async(category_id) => {
     try {
-        const response = await axiosClientAPI.delete(`/categories/delete-category/${category_id}`);
+        const response = await axiosClientAPI.delete(`categories/delete-category/${category_id}`);
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {
@@ -51,7 +51,7 @@ export const updateCategory = async(category_id, category_name) =>{
         const category_update = new FormData();
         category_update.set('category_name', category_name);
 
-        const response = await axiosClientAPI.put(`/categories/category-update/${category_id}`, category_update);
+        const response = await axiosClientAPI.put(`categories/category-update/${category_id}`, category_update);
         console.log('Update category:', response);
         return response.data;
 
@@ -64,7 +64,7 @@ export const updateCategory = async(category_id, category_name) =>{
 export const fetchNewestPost = async() =>{
     try{
 
-        const response = axiosClientAPI.get('/categories/newest-post');
+        const response = axiosClientAPI.get('categories/newest-post');
         console.log("fetch newset post");
         return response;
 

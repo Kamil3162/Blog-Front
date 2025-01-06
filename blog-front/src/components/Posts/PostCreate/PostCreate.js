@@ -21,9 +21,13 @@ import {
 // import {CategoryUnderline} from "../../Categories/CategoriesStyled/CategoryCreateStyled";
 import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
 import {fetchCategories} from "../../../services/categories";
+import {postCreate} from "../../../services/post";
+
 // import * as wasi from "wasi";
 
 function PostCreate(){
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
     const [images, setImages] = useState([]); // To store multiple image URLs
     const [fileNames, setFileNames] = useState([]); // To store multiple file names
     const [categories, setCategories] = useState([]);
@@ -33,8 +37,6 @@ function PostCreate(){
         id: null,
         category_name: ''
     });
-
-
 
     const loadCategories = async () => {
         const data = await fetchCategories();
@@ -81,6 +83,23 @@ function PostCreate(){
         setImages(imageUrlsArray);    // Update images
     }
 
+    const handleButtonClick = () => {
+        const response = postCreate(
+            title,
+            selectedCategory.category_name,
+            content,
+            images
+        );
+        console.log(response);
+    }
+
+    const titleChange = (e) => {
+        setTitle(e.target.value);
+    }
+
+    const contentChange = (e) => {
+        setContent(e.target.value);
+    }
 
     return (
         <PhotoContainer>
@@ -97,6 +116,7 @@ function PostCreate(){
             <AddFileForm action="">
                 <InputDataPostCreate
                     placeholder="Title..."
+  		    onChange={titleChange}
                 />
 
                 <StyledSelect
@@ -120,6 +140,7 @@ function PostCreate(){
                 <AddText
                     placeholder="Add content..."
                     placeholderTextColor="black"
+		    onChange={contentChange}
                 />
 
                 <input type="file" accept="image/*" className='input-field' hidden multiple
@@ -200,6 +221,7 @@ function PostCreate(){
                 background={"blue"}
                 color={"white"}
                 text="Upload post"
+		funExecute={handleButtonClick}
             />
         </PhotoContainer>
     )

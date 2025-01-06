@@ -41,19 +41,18 @@ function PostList() {
                 const posts_data = await fetchPosts(currentPage);
                 setPosts(posts_data);
                 console.log(currentPage);
+		setLoading(false);
             } catch (error) {
                 console.log("failed to load posts")
                 // showNotification(error.message, NotificationType.ERROR); // Use it here
-            } finally {
-                setLoading(false);
-            }
+	    }
         };
         loadPosts(currentPage);
     }, [currentPage]);
 
     return (
         <PostListAllContainer>
-            {loading ? (
+		 {loading ? (
                 <div>Loading...</div>
             ) : (
                 <>

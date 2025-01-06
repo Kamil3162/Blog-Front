@@ -41,7 +41,7 @@ function PostDetail({post}){ // add here button edit
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        setComments(post.comments);
+       // setComments(post.comments);
     }, []);
 
     const highlightStyle = {
@@ -131,7 +131,7 @@ function PostDetail({post}){ // add here button edit
                                     className="post-title"
                                     contentEditable="false">
                                     <HomeTitle>
-                                        {post.post.title}
+                                        Test
                                     </HomeTitle>
                                 </PostDetailHeaderTitle>
                                 <HomeDate>DEC 19, 2023</HomeDate>
@@ -142,7 +142,7 @@ function PostDetail({post}){ // add here button edit
                                 className="post-content"
                                 contentEditable="false"
                             >
-                                {post.post.content}
+                                Test information
                                 {/*Thanks to our friends at Webflow for sponsoring this blog post!*/}
                                 {/*<br/>*/}
                                 {/*Gone are the days of aesthetics trumping experience. Today, web design is all about crafting immersive experiences that connect, captivate, motivate, and delight. As tech continues to evolve, and as more organizations zero in on meeting customer expectations, we’re eyeing new trends that are poised to redefine our perception of digital aesthetics and functionality.*/}
@@ -158,37 +158,37 @@ function PostDetail({post}){ // add here button edit
                                 <IconVote name="downvote" backgroundColor="#FF5252" src={downvote} />
                             </IconContainer>
                         </PostDetailContentContainer>
-                        <CommentsContainer>
+                    	<CommentsContainer>
                             <HomeTitle>Comments</HomeTitle>
                             <AddComment/>
-                            {
-                                comments ? (
-                                    comments.map((comment, index) => {
-                                        return(
-                                            <CommentContainer>
-                                                <PhotoContainer>
-                                                    <img src={Photo}/>
-                                                </PhotoContainer>
-                                                <TextTitleContainer>
-                                                    <NameContainer>
-                                                        <p>Kamil Holub</p>
-                                                        <p> now</p>
-                                                    </NameContainer>
-                                                    <TextContainer>
-                                                        dsadas
-                                                    </TextContainer>
-                                                </TextTitleContainer>
-                                            </CommentContainer>
-                                        )
-                                    })
-                                ) : (
-                                    <p></p>
-                                )
-                            }
-                        </CommentsContainer>
-                    </>
+			   {/*{*/}
+                            {/*    comments ? (*/}
+                            {/*        comments.map((comment, index) => {*/}
+                            {/*            return(*/}
+                            {/*                <CommentContainer>*/}
+                            {/*                    <PhotoContainer>*/}
+                            {/*                        <img src={Photo}/>*/}
+                            {/*                    </PhotoContainer>*/}
+                            {/*                    <TextTitleContainer>*/}
+                            {/*                        <NameContainer>*/}
+                            {/*                            <p>Kamil Holub</p>*/}
+                            {/*                            <p> now</p>*/}
+                            {/*                        </NameContainer>*/}
+                            {/*                        <TextContainer>*/}
+                            {/*                            dsadas*/}
+                            {/*                        </TextContainer>*/}
+                            {/*                    </TextTitleContainer>*/}
+                            {/*                </CommentContainer>*/}
+                            {/*            )*/}
+                            {/*        })*/}
+                            {/*    ) : (*/}
+                            {/*        <p></p>*/}
+                            {/*    )*/}
+                            {/*}*/}                      
+			</CommentsContainer>                    
+		    </>
                 )
-            }
+           }
 
         </PostDetailContainer>
     );
