@@ -1,26 +1,33 @@
 import Cookies from "universal-cookie";
 import axiosClientAPI from "./base";
-
 const cookies = new Cookies();
 
+
+
+
 export const postCreate = (title, category, content, photo) => {
-    const formData = new FormData();
+    try{
+        const formData = new FormData();
 
-    formData.set('title', title);
-    formData.set('category', category);
-    formData.set('content', content);
-    formData.set('photo', photo);
+        formData.set('title', title);
+        formData.set('category', category);
+        formData.set('content', content);
+        formData.set('photo', photo);
 
-    axiosClientAPI.post('/posts/post-create/',formData,{
-        withCredentials: true, // This enables cross-origin requests to include cookies
-        headers: {
-            'Content-Type': 'multipart/form-data',
-        },
-    }).then(response => {
-        console.log(response);
-    }).catch(error => {
-        console.log(error);
-    })
+        console.log(formData);
+
+        const response = axiosClientAPI.post('/posts/post-create/',formData,{
+            withCredentials: true, // This enables cross-origin requests to include cookies
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
+        return response.data;
+
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
 }
 
 export const postUpdate = (post_id, title, content) =>{
@@ -72,7 +79,7 @@ export const postDetail = (post_id) =>{
 export const postGenDetail = async (post_id) => {
     try {
         const response = await axiosClientAPI.get(`/posts/post/${post_id}`, {
-            // withCredentials: true,
+            withCredentials: true,
             // headers: {
             //     'Content-Type': 'multipart/form-data',
             // },

@@ -20,6 +20,7 @@ import AdminUsers from "../views/auth/admin_users";
 import {UserDetail} from "../components/UserProfile/user_styles";
 import UserProfile from "../components/UserProfile/UserProfile";
 import WebSocketChat from "../services/ws";
+import ImageDisplay from "../views/post/image_test_display";
 
 const AppRoutes = () => (
     // <ErrorProvider>
@@ -43,6 +44,7 @@ const AppRoutes = () => (
                     <Route path="/admin-panel/user" element={<UserProfile />} />
                     <Route path="/user" element={<AdminPanelView />} />
                     <Route path="/chat" element={<WebSocketChat />} />
+                    <Route path="/test-image" element={<ImageDisplay />} />
             </Routes>
     // </ErrorProvider>
 

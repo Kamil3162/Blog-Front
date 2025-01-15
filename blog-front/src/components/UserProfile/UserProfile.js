@@ -40,7 +40,6 @@ function UserProfile(){
                             SJ Label
                         </Label>
                     </LeftSection>
-
                     <RightSection>
                         <UserProfile1>
                             <Avatar src={key}/>
@@ -97,7 +96,7 @@ function UserProfile(){
                                         testowy32
                                     </p>
                                 </UserInfoAccContainer>
-                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>
@@ -105,7 +104,7 @@ function UserProfile(){
                                         testowy32
                                     </p>
                                 </UserInfoAccContainer>
-                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>
@@ -113,7 +112,7 @@ function UserProfile(){
                                         testowy32
                                     </p>
                                 </UserInfoAccContainer>
-                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>
@@ -123,7 +122,7 @@ function UserProfile(){
                                 </UserInfoAccContainer>
                             </div>
                             <div >
-                                <UserInfoAccContainer >
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>
@@ -131,7 +130,7 @@ function UserProfile(){
                                         testowy32
                                     </p>
                                 </UserInfoAccContainer>
-                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>
@@ -139,7 +138,7 @@ function UserProfile(){
                                         testowy32
                                     </p>
                                 </UserInfoAccContainer>
-                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>
@@ -147,7 +146,7 @@ function UserProfile(){
                                         testowy32
                                     </p>
                                 </UserInfoAccContainer>
-                                <UserInfoAccContainer style={{ marginTop: "30px" }}>
+                                <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
                                     </h1>

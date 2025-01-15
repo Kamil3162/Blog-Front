@@ -1,40 +1,34 @@
-// import {PostDetailContainer} from "../../../assets/styledCss/PostDetailStyled";
 import React, {useEffect, useState} from "react";
 import {
     AddFileForm,
     AddText,
-    AddTitle,
     InputDataPostCreate,
     PhotoContainer,
-    PostImagesList, StyledPhotoTable, StyledSelect
+    StyledPhotoTable, StyledSelect
 } from "../../../assets/styledCss/PostCreateStyled";
 import upimage from "../../../assets/icons/upload.png";
 import {AuthButtonComponent} from "../../Button/AuthButtonComponent";
 import {
     HomeContentContainer,
     HomeContentText,
-    HomeDate,
     HomeTitle,
-    HomeTitlePost
 } from "../../../assets/styledCss/PostStyled";
-// import postCreate from "../../../services/post_service";
-// import {CategoryUnderline} from "../../Categories/CategoriesStyled/CategoryCreateStyled";
 import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
 import {fetchCategories} from "../../../services/categories";
-// import * as wasi from "wasi";
+import {postCreate} from "../../../services/post";
 
 function PostCreate(){
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+    const [categories, setCategories] = useState([]);
     const [images, setImages] = useState([]); // To store multiple image URLs
     const [fileNames, setFileNames] = useState([]); // To store multiple file names
-    const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const [selectedCategory, setSelectedCategory] = useState({
         id: null,
         category_name: ''
     });
-
-
 
     const loadCategories = async () => {
         const data = await fetchCategories();
@@ -81,6 +75,23 @@ function PostCreate(){
         setImages(imageUrlsArray);    // Update images
     }
 
+    const handleButtonClick = () => {
+        const response = postCreate(
+            title,
+            selectedCategory.category_name,
+            content,
+            images
+        );
+        console.log(response);
+    }
+
+    const titleChange = (e) => {
+        setTitle(e.target.value);
+    }
+
+    const contentChange = (e) => {
+        setContent(e.target.value);
+    }
 
     return (
         <PhotoContainer>
@@ -97,6 +108,7 @@ function PostCreate(){
             <AddFileForm action="">
                 <InputDataPostCreate
                     placeholder="Title..."
+                    onChange={titleChange}
                 />
 
                 <StyledSelect
@@ -120,6 +132,8 @@ function PostCreate(){
                 <AddText
                     placeholder="Add content..."
                     placeholderTextColor="black"
+                    onChange={contentChange}
+
                 />
 
                 <input type="file" accept="image/*" className='input-field' hidden multiple
@@ -158,9 +172,6 @@ function PostCreate(){
                         </div>
                     )
                 }
-
-
-
                 {images.length > 0 ? (
                     <>
                         {images.map((img, index) => {
@@ -200,9 +211,18 @@ function PostCreate(){
                 background={"blue"}
                 color={"white"}
                 text="Upload post"
+                funExecute={handleButtonClick}
             />
         </PhotoContainer>
     )
 }
 
+
+
+
+
 export default PostCreate;
+
+
+
+

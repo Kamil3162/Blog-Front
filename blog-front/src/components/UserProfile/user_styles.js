@@ -51,6 +51,7 @@ export const Header = styled.header`
   height: 48px;
   width: 100%;
   border-radius: 10px 10px 0 0;
+  
 `;
 
 export const LeftSection = styled.div`
@@ -78,6 +79,10 @@ export const RightSection = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  
+  @media (max-width: 600px){
+    display: block;
+  }
 `;
 
 export const UserProfile1 = styled.div`
@@ -111,6 +116,11 @@ export const UserInformationContainer = styled.div`
   padding: 20px;
   border-radius: 0 0 10px 10px;
   width: 100%;
+  
+  @media (max-width: 600px){
+    width: 90%;
+  }
+  
 `;
 
 export const PersonalInfoShort = styled.div`
@@ -120,6 +130,11 @@ export const PersonalInfoShort = styled.div`
     background-color: white;
     border-radius: 20px;
     align-items: center;
+  
+    @media (max-width: 600px){
+      display: block;
+      height: 250px;
+    }
 `;
 
 export const PersonNamePosition = styled.div`
@@ -130,6 +145,12 @@ export const PersonNamePosition = styled.div`
   gap: 10px;
   margin-left: 30px;
   border-right: 1px solid black;
+  
+  @media (max-width: 600px){
+    height: 60%;
+    border-right: none;
+    
+  }
   
 `;
 export const PersonImage = styled.image`
@@ -165,12 +186,22 @@ export const UserInformationAccess = styled.div`
     display: flex;
     gap: 50px;
     margin-left: 50px;
+  
+  @media (max-width: 600px){
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    margin-left: 0;
+  }
 `;
 
 export const UserInfoAccContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 30px;
+  
   h1{
     color: darkgray;
     font-size: 15px;
@@ -186,6 +217,17 @@ export const UserInfoAccContainer = styled.div`
     font-weight: 600;
     margin: 0 ;
   }
+  
+  @media (max-width: 600px){
+    margin: 0 auto;
+    
+    h1{
+      //margin: 0 auto;
+    }
+    p{
+      //margin: 0 auto;
+    }
+  }
 `;
 
 export const PersonalInformationContainer = styled.div`
@@ -193,6 +235,9 @@ export const PersonalInformationContainer = styled.div`
     justify-content: space-between;
     gap: 30px;
     margin-top: 20px;
+  @media (max-width: 600px){
+    display: block;
+  }
 `;
 
 export const PersonalInfoAdd = styled(PersonalInfoShort)`
@@ -202,5 +247,12 @@ export const PersonalInfoAdd = styled(PersonalInfoShort)`
     display: flex;
     justify-content: space-between;
   height: 600px;
+  
+    @media (max-width: 600px){
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     
 `

@@ -41,7 +41,7 @@ function PostDetail({post}){ // add here button edit
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        setComments(post.comments);
+        // setComments(post.comments);
     }, []);
 
     const highlightStyle = {
@@ -155,36 +155,41 @@ function PostDetail({post}){ // add here button edit
                             </PostDetailContent>
                             <IconContainer>
                                 <IconVote name="upvote" backgroundColor="#4CAF50" src={upvote} />
-                                <IconVote name="downvote" backgroundColor="#FF5252" src={downvote} />
+                                <IconVote
+                                    name="downvote"
+                                    backgroundColor="#FF5252"
+                                    src={upvote}
+                                    style={{ transform: 'rotate(180deg)' }}
+                                />
                             </IconContainer>
                         </PostDetailContentContainer>
                         <CommentsContainer>
                             <HomeTitle>Comments</HomeTitle>
                             <AddComment/>
-                            {
-                                comments ? (
-                                    comments.map((comment, index) => {
-                                        return(
-                                            <CommentContainer>
-                                                <PhotoContainer>
-                                                    <img src={Photo}/>
-                                                </PhotoContainer>
-                                                <TextTitleContainer>
-                                                    <NameContainer>
-                                                        <p>Kamil Holub</p>
-                                                        <p> now</p>
-                                                    </NameContainer>
-                                                    <TextContainer>
-                                                        dsadas
-                                                    </TextContainer>
-                                                </TextTitleContainer>
-                                            </CommentContainer>
-                                        )
-                                    })
-                                ) : (
-                                    <p></p>
-                                )
-                            }
+                            {/*{*/}
+                            {/*    comments ? (*/}
+                            {/*        comments.map((comment, index) => {*/}
+                            {/*            return(*/}
+                            {/*                <CommentContainer>*/}
+                            {/*                    <PhotoContainer>*/}
+                            {/*                        <img src={Photo}/>*/}
+                            {/*                    </PhotoContainer>*/}
+                            {/*                    <TextTitleContainer>*/}
+                            {/*                        <NameContainer>*/}
+                            {/*                            <p>Kamil Holub</p>*/}
+                            {/*                            <p> now</p>*/}
+                            {/*                        </NameContainer>*/}
+                            {/*                        <TextContainer>*/}
+                            {/*                            dsadas*/}
+                            {/*                        </TextContainer>*/}
+                            {/*                    </TextTitleContainer>*/}
+                            {/*                </CommentContainer>*/}
+                            {/*            )*/}
+                            {/*        })*/}
+                            {/*    ) : (*/}
+                            {/*        <p></p>*/}
+                            {/*    )*/}
+                            {/*}*/}
                         </CommentsContainer>
                     </>
                 )

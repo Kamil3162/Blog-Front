@@ -70,22 +70,30 @@ const DashboardContainer = styled.div`
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
+  height: auto;
+  //overflow: hidden;
 
   @media (max-width: 600px) {
     padding: 10px;
     border-radius: 10px;
+    max-width: 400px;
     //margin: 0 10px;
   }
 `;
 
 const ChartWrapper = styled.div`
   width: 100%;
-  height: 500px;
+  height: 300px;
+  position: relative;
+  //min-height: 300px
+  padding: 0 10px; // Add some padding
+
 
   @media (max-width: 600px) {
     height: 300px;  // Smaller height on mobile
+    max-width: 80%;
   }
 `;
 
@@ -225,7 +233,7 @@ const DashboardChart = () => {
         <DashboardContainer>
             <ChartTitle>Performance Dashboard</ChartTitle>
             <ChartWrapper>
-                <ResponsiveContainer>
+                <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart
                         data={data}
                         margin={{

@@ -20,7 +20,7 @@ export const AdminPanelContainer = styled.div`
   
   @media (min-width: 500px){
     display: flex;
-    min-width: 100vh;
+    //min-width: 100vh;
     min-height: 100vh;
     //background-color: #c0bfbf;
     //background: linear-gradient(to top left, #61dafb 0, #007bff 100);

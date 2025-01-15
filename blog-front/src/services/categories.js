@@ -2,14 +2,22 @@ import axios from "axios";
 import jwt, {jwtDecode} from "jwt-decode";
 import Cookies from "universal-cookie";
 import axiosClientAPI from "./base";
-
+import env from "../config/environment";
 const cookies = new Cookies();
-const API_URL = "http://127.0.0.1:10000/categories"
+// const dotenv = require('dotenv');
+// dotenv.config();
 
+const API_URL = process.env.REACT_APP_API_URL;
+const SECRET_KEY = process.env.REACT_APP_BACKEND_API_URL;
+
+console.log(API_URL);
+console.log(SECRET_KEY);
 export const fetchCategories = async () => {
 
     try {
         const response = await axiosClientAPI.get('/categories/categories');
+        console.log(API_URL);
+        console.log(SECRET_KEY);
         console.log('Fetch Categories Response:', response);
         return response.data; // Assuming the server response contains the desired data in the response body
     } catch (error) {

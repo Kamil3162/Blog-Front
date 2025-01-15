@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {MainContainer} from "../../assets/styledCss/MainStyled";
 import NavContext from "../../context/NavbarContext";
+import NavContextProvider from "../../context/NavbarContext";
 
 function MainScreenApplication({children}){
 
@@ -19,11 +20,11 @@ function MainScreenApplication({children}){
     }, []);
 
     return (
-        <NavContext>
+        <NavContextProvider>
             <MainContainer>
                 {children}
             </MainContainer>
-        </NavContext>
+        </NavContextProvider>
     )
 }
 

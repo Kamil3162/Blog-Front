@@ -13,8 +13,8 @@ import listview from "../../assets/icons/listview.png";
 import {useContext} from "react";
 import { logout } from "../../services/user";
 import {useAuth} from "../../context/AuthContext";
-import NavbarContext from "../../context/nav_contextes/nav_context";
 import {Link} from "react-router-dom";
+import {NavCon} from "../../context/NavbarContext";
 
 function Navbar(){
     const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +22,7 @@ function Navbar(){
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
     const { authToken } = useAuth();
 
-    const { handlePostSearch } = useContext(NavbarContext);
+    const { handlePostSearch } = useContext(NavCon);
 
     const handleLogout = () =>{
         console.log("click");

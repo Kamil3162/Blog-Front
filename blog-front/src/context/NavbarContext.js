@@ -1,24 +1,61 @@
-import NavbarContext from "./nav_contextes/nav_context";
-import {useContext, useState} from "react";
+import {createContext, useCallback, useEffect, useState} from "react";
 import {searchPost} from "../utils/search_field_functions";
 
-function NavContext({children}){
+export const NavCon = createContext();
 
+function NavContextProvider({children}){
+    const [category, setCategory] = useState("all");
     const [searchedPosts, setSearchedPosts] = useState([]);
-    const handlePostSearch = (postTitle) =>{
-        const posts = searchPost("HomeTitle", postTitle);
+    const [filteredPosts, setFilteredPosts] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
 
-        console.log(postTitle);
-        console.log(posts);
+    const searchPostByCategory = useCallback((posts, selectedCategory) => {
+        if (!posts) return [];
+        if (selectedCategory === "all") return posts;
+
+        return posts.filter(post =>
+            post.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
+    }, []);
+
+    const handleCategoryChange = useCallback((newCategory) => {
+        setCategory(newCategory);
+        const categoryFiltered = searchPostByCategory(searchedPosts, newCategory);
+        setFilteredPosts(categoryFiltered);
+    }, [searchedPosts, searchPostByCategory]);
+
+    // Combined search function for both title and category
+    const handlePostSearch = useCallback((postTitle) => {
+        setSearchedPosts(postTitle);
+        const posts = searchPost("HomeTitle", postTitle);
+        const categoryFiltered = searchPostByCategory(posts, category);
 
         setSearchedPosts(posts);
-    }
+        setFilteredPosts(categoryFiltered);
+    }, [category, searchPostByCategory]);
+
+
+    // Effect to update filtered posts when category or search changes
+    useEffect(() => {
+        const categoryFiltered = searchPostByCategory(searchedPosts, category);
+        setFilteredPosts(categoryFiltered);
+    }, [category, searchedPosts, searchPostByCategory]);
 
     return(
-        <NavbarContext.Provider value={{searchedPosts, handlePostSearch}}>
+        <NavCon.Provider
+            value={{
+                searchedPosts,
+                category,
+                setCategory,
+                filteredPosts,
+                setFilteredPosts,
+                handlePostSearch,
+                searchPostByCategory
+            }}
+        >
             {children}
-        </NavbarContext.Provider>
+        </NavCon.Provider>
 
     )
 }
-export default NavContext;
+export default NavContextProvider;

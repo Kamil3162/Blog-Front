@@ -28,7 +28,7 @@ function AdminPanel(){
                 </DashBoardBussinesInfoContainer>
                 <DashBoardInfoContainer>
                     <DashboardInfoPanel />
-                </ DashBoardInfoContainer>
+                </DashBoardInfoContainer>
                 {/*<InfoBlogsContainer>*/}
                 {/*    <PostsTable />*/}
                 {/*</InfoBlogsContainer>*/}
