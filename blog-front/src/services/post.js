@@ -2,9 +2,6 @@ import Cookies from "universal-cookie";
 import axiosClientAPI from "./base";
 const cookies = new Cookies();
 
-
-
-
 export const postCreate = (title, category, content, photo) => {
     try{
         const formData = new FormData();
@@ -77,6 +74,7 @@ export const postDetail = (post_id) =>{
 }
 
 export const postGenDetail = async (post_id) => {
+   console.log(post_id);
     try {
         const response = await axiosClientAPI.get(`/posts/post/${post_id}`, {
             withCredentials: true,

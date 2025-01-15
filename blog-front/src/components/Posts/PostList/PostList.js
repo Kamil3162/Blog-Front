@@ -40,6 +40,7 @@ function PostList() {
                 setPosts(posts_data);
                 setLoading(false);
                 console.log(currentPage);
+		setLoading(false);
             } catch (error) {
                 console.log("failed to load posts")
                 // showNotification(error.message, NotificationType.ERROR); // Use it here
@@ -50,7 +51,7 @@ function PostList() {
 
     return (
         <PostListAllContainer>
-            {loading ? (
+		 {loading ? (
                 <div>Loading...</div>
             ) : (
                 <>

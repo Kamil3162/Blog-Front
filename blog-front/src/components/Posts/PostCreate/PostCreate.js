@@ -17,6 +17,8 @@ import {PostListCategory} from "../../../assets/styledCss/PostListStyled";
 import {fetchCategories} from "../../../services/categories";
 import {postCreate} from "../../../services/post";
 
+// import * as wasi from "wasi";
+
 function PostCreate(){
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -133,7 +135,6 @@ function PostCreate(){
                     placeholder="Add content..."
                     placeholderTextColor="black"
                     onChange={contentChange}
-
                 />
 
                 <input type="file" accept="image/*" className='input-field' hidden multiple
@@ -217,12 +218,6 @@ function PostCreate(){
     )
 }
 
-
-
-
-
 export default PostCreate;
-
-
 
 
