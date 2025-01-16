@@ -14,12 +14,12 @@ import photo1 from "../../assets/icons/loop.png";
 import {PostMovingContainer} from "../../assets/styledCss/PostListStyled";
 import PreviousButton from "../../components/Button/PreviousButton";
 import NextButton from "../../components/Button/NextButton";
-import NavbarContext from "../../context/nav_contextes/nav_context";
+import {NavCon} from "../../context/NavbarContext";
 
 
 function AdminPosts(){
     const [searchTerm, setSearchTerm] = useState("");
-    const { handlePostSearch } = useContext(NavbarContext);
+    const { handlePostSearch } = useContext(NavCon);
     const [currentPage, setCurrentPage] = useState("0");
 
     const handleSearchInputChange = (event) => {

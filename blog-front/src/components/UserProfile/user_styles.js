@@ -175,11 +175,18 @@ export const PersonStaffInfo = styled.div`
     font-size: 20px;
     font-family: 'Lexend', sans-serif;
     margin-bottom: 0;
+    color: ${props => props.fontColor ? "black" : "blue"};
   }
   p{
     font-family: 'Lexend', sans-serif;
     font-size: 15px;
   }
+`;
+export const StyledH1 = styled.h1`
+  font-size: ${props => props.fontSize ? "5px" : "10px"}
+  font-family: 'Lexend', sans-serif;
+  margin-bottom: 0;
+  color: ${props => props.fontColor ? props.fontColor : "black"};
 `;
 
 export const UserInformationAccess = styled.div`

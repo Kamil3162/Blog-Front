@@ -19,7 +19,7 @@ import NavbarContext from "../../context/nav_contextes/nav_context";
 
 function AdminCategories(){
     const [searchTerm, setSearchTerm] = useState("");
-    const { handlePostSearch } = useContext(NavbarContext);
+    // const { handlePostSearch } = useContext(NavbarContext);
     const [currentPage, setCurrentPage] = useState("");
 
 
@@ -29,7 +29,7 @@ function AdminCategories(){
     };
 
     const handleSearchClick = () => {
-        handlePostSearch(searchTerm);
+        // handlePostSearch(searchTerm);
 
     }
     return (

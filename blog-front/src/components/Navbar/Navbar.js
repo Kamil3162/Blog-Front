@@ -22,7 +22,7 @@ function Navbar(){
     const { isNavVisible, setIsNavVisible } = useContext(NavigationVisibilityContext);
     const { authToken } = useAuth();
 
-    const { handlePostSearch } = useContext(NavCon);
+    const { handlePostSearchByTitle } = useContext(NavCon);
 
     const handleLogout = () =>{
         console.log("click");
@@ -39,7 +39,7 @@ function Navbar(){
     };
 
     const handleSearchClick = () => {
-        handlePostSearch(searchTerm);
+        handlePostSearchByTitle(searchTerm);
     }
 
     const renderNavItems = () => {
@@ -77,6 +77,7 @@ function Navbar(){
             )
         // }
     }
+
     return (
         <>
 
@@ -95,7 +96,7 @@ function Navbar(){
                             type="text"
                             placeholder="Search..."
                             fontColor="white"
-                            onChange={handleSearchInputChange}
+                            onChange={(e) => handlePostSearchByTitle(e.target.value)}
                         />
                         <SearchIconContainer
                             backgroundColor="white"

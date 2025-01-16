@@ -5,12 +5,18 @@ export const NavCon = createContext();
 
 function NavContextProvider({children}){
     const [category, setCategory] = useState("all");
+    const [posts, setPosts] = useState([]);
     const [searchedPosts, setSearchedPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
+    const [selectedCategories, setSelectedCategories] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
 
+    const addSelectedCategories = (category) => {
+        setSelectedCategories(...selectedCategories, category);
+    }
+
     const searchPostByCategory = useCallback((posts, selectedCategory) => {
-        if (!posts) return [];
+        if (!posts?.length) return [];
         if (selectedCategory === "all") return posts;
 
         return posts.filter(post =>
@@ -18,22 +24,38 @@ function NavContextProvider({children}){
         );
     }, []);
 
-    const handleCategoryChange = useCallback((newCategory) => {
-        setCategory(newCategory);
-        const categoryFiltered = searchPostByCategory(searchedPosts, newCategory);
-        setFilteredPosts(categoryFiltered);
-    }, [searchedPosts, searchPostByCategory]);
+    const handlePostSearchCategories = useCallback(() => {
+        console.log("click", selectedCategories);
 
-    // Combined search function for both title and category
-    const handlePostSearch = useCallback((postTitle) => {
-        setSearchedPosts(postTitle);
-        const posts = searchPost("HomeTitle", postTitle);
-        const categoryFiltered = searchPostByCategory(posts, category);
+        if (!selectedCategories?.length) {
+            console.log("No categories selected");
+            setFilteredPosts(posts);
+            return;
+        }
 
-        setSearchedPosts(posts);
-        setFilteredPosts(categoryFiltered);
-    }, [category, searchPostByCategory]);
+        const searchResults = posts.filter(post =>
+            selectedCategories.some(category =>
+                post.category.toLowerCase() === category.toLowerCase()
+            )
+        );
 
+        setFilteredPosts(searchResults);
+    }, [selectedCategories, posts]); // Add dependencies here
+
+    const handlePostSearchByTitle = useCallback((title) => {
+        if (!title.trim()) {
+            setSearchedPosts(posts);
+            setFilteredPosts(searchPostByCategory(posts, category));
+            return;
+        }
+
+        const searchResults = posts.filter(post =>
+            post.title.toLowerCase().includes(title.toLowerCase())
+        );
+
+        setSearchedPosts(searchResults);
+        setFilteredPosts(searchPostByCategory(searchResults, category));
+    }, [posts, category, searchPostByCategory]);
 
     // Effect to update filtered posts when category or search changes
     useEffect(() => {
@@ -41,21 +63,29 @@ function NavContextProvider({children}){
         setFilteredPosts(categoryFiltered);
     }, [category, searchedPosts, searchPostByCategory]);
 
-    return(
+    return (
         <NavCon.Provider
             value={{
+                posts,
+                setPosts,
                 searchedPosts,
+                setSearchedPosts,
                 category,
                 setCategory,
                 filteredPosts,
+                selectedCategories,
                 setFilteredPosts,
-                handlePostSearch,
-                searchPostByCategory
+                handlePostSearchByTitle,
+                searchPostByCategory,
+                searchQuery,
+                setSearchQuery,
+                setSelectedCategories,
+                handlePostSearchCategories,
+                addSelectedCategories
             }}
         >
             {children}
         </NavCon.Provider>
-
-    )
+    );
 }
 export default NavContextProvider;

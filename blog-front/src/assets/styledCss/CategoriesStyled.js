@@ -14,13 +14,38 @@ const fadeIn1 = keyframes`
   to { opacity: 1; }
 `;
 
+
+export const CategoryP = styled.p`
+  box-sizing: border-box;
+  display: block;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  background-color: ${props => props.clicked ? "transparent" : "#111111"};
+  padding: 5px 15px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+`;
+
 export const CategoriesContainer = styled.div`
   font-size: 20px;
   animation: ${fadeIn1} 1s ease-out;
+  
   p{
+    box-sizing: border-box;  // Include padding in width calculation
+    display: inline-block;
     font-size: 15px;
     font-family: 'Raleway',sans-serif;
     font-weight: 800;
+    background-color: ${props => props.clicked ? "#911111" : "transparent"};
+    padding: 5px;
+    border-radius: 10px;
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
     @media (min-width: 700px){

@@ -15,7 +15,7 @@ import {
     PersonNamePosition,
     PersonStaffInfo,
     PhotoHolder,
-    RightSection,
+    RightSection, StyledH1,
     UserDetail,
     UserInfoAccContainer,
     UserInformationAccess,
@@ -54,8 +54,11 @@ function UserProfile(){
                         <PersonNamePosition>
                             <PersonImage src={key}/>
                             <PersonStaffInfo>
-                                <h1>dsadsa</h1>
-                                <p>dsadsa</p>
+                                <h1>Dsadsa</h1>
+                                <div style={{ display: "inline-block"}}>
+                                    <StyledH1>dsadsa |</StyledH1>
+                                    <StyledH1 fontSize="13px">esa</StyledH1>
+                                </div>
                             </PersonStaffInfo>
                         </PersonNamePosition>
                         <UserInformationAccess>

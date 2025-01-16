@@ -76,7 +76,7 @@ export const postDetail = (post_id) =>{
 export const postGenDetail = async (post_id) => {
    console.log(post_id);
     try {
-        const response = await axiosClientAPI.get(`/posts/post/${post_id}`, {
+        const response = await axiosClientAPI.get(`/posts/post/?post_id=${post_id}`, {
             withCredentials: true,
             // headers: {
             //     'Content-Type': 'multipart/form-data',

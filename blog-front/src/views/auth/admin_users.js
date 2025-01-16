@@ -28,17 +28,15 @@ import {PostMovingContainer} from "../../assets/styledCss/PostListStyled";
 
 function AdminUsers(){
     const [searchTerm, setSearchTerm] = useState("");
-    const { handlePostSearch } = useContext(NavbarContext);
+    // const { handlePostSearch } = useContext(NavbarContext);
     const [currentPage, setCurrentPage] = useState("");
-
-
 
     const handleSearchInputChange = (event) => {
         setSearchTerm(event.target.value);
     };
 
     const handleSearchClick = () => {
-        handlePostSearch(searchTerm);
+        // handlePostSearch(searchTerm);
 
     }
     return (
