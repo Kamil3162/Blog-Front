@@ -11,13 +11,10 @@ import PostCreateView from "../views/post/PostCreateView";
 import ResetPasswordDisplay from "../views/auth/ResetPasswordDisplay";
 import SetNewPasswordDisplay from "../views/auth/SetNewPasswordDisplay";
 import ChatPanelView from "../views/chat/ChatPanelView";
-import {ErrorProvider} from "../context/error_context";
-import {NotificationDisplay} from "../components/Error/GlobalError";
 import AdminApplicationView from "../views/auth/admin_panel_options";
 import AdminPosts from "../views/auth/admin_posts";
 import AdminCategories from "../views/auth/admin_categories";
 import AdminUsers from "../views/auth/admin_users";
-import {UserDetail} from "../components/UserProfile/user_styles";
 import UserProfile from "../components/UserProfile/UserProfile";
 import WebSocketChat from "../services/ws";
 import ImageDisplay from "../views/post/image_test_display";
@@ -26,6 +23,7 @@ const AppRoutes = () => (
     // <ErrorProvider>
             <Routes>
                     <Route path="/" element={<HomeScreen />} />
+                    <Route path="/me" element={<AdminPanelView/>} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/sing-up" element={<Register />} />
                     <Route path="/categories" element={<CategoriesView />} />  /
