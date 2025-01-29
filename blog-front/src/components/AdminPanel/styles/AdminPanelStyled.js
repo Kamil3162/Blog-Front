@@ -5,18 +5,23 @@ import {LeftPanelElementText} from "./LeftPanelStyled";
 
 
 export const AdminPanelContainer = styled.div`
-  @media (max-width: 500px){
-    //min-width: 100vh;
-    //min-height: 100vh;
-    width: auto;
-    height: auto;
-    display: block;
-    //background-color: #c0bfbf;
-    //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
-    //background-repeat: no-repeat;
-    //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-color: rgba(91, 88, 88, 0.07);
-  }
+  width: auto;
+  height: auto;
+  display: block;
+  background-color: rgba(91, 88, 88, 0.07);
+  //
+  //@media (max-width: 500px){
+  //  //min-width: 100vh;
+  //  //min-height: 100vh;
+  //  width: auto;
+  //  height: auto;
+  //  display: block;
+  //  //background-color: #c0bfbf;
+  //  //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
+  //  //background-repeat: no-repeat;
+  //  //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  //  background-color: rgba(91, 88, 88, 0.07);
+  //}
   
   @media (min-width: 500px){
     display: flex;

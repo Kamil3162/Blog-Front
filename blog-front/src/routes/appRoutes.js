@@ -18,12 +18,13 @@ import AdminUsers from "../views/auth/admin_users";
 import UserProfile from "../components/UserProfile/UserProfile";
 import WebSocketChat from "../services/ws";
 import ImageDisplay from "../views/post/image_test_display";
+import UserPanel from "../views/user/user_posts";
 
 const AppRoutes = () => (
     // <ErrorProvider>
             <Routes>
                     <Route path="/" element={<HomeScreen />} />
-                    <Route path="/me" element={<AdminPanelView/>} />
+                    <Route path="/me" element={<UserPanel/>} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/sing-up" element={<Register />} />
                     <Route path="/categories" element={<CategoriesView />} />  /
