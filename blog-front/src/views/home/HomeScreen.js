@@ -1,12 +1,12 @@
 import React from "react";
 import {MainContainer} from "../../assets/styledCss/MainStyled.js";
 import {HomeContainer} from "../../assets/styledCss/HomeStyled";
-import Navbar from "../../components/Navbar/Navbar.js";
-import HeaderPost from "../../components/HeaderPost/HeaderPost";
-import ContentPart from "../../components/ContentPart/ContentPart";
-import RolloutOptions from "../../components/RolloutOptions/RolloutOptions";
-import Categories from "../../components/Categories/Categories";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/navbar.js";
+import HeaderPost from "../../components/HomeHeaderPost/home_post_header";
+import ContentPart from "../../components/ContentPart/page_layout";
+import RolloutOptions from "../../components/RolloutOptions/rollout";
+import Categories from "../../components/Categories/categories";
+import Footer from "../../components/Footer/footer";
 
 function HomeScreen(){
     return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {AuthButtonComponent} from "./components/Button/AuthButtonComponent";
+import {AuthButtonComponent} from "./components/Button/auth_button";
 
 
 export const CommentsContainer = styled.div`

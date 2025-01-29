@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useNotification} from "../components/Error/GlobalError";
+import {useNotification} from "../components/Error/global_error";
 import { toast } from "react-toastify";
 import env from "../config/environment";
 

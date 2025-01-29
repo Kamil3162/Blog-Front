@@ -3,9 +3,9 @@ import React from "react";
 import {
     AdminPanelContainer, DashBoardContainer,
 
-} from "./styles/AdminPanelStyled";
+} from "./styles/admin_panel";
 import {OptionAdminContainer, OptionChangeContainer, OptionsContainer} from "./components/app_options";
-import LeftPanel from "./components/LeftPanel";
+import LeftPanel from "./components/left_panel";
 
 function AdminApplications(){
     return (

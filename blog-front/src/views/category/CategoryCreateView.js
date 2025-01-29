@@ -1,9 +1,9 @@
-import Navbar from "../../components/Navbar/Navbar";
-import RolloutOptions from "../../components/RolloutOptions/RolloutOptions";
-import ContentPart from "../../components/ContentPart/ContentPart";
-import HeaderPost from "../../components/HeaderPost/HeaderPost";
-import Categories from "../../components/Categories/Categories";
-import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/navbar";
+import RolloutOptions from "../../components/RolloutOptions/rollout";
+import ContentPart from "../../components/ContentPart/page_layout";
+import HeaderPost from "../../components/HomeHeaderPost/home_post_header";
+import Categories from "../../components/Categories/categories";
+import Footer from "../../components/Footer/footer";
 import {HomeContainer} from "../../assets/styledCss/HomeStyled";
 import React, {useContext, useState} from "react";
 import {PostListCategory, PostListContainer, PostListPhoto} from "../../assets/styledCss/PostListStyled";
@@ -19,8 +19,8 @@ import blog_image from "../../assets/icons/blog_image.png";
 import {
     CategoryCreateContainer,
     CategoryFieldsContainer, CategoryUnderline
-} from "../../components/Categories/CategoriesStyled/CategoryCreateStyled";
-import CategoryCreate from "../../components/Categories/CategoryCreate";
+} from "../../components/Categories/CategoriesStyled/styles";
+import CategoryCreate from "../../components/Categories/category_create";
 import {WindowSizeContext} from "../../context/WindowsSizeContext";
 import {NavigationVisibilityContext} from "../../context/NavigationVisibilityContext";
 

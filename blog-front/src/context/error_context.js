@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext} from "react";
-import {NotificationDisplay} from "../components/Error/GlobalError";
+import {NotificationDisplay} from "../components/Error/global_error";
 
 export const NotificationContext = createContext();
 

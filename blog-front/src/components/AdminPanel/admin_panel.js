@@ -1,17 +1,21 @@
-import LeftPanel from "../../components/AdminPanel/components/left_panel";
+import React from "react";
+
 import {
     AdminPanelContainer,
     DashBoardBussinesInfoContainer,
     DashBoardContainer,
-    DashBoardInfoContainer
-} from "../../components/AdminPanel/styles/admin_panel";
-import {DASHBOARD_INFO} from "../../components/AdminPanel/constants/constant_panel";
-import BusinessInfoCard from "../../components/AdminPanel/components/bussiness_info_card";
-import DashboardInfoPanel from "../../components/AdminPanel/components/dashboard_info_panel";
-import React from "react";
+    DashBoardInfoContainer,
 
-function MyProfile(){
+} from "./styles/admin_panel";
+import {DASHBOARD_INFO} from "./constants/constant_panel";
+import BusinessInfoCard from "./components/bussiness_info_card";
+import PostsTable from "./components/posts_table";
+import LeftPanel from "./components/left_panel";
+import DashboardInfoPanel from "./components/dashboard_info_panel";
+import {InfoBlogsContainer} from "./styles/info_blogs";
+import image from "../../assets/icons/image.png";
 
+function AdminPanel(){
     return (
         <AdminPanelContainer>
             <LeftPanel />
@@ -32,6 +36,5 @@ function MyProfile(){
         </AdminPanelContainer>
     )
 }
+export default AdminPanel;
 
-
-export default MyProfile;

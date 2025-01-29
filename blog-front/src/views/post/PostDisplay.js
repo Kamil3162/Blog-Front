@@ -1,9 +1,9 @@
 import {HomeContainer} from "../../assets/styledCss/HomeStyled";
-import Navbar from "../../components/Navbar/Navbar";
-import RolloutOptions from "../../components/RolloutOptions/RolloutOptions";
-import PostDetail from "../../components/Posts/PostDetail/PostDetail";
+import Navbar from "../../components/Navbar/navbar";
+import RolloutOptions from "../../components/RolloutOptions/rollout";
+import PostDetail from "../../components/Posts/post_detail";
 import React, {useEffect, useState} from "react";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/footer";
 import {useParams} from "react-router-dom";
 
 import {postDetail, postGenDetail} from "../../services/post";

@@ -43,39 +43,11 @@ function Topbar(){
     }
 
     const renderNavItems = () => {
-        // if (width > 500){
-        //     return (
-        //         <>
-        //             <NavbarElement>
-        //                 <a href="/">
-        //                     Home
-        //                 </a>
-        //             </NavbarElement>
-        //             <NavbarElement>
-        //                 <a href="/post-create">
-        //                     Post Create
-        //                 </a>
-        //             </NavbarElement>
-        //             <NavbarElement>
-        //                 <a href="/category/create">
-        //                     Category Create
-        //                 </a>
-        //             </NavbarElement>
-        //             <NavbarElement>
-        //                 <a href="/admin-panel">
-        //                     Admin Panel
-        //                 </a>
-        //             </NavbarElement>
-        //         </>
-        //     )
-        // }
-        // else {
         return (
             <NavbarElement onClick={toggleNavVisibility}>
                 <img src={listview} width="30px" height="30px"/>
             </NavbarElement>
         )
-        // }
     }
 
     return (

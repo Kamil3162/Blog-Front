@@ -333,6 +333,7 @@ export const NavbarElement = styled.div`
     position: relative;
     z-index: 1;
     //
+    
     &::after {
       content: '';
       position: absolute;

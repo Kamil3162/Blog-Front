@@ -1,6 +1,6 @@
-import ChatPannel from "../../components/ChatPannel/ChatPannel";
+import ChatPannel from "../../components/ChatPannel/chat_panel";
 import {HomeContainer} from "../../assets/styledCss/HomeStyled";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/navbar";
 
 
 function ChatPanelView(){

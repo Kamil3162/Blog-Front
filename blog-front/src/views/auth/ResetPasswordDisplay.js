@@ -1,10 +1,7 @@
-import Navbar from "../../components/Navbar/Navbar";
-import ResetPasswordPanel from "../../components/ResetPasswordPanel/ResetPasswordPanel";
-import Footer from "../../components/Footer/Footer";
+import ResetPasswordPanel from "../../components/ResetPasswordPanel/reset_password";
 function ResetPasswordDisplay(){
     return (
         <>
-            {/*<Navbar/>*/}
             <ResetPasswordPanel/>
         </>
     )

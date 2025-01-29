@@ -1,4 +1,4 @@
-import AdminPanel from "../../components/AdminPanel/AdminPanel";
+import AdminPanel from "../../components/AdminPanel/admin_panel";
 
 function AdminPanelView(){
     return (
