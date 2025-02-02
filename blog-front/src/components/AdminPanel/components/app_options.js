@@ -36,7 +36,10 @@ export const OptionsContainer = styled.div`
   
   @media (max-width: 600px){
     width: auto;
+    padding: 2px;
+    margin-top: 50px;
   }
+  
   p{
     font-size: 16px;
     font-family: 'Lexend', sans-serif;

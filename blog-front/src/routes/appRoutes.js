@@ -19,6 +19,7 @@ import WebSocketChat from "../services/ws";
 import ImageDisplay from "../views/post/image_test_display";
 import UserPanel from "../views/user/user_posts";
 import UserAccount from "../views/user/user_account";
+import PostModify from "../components/Posts/post_edit";
 
 const AppRoutes = () => (
     <Routes>
@@ -30,6 +31,7 @@ const AppRoutes = () => (
             <Route path="/category/create" element={<CategoryCreateView />} />
             <Route path="/posts/:page" element={<AdminPanelView />} />
             <Route path="/post-detail/:id" element={<PostDisplay />} />
+            <Route path="/post-modify/:id" element={<PostModify />} />
             <Route path="/post-create" element={<PostCreateView />} />
             <Route path="/reset/password" element={<ResetPasswordDisplay />} />
             <Route path="/reset/password/:token" element={<SetNewPasswordDisplay />} />

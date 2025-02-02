@@ -9,6 +9,8 @@ export const AdminPanelContainer = styled.div`
   height: auto;
   display: block;
   background-color: rgba(91, 88, 88, 0.07);
+  //background: linear-gradient(to top left, #61dafb 0, #007bff 100);
+  
   //
   //@media (max-width: 500px){
   //  //min-width: 100vh;
@@ -22,8 +24,8 @@ export const AdminPanelContainer = styled.div`
   //  //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   //  background-color: rgba(91, 88, 88, 0.07);
   //}
-  
-  @media (min-width: 500px){
+
+  @media (min-width: 500px) {
     display: flex;
     //min-width: 100vh;
     min-height: 100vh;
@@ -32,8 +34,9 @@ export const AdminPanelContainer = styled.div`
     //background-repeat: no-repeat;
     //background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-color: rgba(91, 88, 88, 0.07);
+    //background-color: rgba(7, 6, 6, 0.13);
   }
-    
+
 `;
 
 export const DashBoardContainer = styled.div`

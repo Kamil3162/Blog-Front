@@ -28,6 +28,7 @@ import {LoginInputField} from "../../assets/styledCss/AccountingStyled";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {NavbarElement} from "../../assets/styledCss/NavbarStyled";
+import {AuthButtonComponent} from "../../components/Button/auth_button";
 
 
 export const InputUserDataWrapper = styled.div`
@@ -142,8 +143,17 @@ function UserAccount(){
                                         </h1>
                                         <input type="text" value="testowy32"/>
                                     </UserInfoAccContainer>
+
+                                    <AuthButtonComponent
+                                        width={150}
+                                        height={50}
+                                        background={"blue"}
+                                        color={"white"}
+                                        text="Save"/>
+
                                 </UserInformationAccess>
                             </PersonalInfoShort>
+
                         </UserInformationContainer>
                     </OptionsContainer>
                 </div>

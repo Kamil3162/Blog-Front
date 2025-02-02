@@ -15,6 +15,7 @@ import PreviousButton from "../Button/button_previous";
 import NextButton from "../Button/button_next";
 import {StatusIndicator} from "./components/app_options_test";
 import styled from "styled-components";
+import {InputDataPostCreate} from "../../assets/styledCss/PostCreateStyled";
 
 export const ButtonModify = styled.button`
   width: 75px;
@@ -83,6 +84,10 @@ export const ButtonModify = styled.button`
     opacity: 0.8;
     cursor: wait;
   }
+`;
+
+const InputData = styled(InputDataPostCreate)`
+        width: 200px;
 `;
 
 function AdminCategories() {
@@ -165,7 +170,7 @@ function AdminCategories() {
                     {exampleCategories.map(category => (
                         <TableRow key={category.id}>
                             <TableCell>
-                                <SearchField
+                                <InputData
                                     type="text"
                                     value={editID === category.id ? editedValues.category_name : category.category_name}
                                     onChange={handleChange}

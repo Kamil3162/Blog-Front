@@ -53,7 +53,19 @@ export const HomeDate = styled.p`
   font-size: 17px;
 `;
 
-
+export const HomeEditdsadsadsadsadas = styled.input`
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  background-color: #fdfdfd;
+  color: black;
+  margin-bottom: 5px; // Adjust this value as needed
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  &:focus{
+    border: 1px solid red;
+  }
+`;
 
 export const HomeTitlePost = styled.div`
     display: flex;
@@ -77,8 +89,21 @@ export const HomeTitle = styled.p`
   margin-top: 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
-  font-size: 30px;
   padding: 0;
+  font-size: 2rem;
+`;
+
+export const HomeTitleEdit = styled.input`
+  margin-top: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  padding: 10px;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: #fdfdfd;
+  
   
 `;
 export const HomeDataContainer = styled.div`

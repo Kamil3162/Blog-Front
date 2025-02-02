@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import photo from "../../../assets/icons/Photo.png";
+import {AuthButtonComponent} from "../../Button/auth_button";
+import React from "react";
 const CategoryContainer = styled.div`
   display: flex;
   padding: 15px;
@@ -111,17 +113,46 @@ const PostsTable = styled.div`
     padding: 5px;
   }
 `;
+
+export const PostBtnEditContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+`;
+
 function LastPost({image, category, helper_text}){
     return (
         <LastPostsContainer>
             <ImageHolder>
                 <img src={image}/>
             </ImageHolder>
-            <CategoryNameContainer>{category}</CategoryNameContainer>
-            <HelperInfo>{helper_text}</HelperInfo>
+            <div style={{ display: "flex"}}>
+                <div>
+                    <CategoryNameContainer>{category}</CategoryNameContainer>
+                    <HelperInfo>{helper_text}</HelperInfo>
+                </div>
+                <PostBtnEditContainer>
+                    <AuthButtonComponent
+                        width={80}
+                        height={50}
+                        background={"blue"}
+                        color={"white"}
+                        text="Edit">Sign up</AuthButtonComponent>
+                </PostBtnEditContainer>
+                <PostBtnEditContainer>
+                    <AuthButtonComponent
+                        width={80}
+                        height={50}
+                        background={"red"}
+                        color={"white"}
+                        text="Delete">Sign up</AuthButtonComponent>
+                </PostBtnEditContainer>
+            </div>
         </LastPostsContainer>
     )
 }
+
 function HelperComponent({image, header, helper}){
     return (
         <CategoryContainer>
@@ -147,40 +178,39 @@ function HelperComponent({image, header, helper}){
                     helper_text="Recommanded"
                 />
                 <LastPost
-                image={photo}
-                category="Technology"
-                helper_text="Recommanded"
+                    image={photo}
+                    category="Technology"
+                    helper_text="Recommanded"
                 />
                 <LastPost
-                image={photo}
-                category="Technology"
-                helper_text="Recommanded"
+                    image={photo}
+                    category="Technology"
+                    helper_text="Recommanded"
                 />
                 <LastPost
-                image={photo}
-                category="Technology"
-                helper_text="Recommanded"
+                    image={photo}
+                    category="Technology"
+                    helper_text="Recommanded"
                 />
                 <LastPost
-                image={photo}
-                category="Technology"
-                helper_text="Recommanded"
+                    image={photo}
+                    category="Technology"
+                    helper_text="Recommanded"
                 />
                 <LastPost
-                image={photo}
-                category="Technology"
-                helper_text="Recommanded"
+                    image={photo}
+                    category="Technology"
+                    helper_text="Recommanded"
                 />
                 <LastPost
-                image={photo}
-                category="Technology"
-                helper_text="Recommanded"
+                    image={photo}
+                    category="Technology"
+                    helper_text="Recommanded"
                 />
             </PostsTable>
         </CategoryContainer>
     )
 }
-
 
 function ExampleComponent(){
     return (

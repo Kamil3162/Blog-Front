@@ -13,6 +13,7 @@ export const CreateCommentContainer = styled.div`
 
 export const CreateCommentField = styled(AddText)`
   border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
   padding: 20px; /* Adds some space inside the textarea */
   box-sizing: border-box; /* Ensures padding does not affect the overall dimensions */
   resize: vertical; /* Allows the user to resize the textarea vertically */
@@ -20,12 +21,12 @@ export const CreateCommentField = styled(AddText)`
   font-size: 16px; /* Sets a comfortable font size for reading and writing */
   line-height: 1.5; /* Improves the readability of multiline text */
   outline: none; /* emoves the default focus outline to use a custom style if desired */
-  background-color:#2138cd14 ;
+  background-color: #fdfdfd;
   color: black;
   font-weight: 800;
   height: 100px;
-  
-  &:focus{
+
+  &:focus {
     border-color: black; /* Highlights the textarea when focused */
   }
 `;

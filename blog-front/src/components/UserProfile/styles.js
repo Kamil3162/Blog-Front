@@ -52,6 +52,10 @@ export const Header = styled.header`
   width: 100%;
   border-radius: 10px 10px 0 0;
   
+  @media (max-width: 768px){
+    width: 80%;
+  }
+  
 `;
 
 export const LeftSection = styled.div`
@@ -119,21 +123,24 @@ export const UserInformationContainer = styled.div`
   
   @media (max-width: 600px){
     width: 90%;
+    height: 600px;
   }
   
 `;
 
 export const PersonalInfoShort = styled.div`
-    max-height: 300px;
+    //max-height: 300px;
     height: 150px;
     display: flex;
     background-color: white;
     border-radius: 20px;
     align-items: center;
   
-    @media (max-width: 600px){
+    @media (max-width: 768px){
       display: block;
-      height: 250px;
+      height: 200px;
+      width: 90%;
+      background-color: white;
     }
 `;
 
@@ -147,7 +154,7 @@ export const PersonNamePosition = styled.div`
   border-right: 1px solid black;
   
   @media (max-width: 600px){
-    height: 60%;
+    width: auto;
     border-right: none;
     
   }
@@ -169,7 +176,7 @@ export const PersonStaffInfo = styled.div`
     display: block;
     flex: 1;
     min-width: 300px;
-  text-align: left;
+    text-align: left;
   
   h1{
     font-size: 20px;
@@ -197,9 +204,11 @@ export const UserInformationAccess = styled.div`
   @media (max-width: 600px){
     display: flex; 
     flex-direction: column;
-    justify-content: center;
+    //justify-content: center;
     gap: 0;
     margin-left: 0;
+    height: 300px;
+    background-color: white;
   }
 `;
 
@@ -231,15 +240,12 @@ export const UserInfoAccContainer = styled.div`
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
   }
-  @media (max-width: 600px){
-    margin: 0 auto;
-    
-    h1{
-      //margin: 0 auto;
-    }
-    p{
-      //margin: 0 auto;
-    }
+  @media (max-width: 768px){
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+    justify-items: center;
   }
 `;
 

@@ -66,7 +66,7 @@ export const AddText = styled.textarea`
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    background-color: #f0f0f0;
+    background-color: #fdfdfd;
     color: black;
     
     &::placeholder {
@@ -74,7 +74,6 @@ export const AddText = styled.textarea`
     }
     
     &:focus {
-        border-color: #007bff;
         outline: none;
     }
     
@@ -86,7 +85,7 @@ export const AddText = styled.textarea`
         padding: 20px;
         font-size: 16px;
         line-height: 1.5;
-        background-color: #2138cd14;
+        background-color: #fdfdfd;
         font-weight: 800;
     }
 `;
@@ -97,7 +96,7 @@ export const InputDataPostCreate = styled.input`
     width: 300px;
     padding: 10px;
     font-weight: 600;
-    background-color:#2138cd14 ;
+    background-color: #fdfdfd;
     border: 1px solid black;
     border-radius: 5px;
     margin: auto;
@@ -112,8 +111,7 @@ export const StyledSelect = styled.select`
   width: 320px; /* Max width for larger screens */
   padding: 10px;
   font-weight: 600;
-  background-color: #2138cd14; /* Slightly transparent blue */
-  border: 1px solid black;
+  background-color: #fdfdfd;  border: 1px solid black;
   border-radius: 5px;
   margin: 20px auto; /* Consolidated margin for top, bottom, and center alignment */
   

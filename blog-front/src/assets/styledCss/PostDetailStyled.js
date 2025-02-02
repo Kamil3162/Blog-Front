@@ -57,35 +57,58 @@ export const PostDetailHeader = styled.div`
     }
   }
 `;
+export const PostEditDetailContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  transition: all 0.3s ease;
+
+  @media (min-width: 600px) {
+    padding-bottom: 40px;
+    //background: linear-gradient(55deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, #FFF5FC 45%, #FFF5FC 45%);
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+`;
 
 export const PostDetailPhotoContainer = styled(HomePhotoContainer)`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   transition: transform 0.3s ease;
+  margin-bottom: 50px;
+  max-width: 600px;
+  max-height: 300px;
 
   img {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-  }
-
-  &:hover img {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 80%;
+    max-height: 60%;
   }
 
   @media (min-width: 600px) {
     display: flex;
-    max-width: 80%;
-    max-height: 60%;
+    max-width: 1200px;
+    max-height: 450px;
     flex: 1;
-    margin-right: -300px;
     z-index: 1;
+    
+    img{
+      object-fit: cover;
+    }
   }
 `;
 
 export const PostDetailHeaderTitle = styled.div`
   height: auto;
-  text-align: center;
+  align-content: center;
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 20px;
@@ -114,25 +137,60 @@ export const PostDetailContentContainer = styled.div`
 
 export const PostDetailContent = styled.div`
   text-align: left;
-  margin: auto;
+  //margin: auto;
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.6;
-  color: #444;
+  color: #070707;
 
   @media (min-width: 500px) {
     width: 70%;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 700;
+  }
+`;
+export const PostModifyArea = styled.textarea`
+  text-align: left;
+  //margin: auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #070707;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 90%;
+    height: 400px;
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: 700;
+    background-color: #fdfdfd;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    font-size: 15px;
+  }
+  
+  @media (min-width: 500px) {
+    max-width: 100%;
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #fdfdfd;
+    border: 1px solid rgba(0, 0, 0, 0.18);
   }
 `;
 
 export const PostDetailInformation = styled.div`
+  margin-bottom: 70px;
+  margin-top: 100px;
+  
   @media (min-width: 600px) {
     flex: 1;
     text-align: center;
-    padding-left: 100px;
     animation: ${fadeIn} 0.5s ease-out 0.2s both;
   }
 `;
@@ -167,10 +225,10 @@ export const PostModifyContainer = styled.div`
 
 // code responsible for adjustment like icons to post detail
 export const IconVote = styled.img`
-  height: 50px;
-  width: 50px;
-  border-radius: 20px;
-  padding: 10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 10px;
+  padding: 5px;
   transition: all 0.3s ease-in-out;  // Add smooth transitions
   cursor: pointer;  // Show clickable cursor
 
