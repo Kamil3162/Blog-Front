@@ -108,7 +108,6 @@ function UserAccount(){
                                 <UserProfile1>
                                     <Avatar src={key}/>
                                     <Username>Hang Minh Nguyen</Username>
-                                    {/*<DropdownIcon /> /!* Your dropdown icon component *!/*/}
                                 </UserProfile1>
                             </RightSection>
                         </Header>
@@ -154,7 +153,6 @@ function UserAccount(){
 
                                 </UserInformationAccess>
                             </PersonalInfoShort>
-
                         </UserInformationContainer>
                     </OptionsContainer>
 

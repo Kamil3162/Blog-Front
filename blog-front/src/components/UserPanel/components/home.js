@@ -184,6 +184,7 @@ const MainMeContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  
   @media (max-width: 768px) {
     width: 95%;
     padding: 0 10px;
@@ -216,6 +217,24 @@ const LastPostsContainer = styled.div`
 
 const ImageHolder = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ImageSmallerHolder = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.42) 5px 10px 10px 5px;
+    object-fit: cover;
+  }
 `;
 
 const PostsTable = styled.div`
@@ -238,6 +257,7 @@ const PostsTable = styled.div`
   @media (max-width: 768px) {
     gap: 15px;
     padding: 5px;
+    
   }
 `;
 
@@ -246,12 +266,72 @@ export const PostBtnEditContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    gap: 10px;
 `;
+
+// smaller icons
+
+export const SmallerPostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+
+  //img {
+  //  width: 100%;
+  //  height: 100px;
+  //  border-radius: 20px;
+  //  box-shadow: rgba(0, 0, 0, 0.42) 5px 10px 10px 5px;
+  //  object-fit: cover;
+  //}
+  //
+  //@media (max-width: 768px) {
+  //  max-width: 200px;
+  //
+  //  img {
+  //    height: 100px;
+  //    object-fit: cover;
+  //  }
+  //}
+`;
+
+function LastPostSmaller({image, category, helper_text}){
+    return (
+        <SmallerPostContainer>
+            <ImageSmallerHolder>
+                <img src={image}/>
+            </ImageSmallerHolder>
+            <div style={{ display: "block", gap: "10px"}}>
+                <div>
+                    <CategoryNameContainer>{category}</CategoryNameContainer>
+                    <HelperInfo>{helper_text}</HelperInfo>
+                </div>
+                <PostBtnEditContainer>
+                    <AuthButtonComponent
+                        width={80}
+                        height={50}
+                        background={"blue"}
+                        color={"white"}
+                        text="Edit">
+                    </AuthButtonComponent>
+                    <AuthButtonComponent
+                        width={80}
+                        height={50}
+                        background={"red"}
+                        color={"white"}
+                        text="Delete">
+                    </AuthButtonComponent>
+                </PostBtnEditContainer>
+            </div>
+        </SmallerPostContainer>
+    )
+}
+
 
 function LastPost({image, category, helper_text}){
     return (
         <LastPostsContainer>
-
             <ImageHolder>
                 <img src={image}/>
             </ImageHolder>
@@ -266,7 +346,8 @@ function LastPost({image, category, helper_text}){
                         height={50}
                         background={"blue"}
                         color={"white"}
-                        text="Edit">Sign up</AuthButtonComponent>
+                        text="Edit">
+                    </AuthButtonComponent>
                 </PostBtnEditContainer>
                 <PostBtnEditContainer>
                     <AuthButtonComponent
@@ -274,7 +355,8 @@ function LastPost({image, category, helper_text}){
                         height={50}
                         background={"red"}
                         color={"white"}
-                        text="Delete">Sign up</AuthButtonComponent>
+                        text="Delete">
+                    </AuthButtonComponent>
                 </PostBtnEditContainer>
             </div>
         </LastPostsContainer>
@@ -285,52 +367,22 @@ function HelperComponent({image, header, helper}){
     return (
         <CategoryContainer>
             <PostsTable>
-                <LastPost
+                <LastPostSmaller
                     image={photo}
                     category="Technology"
                     helper_text="Recommanded"
                 />
-                <LastPost
+                <LastPostSmaller
                     image={photo}
                     category="Technology"
                     helper_text="Recommanded"
                 />
-                <LastPost
+                <LastPostSmaller
                     image={photo}
                     category="Technology"
                     helper_text="Recommanded"
                 />
-                <LastPost
-                    image={photo}
-                    category="Technology"
-                    helper_text="Recommanded"
-                />
-                <LastPost
-                    image={photo}
-                    category="Technology"
-                    helper_text="Recommanded"
-                />
-                <LastPost
-                    image={photo}
-                    category="Technology"
-                    helper_text="Recommanded"
-                />
-                <LastPost
-                    image={photo}
-                    category="Technology"
-                    helper_text="Recommanded"
-                />
-                <LastPost
-                    image={photo}
-                    category="Technology"
-                    helper_text="Recommanded"
-                />
-                <LastPost
-                    image={photo}
-                    category="Technology"
-                    helper_text="Recommanded"
-                />
-                <LastPost
+                <LastPostSmaller
                     image={photo}
                     category="Technology"
                     helper_text="Recommanded"

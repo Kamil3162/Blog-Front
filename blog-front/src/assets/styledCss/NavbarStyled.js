@@ -63,8 +63,8 @@ export const AuthButtonCom = styled.button`
   padding: 10px;
   font-weight: 1000;
   border-radius: 20px;
-  width: 160px; // Use props.width directly
-  height: 50px; // Use props.height directly
+  width: 150px; // Use props.width directly
+  height: 40px; // Use props.height directly
   font-size: 15px; // Use props.font_size directly
   border: none;
   background: ${props => props.background || 'initial'}; // Use props.background directly

@@ -53,7 +53,7 @@ export const Header = styled.header`
   border-radius: 10px 10px 0 0;
   
   @media (max-width: 768px){
-    width: 80%;
+    width: 90%;
   }
   
 `;
@@ -116,20 +116,20 @@ export const Username = styled.span`
 `;
 
 export const UserInformationContainer = styled.div`
-  background-color: rgba(7, 6, 6, 0.11);
+  //background-color: rgba(147, 146, 146, 0.5);
   padding: 20px;
-  border-radius: 0 0 10px 10px;
+  //border-radius: 0 0 10px 10px;
+  border-radius: 10px;
   width: 100%;
-  
-  @media (max-width: 600px){
+
+  @media (max-width: 600px) {
     width: 90%;
-    height: 600px;
+    height: 100%;
   }
-  
+
 `;
 
 export const PersonalInfoShort = styled.div`
-    //max-height: 300px;
     height: 150px;
     display: flex;
     background-color: white;
@@ -138,14 +138,16 @@ export const PersonalInfoShort = styled.div`
   
     @media (max-width: 768px){
       display: block;
-      height: 200px;
-      width: 90%;
+      height: 100px;
+      width: 100%;
       background-color: white;
+      //margin-bottom: 100px;
     }
 `;
 
 export const PersonNamePosition = styled.div`
   height: 80%;
+  max-height: 100px;
   display: flex;
   align-items: center;
   padding: 5px;
@@ -156,7 +158,7 @@ export const PersonNamePosition = styled.div`
   @media (max-width: 600px){
     width: auto;
     border-right: none;
-    
+    margin-bottom: 20px;
   }
   
 `;
@@ -201,14 +203,13 @@ export const UserInformationAccess = styled.div`
     gap: 50px;
     margin-left: 50px;
   
-  @media (max-width: 600px){
-    display: flex; 
-    flex-direction: column;
-    //justify-content: center;
+  @media (max-width: 768px){
+    display: block;
     gap: 0;
     margin-left: 0;
     height: 300px;
     background-color: white;
+    border-radius: 20px;
   }
 `;
 
@@ -243,7 +244,7 @@ export const UserInfoAccContainer = styled.div`
   @media (max-width: 768px){
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 10px;
     align-items: center;
     justify-items: center;
   }
@@ -254,8 +255,12 @@ export const PersonalInformationContainer = styled.div`
     justify-content: space-between;
     gap: 30px;
     margin-top: 20px;
-  @media (max-width: 600px){
+
+  @media (max-width: 768px){
     display: block;
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 `;
 
@@ -265,12 +270,14 @@ export const PersonalInfoAdd = styled(PersonalInfoShort)`
     flex-direction: row;
     display: flex;
     justify-content: space-between;
-  height: 600px;
+    height: 600px;
   
-    @media (max-width: 600px){
-      margin-top: 20px;
+    @media (max-width: 768px){
+      height: 250px;
+      margin-top: 200px;
       display: flex;
-      flex-direction: column;
+      width: 90%;
+      //flex-direction: column;
       justify-content: center;
     }
     

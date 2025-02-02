@@ -31,13 +31,14 @@ export const OptionsContainer = styled.div`
   display: block;
   width: 100%;
   max-width: 1600px;
-  padding: 24px;
+  padding: 10px;
   margin: 0 auto;
   
   @media (max-width: 600px){
     width: auto;
     padding: 2px;
-    margin-top: 50px;
+    margin-top: 5px;
+    height: 100%;
   }
   
   p{

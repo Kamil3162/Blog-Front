@@ -50,6 +50,8 @@ function UserProfile(){
                     </RightSection>
                 </Header>
                 <UserInformationContainer>
+                    <PersonalInformationContainer>
+
                     <p>Stats / Staff list / Staff Detail</p>
                     <PersonalInfoShort>
                         <PersonNamePosition>
@@ -89,6 +91,8 @@ function UserProfile(){
                             </UserInfoAccContainer>
                         </UserInformationAccess>
                     </PersonalInfoShort>
+                    </PersonalInformationContainer>
+
                     <PersonalInformationContainer>
                         <PersonalInfoAdd>
                             <div>
@@ -125,7 +129,7 @@ function UserProfile(){
                                     </p>
                                 </UserInfoAccContainer>
                             </div>
-                            <div >
+                            <div>
                                 <UserInfoAccContainer>
                                     <h1>
                                         Staff Account:
@@ -161,7 +165,6 @@ function UserProfile(){
                             </div>
                         </PersonalInfoAdd>
                         <PersonalInfoAdd>
-
                             <UserInfoAccContainer>
                                 <h1>
                                     Staff Account:
@@ -174,7 +177,6 @@ function UserProfile(){
                         </PersonalInfoAdd>
                     </PersonalInformationContainer>
                 </UserInformationContainer>
-
             </OptionsContainer>
             {/* Display more user information */}
         </AdminPanelContainer>

@@ -43,11 +43,12 @@ export const UserMeInfoContainer = styled.div`
   background-color: rgba(7, 6, 6, 0.35);
   display: flex;
   position: relative;
+  padding: 10px;
 `;
 
 export const MainContentWrapper = styled.div`
   flex: 1;
-  padding: 10px;
+  //padding: 10px;
   //margin-left: 50px;
   position: relative;
   z-index: 1;

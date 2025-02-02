@@ -27,7 +27,6 @@ export const AddFileForm = styled.form`
   @media (max-width: 600px){
     display: block;
     height: 450px;
-    width: 350px;
     //margin-left: 10%;
   }
 `;
