@@ -7,6 +7,8 @@ import ExampleComponent from "../../components/UserPanel/components/home";
 import listview from "../../assets/icons/listview.png";
 import { Link } from "react-router-dom"
 import {NavbarElement} from "../../assets/styledCss/NavbarStyled";
+import Footer from "../../components/Footer/footer";
+
 
 function UserPanel(){
     const [isColapsed, setIsColapsed] = useState(true);
@@ -30,27 +32,33 @@ function UserPanel(){
     const handleColapsed = () => {
         setIsColapsed(!isColapsed);
     }
+
     return (
-        <UserMeInfoContainer>
-            <NavbarWrapper>
-                <NavbarElement onClick={handleColapsed}>
-                    <img src={listview} width="30px" height="30px" alt="menu"/>
-                </NavbarElement>
-            </NavbarWrapper>
-            {
-                colapsedPanel(isColapsed)
-            }
-            <MainContentWrapper>
-                <div style={{ marginLeft: "150px"}}>
-                    <Topbar/>
-                </div>
-                <div style={{
-                    display: "flex"
-                }}>
-                    <ExampleComponent cd b  />
-                </div>
-            </MainContentWrapper>
-        </UserMeInfoContainer>
+        <>
+            <UserMeInfoContainer>
+                <NavbarWrapper>
+                    <NavbarElement onClick={handleColapsed}>
+                        <img src={listview} width="30px" height="30px" alt="menu"/>
+                    </NavbarElement>
+                </NavbarWrapper>
+                {
+                    colapsedPanel(isColapsed)
+                }
+                <MainContentWrapper>
+                    <div style={{ marginLeft: "150px"}}>
+                        <Topbar/>
+                    </div>
+                    <div style={{
+                        display: "flex"
+                    }}>
+                        <ExampleComponent cd b  />
+                    </div>
+                </MainContentWrapper>
+
+            </UserMeInfoContainer>
+            <Footer/>
+        </>
+
     )
 }
 export default UserPanel;

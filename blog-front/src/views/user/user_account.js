@@ -29,6 +29,7 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 import {NavbarElement} from "../../assets/styledCss/NavbarStyled";
 import {AuthButtonComponent} from "../../components/Button/auth_button";
+import DashboardChart from "../../components/Chart/chart";
 
 
 export const InputUserDataWrapper = styled.div`
@@ -156,6 +157,18 @@ function UserAccount(){
 
                         </UserInformationContainer>
                     </OptionsContainer>
+
+                </div>
+                <div style={{
+                    width: "100%",      // Parent container takes full width
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "80px"
+                }}>
+                    <DashboardChart/>
+                    <div>
+                        esa
+                    </div>
                 </div>
             </MainContentWrapper>
         </UserMeInfoContainer>

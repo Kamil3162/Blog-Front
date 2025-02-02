@@ -46,11 +46,12 @@ const ResponsiveContainer = styled.div`
     margin-top: 105px;
   }
 `;
+
+
 function PostModify(){
     const [title, setTitle] = useState("fdsfds");
     const [content, setContent] = useState("");
     const [category, setCategory] = useState("");
-
 
     const handleDateChange = (e) => {
     };

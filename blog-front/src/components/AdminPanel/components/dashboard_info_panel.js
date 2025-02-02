@@ -5,7 +5,6 @@ import {
     LeftDashBoardPanelEsa,
 } from "../styles/admin_panel";
 import {LeftPanelElementText} from "../styles/left_panel";
-
 import {ComposedChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend} from 'recharts';
 import styled from "styled-components";
 

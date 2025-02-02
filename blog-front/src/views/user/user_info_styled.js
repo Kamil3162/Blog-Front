@@ -40,7 +40,7 @@ export const UserMeLeftPanel = styled.div`
 export const UserMeInfoContainer = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-color: rgb(91, 88, 88, 0.07);
+  background-color: rgba(7, 6, 6, 0.35);
   display: flex;
   position: relative;
 `;
