@@ -150,12 +150,10 @@ function UserAccount(){
                                         background={"blue"}
                                         color={"white"}
                                         text="Save"/>
-
                                 </UserInformationAccess>
                             </PersonalInfoShort>
                         </UserInformationContainer>
                     </OptionsContainer>
-
                 </div>
                 <div style={{
                     width: "100%",      // Parent container takes full width

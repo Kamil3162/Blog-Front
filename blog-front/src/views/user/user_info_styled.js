@@ -43,21 +43,26 @@ export const UserMeInfoContainer = styled.div`
   background-color: rgba(7, 6, 6, 0.35);
   display: flex;
   position: relative;
-  padding: 10px;
+  //padding: 10px;
 `;
 
 export const MainContentWrapper = styled.div`
-  flex: 1;
+  //flex: 1;
   //padding: 10px;
   //margin-left: 50px;
-  position: relative;
-  z-index: 1;
+  //position: relative;
+  //z-index: 1;
 `;
 
 export const NavbarWrapper = styled.div`
   margin-left: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
   //position: relative;
   z-index: 1001;
   position: fixed;
+  
+  @media (max-width: 768px){
+    margin-top: 0;  
+  }
+  
 `;

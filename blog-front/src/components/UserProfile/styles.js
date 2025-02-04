@@ -122,7 +122,7 @@ export const UserInformationContainer = styled.div`
   border-radius: 10px;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 90%;
     height: 100%;
   }
@@ -138,7 +138,7 @@ export const PersonalInfoShort = styled.div`
   
     @media (max-width: 768px){
       display: block;
-      height: 100px;
+      height: 100%;
       width: 100%;
       background-color: white;
       //margin-bottom: 100px;
@@ -204,12 +204,13 @@ export const UserInformationAccess = styled.div`
     margin-left: 50px;
   
   @media (max-width: 768px){
-    display: block;
     gap: 0;
     margin-left: 0;
     height: 300px;
     background-color: white;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
   }
 `;
 

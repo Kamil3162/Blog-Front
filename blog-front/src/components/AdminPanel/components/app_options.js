@@ -28,17 +28,23 @@ const TRANSITIONS = {
 
 // Base container for options
 export const OptionsContainer = styled.div`
-  display: block;
-  width: 100%;
-  max-width: 1600px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 90%;
+  //max-width: 1600px;
+  padding: 20px;
   margin: 0 auto;
+  overflow-x: hidden;
   
-  @media (max-width: 600px){
-    width: auto;
+  
+  @media (max-width: 768px){
+    width: 85%;
     padding: 2px;
-    margin-top: 5px;
+    //margin-top: 30px;
     height: 100%;
+    margin: 30px 0 20px 0 ;
   }
   
   p{

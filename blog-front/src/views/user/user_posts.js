@@ -48,13 +48,10 @@ function UserPanel(){
                     <div style={{ marginLeft: "150px"}}>
                         <Topbar/>
                     </div>
-                    <div style={{
-                        display: "flex"
-                    }}>
+                    <div>
                         <ExampleComponent cd b  />
                     </div>
                 </MainContentWrapper>
-
             </UserMeInfoContainer>
             <Footer/>
         </>

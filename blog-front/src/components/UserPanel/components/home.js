@@ -133,14 +133,17 @@ const PostVisitsChart = () => {
 const CategoryContainer = styled.div`
   display: flex;
   padding: 15px;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 20px;
   flex-wrap: wrap;
 
   @media (max-width: 768px) {
     justify-content: center;
-    gap: 15px;
+    gap: 5px;
+    padding: 0;
+    width: 90%;
   }
 `;
 
@@ -183,11 +186,13 @@ const MainMeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  //padding: 0 20px;
   
   @media (max-width: 768px) {
-    width: 95%;
-    padding: 0 10px;
+    width: 100%;
+    //padding: 0 10px;
+    padding: 2px;
+    margin: 0;
   }
 `;
 
@@ -208,7 +213,8 @@ const LastPostsContainer = styled.div`
 
   @media (max-width: 768px) {
     max-width: 100%;
-
+    margin: 0;
+    
     img {
       height: 250px;
     }
@@ -286,9 +292,11 @@ export const SmallerPostContainer = styled.div`
   //  object-fit: cover;
   //}
   //
-  //@media (max-width: 768px) {
-  //  max-width: 200px;
-  //
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+  }
+  
   //  img {
   //    height: 100px;
   //    object-fit: cover;

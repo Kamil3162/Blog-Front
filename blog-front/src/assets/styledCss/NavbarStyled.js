@@ -79,7 +79,7 @@ export const AuthButtonCom = styled.button`
     padding: 10px;
     font-weight: 1000;
     border-radius: 20px;
-    width: ${props => props.width ? props.width + 'px' : '80px'}; // Use props.width directly
+    width: ${props => props.width ? props.width + 'px' : '40px'}; // Use props.width directly
     height: ${props => props.height ? props.height + 'px ' : '40px'}; // Use props.height directly
     font-size: ${props => props.font_size || '15px'}; // Use props.font_size directly
     border: none;

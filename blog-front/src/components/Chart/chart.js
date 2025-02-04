@@ -53,10 +53,6 @@ const PostVisitsChart = () => {
             height: 400,
             padding: '24px',
             background: `linear-gradient(120deg, rgba(248, 250, 252, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%)`,
-            // background: `
-            //   linear-gradient(120deg, rgba(248, 250, 252, 0.9) 0%, rgba(226, 232, 240, 0.9) 100%),
-            //   linear-gradient(90deg, rgba(203, 213, 225, 0.1) 0%, rgba(148, 163, 184, 0.1) 100%)
-            // `,
             borderRadius: '16px',
             boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         }}>
