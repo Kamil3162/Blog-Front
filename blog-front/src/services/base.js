@@ -4,8 +4,6 @@ import env from "../config/environment";
 
 const axiosClientAPI = axios.create({
     // baseURL: env.apiUrl,
-//    baseURL: env.apiUrl,
-//     baseURL: 'https://kamilholub.pl/api',
      baseURL: 'http://localhost:10000',
     timeout: 10000,
     headers: {

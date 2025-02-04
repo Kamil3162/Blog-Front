@@ -2,16 +2,15 @@ import Cookies from "universal-cookie";
 import axiosClientAPI from "./base";
 const cookies = new Cookies();
 
-export const postCreate = (title, category, content, photo) => {
+export const postCreate = (title, content, owner_id, photo, category) => {
     try{
         const formData = new FormData();
 
         formData.set('title', title);
-        formData.set('category', category);
         formData.set('content', content);
         formData.set('photo', photo);
-
-        console.log(formData);
+        formData.set('owner_id', owner_id);
+        formData.set('category_data', category);
 
         const response = axiosClientAPI.post('/posts/post-create/',formData,{
             withCredentials: true, // This enables cross-origin requests to include cookies
@@ -106,3 +105,27 @@ export const fetchPosts = async (page = 1) => {
         throw error;
     }
 };
+
+
+// part of code responsible for send image inside my db
+// we send a binary data inside my db
+export const insertImage = async (image) => {
+
+    const imgData = {
+        file_data: image
+    }
+    try {
+        const response = await axiosClientAPI.post(`/image/images`,imgData, {
+            // params: { page },
+            withCredentials: true
+        });
+        return response.data;
+    } catch (error) {
+        // useNotification().showNotification(
+        //     error.message,
+        //     NotificationType.ERROR
+        // );
+        console.log("handle fetch post error");
+        throw error;
+    }
+}

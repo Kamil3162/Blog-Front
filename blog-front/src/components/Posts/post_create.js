@@ -78,11 +78,13 @@ function PostCreate(){
     }
 
     const handleButtonClick = () => {
+        const owner_id = 23;
         const response = postCreate(
             title,
-            selectedCategory.category_name,
             content,
-            images
+            images,
+            selectedCategory,
+            owner_id,
         );
         console.log(response);
     }
